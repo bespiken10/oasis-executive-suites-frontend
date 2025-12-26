@@ -11,28 +11,135 @@
 <meta property="og:type" content="website">
 
 <style>
-/*--- CLEAN BASE LAYOUT (unchanged) ---*/
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
-body{background:#fafafa;color:#111;line-height:1.5;}
-header{background:#fff;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:100;}
-header h2{font-weight:600;}
-nav a{text-decoration:none;margin-left:16px;color:#111;font-size:15px;}
-nav a:hover{opacity:0.6;}
-.hero{width:100%;height:72vh;position:relative;overflow:hidden;}
-.carousel{width:100%;height:100%;position:relative;}
-.carousel-slide{width:100%;height:100%;position:absolute;top:0;left:0;opacity:0;transition:opacity .8s ease;}
-.carousel-slide.active{opacity:1;}
-.carousel-slide img{width:100%;height:100%;object-fit:cover;}
+/*--- CLEAN BASE LAYOUT ---*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-/* content sections */
-.section{padding:60px 8%;max-width:1200px;margin:auto;}
-.section h2{text-align:center;font-size:30px;margin-bottom:32px;letter-spacing:0.4px;}
-.suite-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-top:32px;}
-.suite-card{background:#fff;border-radius:8px;overflow:hidden;border:1px solid #eee;box-shadow:0 2px 6px rgba(0,0,0,0.08);text-align:center;}
-.suite-card img{width:100%;height:200px;object-fit:cover;}
-.suite-card h3{padding:14px;font-size:18px;font-weight:600;border-top:1px solid #eee;background:#fdfdfd;}
+body {
+    background: #fafafa;
+    color: #111;
+    line-height: 1.5;
+}
 
-footer{text-align:center;padding:40px;margin-top:60px;background:#111;color:#fff;}
+/* Header */
+header {
+    background: #fff;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h2 {
+    font-weight: 600;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 16px;
+    color: #111;
+    font-size: 15px;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+/* Hero Carousel */
+.hero {
+    width: 100%;
+    height: 72vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .8s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content sections */
+.section {
+    padding: 60px 8%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 32px;
+    letter-spacing: 0.4px;
+}
+
+/* Suites grid */
+.suite-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    margin-top: 32px;
+}
+
+.suite-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.suite-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.suite-card h3 {
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    border-top: 1px solid #eee;
+    background: #fdfdfd;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    margin-top: 60px;
+    background: #111;
+    color: #fff;
+}
 </style>
 
 </head>
@@ -48,26 +155,27 @@ footer{text-align:center;padding:40px;margin-top:60px;background:#111;color:#fff
     </nav>
 </header>
 
-
 <!-- ================= HERO CAROUSEL ================= -->
 <section class="hero">
     <div class="carousel">
 
+        <!-- Slide 1: Exterior / Rooftop -->
         <div class="carousel-slide active">
-            <img src="images/hero/hero-oasis-exterior.webp" alt="Oasis Rooftop Exterior">
+            <img src="images/hero/hero-oasis-exterior.webp" alt="Oasis Executive Suites exterior view">
         </div>
 
+        <!-- Slide 2: Executive Suite Interior -->
         <div class="carousel-slide">
-            <img src="images/hero/hero-executive-suite1.webp" alt="Executive Suite Interior">
+            <img src="images/hero/hero-executive-suite1.webp" alt="Oasis Executive Suites – executive suite interior">
         </div>
 
+        <!-- Slide 3: Super Deluxe -->
         <div class="carousel-slide">
-            <img src="images/suites/super-deluxe.avif" alt="Super Deluxe Room">
+            <img src="images/suites/super-deluxe.jpeg" alt="Oasis Executive Suites – super deluxe room">
         </div>
 
     </div>
 </section>
-
 
 <!-- ================= ROOMS SECTION ================= -->
 <section id="rooms" class="section">
@@ -76,44 +184,42 @@ footer{text-align:center;padding:40px;margin-top:60px;background:#111;color:#fff
     <div class="suite-grid">
 
         <div class="suite-card">
-            <img src="images/suites/deluxe.webp" alt="Deluxe Room">
+            <img src="images/suites/deluxe.webp" alt="Deluxe Room at Oasis Executive Suites">
             <h3>Deluxe Room</h3>
         </div>
 
         <div class="suite-card">
-            <img src="images/suites/suite.webp" alt="Suite Room">
+            <img src="images/suites/suite.webp" alt="Suite room at Oasis Executive Suites">
             <h3>Suite</h3>
         </div>
 
         <div class="suite-card">
-            <img src="images/suites/super-deluxe.avif" alt="Super Deluxe Room">
+            <img src="images/suites/super-deluxe.jpeg" alt="Super Deluxe Suite at Oasis Executive Suites">
             <h3>Super Deluxe Suite</h3>
         </div>
 
         <div class="suite-card">
-            <img src="images/hero/hero-executive-suite1.webp" alt="Executive Suite">
+            <img src="images/hero/hero-executive-suite1.webp" alt="Executive Suite at Oasis Executive Suites">
             <h3>Executive Suite</h3>
         </div>
 
     </div>
 </section>
 
-
 <footer>
     © Oasis Executive Suites – Bengaluru
 </footer>
 
-
 <script>
-/* Simple auto-slide */
-let slides=document.querySelectorAll(".carousel-slide");
-let index=0;
+// Simple auto-slide
+let slides = document.querySelectorAll(".carousel-slide");
+let index = 0;
 
-setInterval(()=>{
+setInterval(() => {
     slides[index].classList.remove("active");
-    index=(index+1)%slides.length;
+    index = (index + 1) % slides.length;
     slides[index].classList.add("active");
-},4500);
+}, 4500);
 </script>
 
 </body>
