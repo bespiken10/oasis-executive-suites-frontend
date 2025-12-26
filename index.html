@@ -1,0 +1,2444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oasis Executive Suites - Business stays near BIEC Bangalore</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Executive suites near BIEC Bangalore. 12 minutes from exhibition center. Reliable WiFi, quiet rooms, 24/7 reception. Perfect for business travelers.">
+    <meta property="og:title" content="Oasis Executive Suites - Business Stays Near BIEC">
+    <meta property="og:description" content="Clean, quiet suites with proper workspaces. 12 min from BIEC.">
+    <meta property="og:type" content="website">
+    
+    <!-- Performance -->
+    <link rel="preconnect" href="https://bookingengine.stayflexi.com">
+    <link rel="dns-prefetch" href="https://www.google.com">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            color: #3a3a3a;
+            line-height: 1.5;
+            background: #fdfcfb;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Skip to content for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #3a3a3a;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #ebe9e6;
+            z-index: 1000;
+        }
+        
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #3a3a3a;
+            letter-spacing: -0.01em;
+        }
+        
+        .nav-cta {
+            background: #3a3a3a;
+            color: #fff;
+            padding: 0.65rem 1.4rem;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s;
+        }
+        
+        .nav-cta:hover {
+            background: #2a2a2a;
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 80px;
+            padding: 0;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 600px;
+        }
+        
+        .hero-content {
+            max-width: 580px;
+            padding: 5rem 1.5rem 4rem;
+        }
+        
+        .hero-visual {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+        
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .carousel-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            text-align: center;
+            background: #f5f3f0;
+        }
+        
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        
+        .ritual-visual-placeholder {
+            width: 100%;
+            max-width: 450px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .ritual-visual-placeholder svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .ritual-content-hero {
+            max-width: 450px;
+            color: rgba(31, 31, 31, 0.95);
+        }
+        
+        .ritual-whisper-hero {
+            font-size: 0.95rem;
+            color: #6f6f6f;
+            margin: 0.8rem 0;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        
+        .ritual-tag-hero {
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #9a9a9a;
+            display: block;
+            margin-top: 0.6rem;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.8rem;
+            z-index: 10;
+        }
+        
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(154, 154, 154, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 8px;
+        }
+        
+        .carousel-dot:hover {
+            background: rgba(111, 111, 111, 0.6);
+        }
+        
+        .carousel-dot.active {
+            background: rgba(111, 111, 111, 0.9);
+            width: 28px;
+            border-radius: 4px;
+        }
+        
+        .hero-label {
+            font-size: 0.85rem;
+            color: #8a7f6d;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-statement {
+            font-size: 1.15rem;
+            color: #5a5a5a;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: #3a3a3a;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background 0.15s;
+        }
+        
+        .hero-cta:hover {
+            background: #2a2a2a;
+        }
+        
+        /* Experience Carousel */
+        .experiences {
+            background: #fff;
+            padding: 5rem 1.5rem 4.5rem;
+            position: relative;
+            scroll-margin-top: 100px;
+        }
+        
+        .experiences::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ebe9e6 20%, #ebe9e6 80%, transparent);
+        }
+        
+        .experiences-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .experiences h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            letter-spacing: -0.01em;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .experiences h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #8a7f6d;
+            opacity: 0.3;
+        }
+        
+        .experiences-intro {
+            font-size: 1rem;
+            color: #7a7a7a;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        .experience-carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .experience-carousel {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #fafaf8;
+            border: 1px solid #ebe9e6;
+        }
+        
+        .experience-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .experience-slide.active {
+            opacity: 1;
+        }
+        
+        .experience-visual {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        
+        .experience-visual svg {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.03));
+        }
+        
+        .experience-text {
+            text-align: center;
+            max-width: 500px;
+        }
+        
+        .experience-text h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.01em;
+        }
+        
+        .experience-text p {
+            font-size: 1rem;
+            color: #6a6a6a;
+            line-height: 1.6;
+        }
+        
+        .experience-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+        
+        .experience-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(154, 154, 154, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 8px;
+        }
+        
+        .experience-dot:hover {
+            background: rgba(111, 111, 111, 0.6);
+        }
+        
+        .experience-dot.active {
+            background: rgba(111, 111, 111, 0.9);
+            width: 28px;
+            border-radius: 4px;
+        }
+        
+        @media (max-width: 768px) {
+            .experience-carousel {
+                height: 550px;
+            }
+            
+            .experience-text h3 {
+                font-size: 1.5rem;
+            }
+            
+            .experience-text p {
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* BIEC Context Reassurance Strip */
+        .context-strip {
+            background: #f5f3f0;
+            padding: 1.5rem 1.5rem;
+            margin: 0 auto;
+            max-width: 1100px;
+            border-radius: 6px;
+        }
+        
+        .context-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .context-text {
+            font-size: 0.95rem;
+            color: #6a6a6a;
+            margin: 0;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.003em;
+        }
+        
+        /* Is This Right Section */
+        .right-for-you {
+            background: #fafaf8;
+            padding: 5rem 1.5rem 4.5rem;
+            position: relative;
+            scroll-margin-top: 100px;
+        }
+        
+        .right-for-you::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ebe9e6 20%, #ebe9e6 80%, transparent);
+        }
+        
+        .right-for-you-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .right-for-you h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            letter-spacing: -0.01em;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .right-for-you h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #8a7f6d;
+            opacity: 0.3;
+        }
+        
+        .fit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .fit-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            padding: 1.5rem;
+            background: #fff;
+            border: 1px solid #f0ede8;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .fit-item:hover {
+            border-color: #d4cfc4;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        
+        .fit-item h3 {
+            font-size: 1rem;
+            color: #1a1a1a;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .fit-item p {
+            color: #6a6a6a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Location */
+        .location {
+            padding: 4rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .location-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .location h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 0;
+            color: #1a1a1a;
+            letter-spacing: -0.01em;
+        }
+
+        .location-intro {
+            font-size: 1rem;
+            color: #6a6a6a;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .distance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .distance-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .distance-item strong {
+            font-size: 0.95rem;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .distance-item .time {
+            font-size: 0.9rem;
+            color: #8a7f6d;
+        }
+
+        .distance-item .detail {
+            font-size: 0.85rem;
+            color: #9a9a9a;
+        }
+
+        .map-button {
+            display: inline-block;
+            background: #3a3a3a;
+            color: #fff;
+            padding: 0.85rem 1.6rem;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background 0.15s;
+            width: fit-content;
+        }
+
+        .map-button:hover {
+            background: #2a2a2a;
+        }
+
+        .location-right {
+            position: relative;
+            height: 500px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #ebe9e6;
+            filter: grayscale(10%);
+        }
+
+        .map-container iframe {
+            display: block;
+        }
+        
+        /* Suites */
+        .suites {
+            background: #fff;
+            padding: 5rem 1.5rem 4.5rem;
+            position: relative;
+            scroll-margin-top: 100px;
+        }
+        
+        .suites::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ebe9e6 20%, #ebe9e6 80%, transparent);
+        }
+        
+        .suites-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .suites h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            letter-spacing: -0.01em;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .suites h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #8a7f6d;
+            opacity: 0.3;
+        }
+        
+        .suites-intro {
+            font-size: 1rem;
+            color: #7a7a7a;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+        
+        .suites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .suite-card {
+            border: 1px solid #ebe9e6;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .suite-card::before {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 8px;
+            height: 8px;
+            background: #6a9a6a;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .suite-card:hover {
+            border-color: #c9c4b8;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transform: translateY(-2px);
+        }
+        
+        .suite-card:hover::before {
+            opacity: 0.6;
+        }
+        
+        .suite-header {
+            padding: 1.8rem 1.8rem 1.2rem;
+            border-bottom: 1px solid #ebe9e6;
+        }
+        
+        .suite-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.4rem;
+        }
+        
+        .suite-for {
+            font-size: 0.85rem;
+            color: #8a7f6d;
+            font-weight: 500;
+        }
+        
+        .suite-body {
+            padding: 1.5rem 1.8rem 1.8rem;
+        }
+        
+        .suite-why {
+            font-size: 0.95rem;
+            color: #5a5a5a;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .suite-features {
+            font-size: 0.85rem;
+            color: #8a8a8a;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+        
+        .suite-context {
+            font-size: 0.85rem;
+            color: #9a9a9a;
+            line-height: 1.5;
+            margin: 0.8rem 0;
+            font-style: normal;
+            font-weight: 400;
+        }
+        
+        .suite-cta {
+            display: inline-block;
+            background: transparent;
+            color: #3a3a3a;
+            padding: 0.7rem 1.4rem;
+            border: 1px solid #d4cfc4;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+        
+        .suite-cta:hover {
+            background: #fafaf8;
+            border-color: #8a7f6d;
+            transform: translateY(-1px);
+        }
+        
+        .suite-cta:active {
+            transform: translateY(0);
+        }
+        
+        .suite-card:hover .suite-cta {
+            border-color: #8a7f6d;
+        }
+        
+        .suites-helper {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: #fafaf8;
+            border: 1px solid #ebe9e6;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .helper-text {
+            font-size: 0.95rem;
+            color: #6a6a6a;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .helper-link {
+            color: #3a3a3a;
+            text-decoration: none;
+            border-bottom: 1px solid #d4cfc4;
+            transition: border-color 0.2s;
+            font-weight: 500;
+        }
+        
+        .helper-link:hover {
+            border-bottom-color: #8a7f6d;
+        }
+        
+        /* Intent Reinforcement Helper */
+        .intent-helper {
+            margin-top: 2rem;
+            padding: 1.2rem 1.5rem;
+            background: #f5f3f0;
+            border-radius: 4px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+        
+        .intent-helper.visible {
+            opacity: 1;
+        }
+        
+        .intent-text {
+            font-size: 0.9rem;
+            color: #7a7a7a;
+            margin: 0;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        
+        /* Questions */
+        .questions {
+            background: #fafaf8;
+            padding: 4rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+        
+        .questions h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            color: #1a1a1a;
+            letter-spacing: -0.01em;
+        }
+        
+        .qa-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 750px;
+        }
+        
+        .qa-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            padding: 1.5rem;
+            background: #fff;
+            border: 1px solid #f0ede8;
+            border-radius: 6px;
+        }
+        
+        .qa-question {
+            font-size: 1rem;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .qa-answer {
+            font-size: 0.95rem;
+            color: #6a6a6a;
+            line-height: 1.6;
+        }
+        
+        /* Reviews */
+        .reviews {
+            background: #fff;
+            padding: 5rem 1.5rem 4.5rem;
+            position: relative;
+            scroll-margin-top: 100px;
+        }
+        
+        .reviews::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ebe9e6 20%, #ebe9e6 80%, transparent);
+        }
+        
+        .reviews-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .reviews h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            letter-spacing: -0.01em;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .reviews h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #8a7f6d;
+            opacity: 0.3;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .review-card {
+            border: 1px solid #f0ede8;
+            padding: 1.7rem;
+            border-radius: 8px;
+            background: #fff;
+            transition: all 0.2s ease;
+        }
+        
+        .review-card:hover {
+            border-color: #c9c4b8;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        
+        .review-text {
+            color: #5a5a5a;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .review-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            font-size: 0.8rem;
+            color: #8a7f6d;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .review-card:first-child .review-meta::before {
+            content: '✓ Verified stay';
+            font-size: 0.75rem;
+            color: #6a9a6a;
+            margin-right: 0.3rem;
+            font-weight: 500;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 5.5rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+            scroll-margin-top: 100px;
+        }
+        
+        .final-cta h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            letter-spacing: -0.01em;
+        }
+        
+        .final-cta > p {
+            font-size: 1rem;
+            color: #6a6a6a;
+            margin-bottom: 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .final-cta-button {
+            display: inline-block;
+            background: #3a3a3a;
+            color: #fff;
+            padding: 1.1rem 2.5rem;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            margin-top: 2rem;
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+        }
+        
+        .final-cta-button:hover {
+            background: #2a2a2a;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .final-cta-button::before {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            opacity: 0.3;
+            transition: width 0.3s ease;
+        }
+        
+        .final-cta-button:hover::before {
+            width: 70%;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2a2a2a;
+            color: #b8b8b8;
+            padding: 3rem 1.5rem 2rem;
+            border-top: 1px solid #3a3a3a;
+        }
+        
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: #fff;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .footer-content .footer-section:nth-child(2) h3 {
+            position: relative;
+        }
+        
+        .footer-content .footer-section:nth-child(2) h3::after {
+            content: '24/7';
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 0.7rem;
+            color: #8a8a8a;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+        
+        .footer-section p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        
+        .footer-section a {
+            color: #b8b8b8;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        
+        .footer-section a:hover {
+            color: #fff;
+        }
+        
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid #3a3a3a;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+        }
+        
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: #3a3a3a;
+            color: #fff;
+            padding: 0.85rem 1.6rem;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.15s;
+            z-index: 999;
+        }
+        
+        .floating-cta:hover {
+            background: #2a2a2a;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Booking Widget */
+        .booking-widget {
+            margin: 2.5rem auto 0;
+            background: #fafaf8;
+            border: 1px solid #ebe9e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            max-width: 600px;
+            position: relative;
+        }
+        
+        .booking-widget::before {
+            content: 'Secure booking';
+            position: absolute;
+            top: -1.5rem;
+            right: 0;
+            font-size: 0.75rem;
+            color: #8a8a8a;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .booking-widget-label {
+            font-size: 0.9rem;
+            color: #6a6a6a;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        .booking-widget iframe {
+            width: 100%;
+            height: 420px;
+            border: 0;
+            border-radius: 6px;
+            background: #fff;
+            display: block;
+        }
+        
+        .booking-widget-footer {
+            margin-top: 1.2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #ebe9e6;
+            font-size: 0.85rem;
+            color: #8a8a8a;
+            line-height: 1.6;
+        }
+        
+        .booking-widget-footer a {
+            color: #8a7f6d;
+            text-decoration: none;
+            border-bottom: 1px solid #d4cfc4;
+            transition: border-color 0.2s;
+        }
+        
+        .booking-widget-footer a:hover {
+            border-bottom-color: #8a7f6d;
+        }
+        
+        .booking-widget-hint {
+            font-size: 0.85rem;
+            color: #8a8a8a;
+            margin-bottom: 0.8rem;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            
+            .hero-visual {
+                height: 400px;
+                order: -1;
+            }
+            
+            .hero-content {
+                padding: 3rem 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            
+            .hero-statement {
+                font-size: 1.05rem;
+            }
+            
+            nav {
+                padding: 1rem 1.5rem;
+            }
+            
+            .logo {
+                font-size: 1rem;
+            }
+            
+            .suites-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
+            .location-right {
+                height: 300px;
+                order: -1;
+            }
+            
+            .distance-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .distance-item .time {
+                font-size: 0.85rem;
+            }
+            
+            .fit-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .floating-cta {
+                bottom: 1rem;
+                right: 1rem;
+                font-size: 0.85rem;
+                padding: 0.75rem 1.4rem;
+            }
+            
+            .booking-widget {
+                max-width: 100%;
+                padding: 1.2rem;
+            }
+            
+            .booking-widget iframe {
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <nav>
+            <div class="logo">Oasis Executive Suites</div>
+            <a href="https://bookingengine.stayflexi.com?hotel_id=23268" class="nav-cta" aria-label="Check room availability">Check availability</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-label">For Business Stays Near BIEC</div>
+                <h1>A quiet, dependable place to work and rest</h1>
+                <p class="hero-statement">12 minutes from BIEC. Clean suites with proper workspaces. Staff who understand late arrivals and early departures. No complications.</p>
+                <a href="https://bookingengine.stayflexi.com?hotel_id=23268" class="hero-cta">Check availability</a>
+            </div>
+            <div class="hero-visual">
+                <div class="carousel-container">
+                    <!-- Room Type 1: Deluxe -->
+                    <div class="carousel-slide ritual-slide-hero active">
+                        <div class="slide-content ritual-content-hero">
+                            <div class="ritual-visual-placeholder">
+                                <svg viewBox="0 0 450 450" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="#f5f3f0" width="450" height="450"/>
+                                    <rect fill="#e8e3dd" x="60" y="90" width="330" height="270" rx="8"/>
+                                    <rect fill="#d4cfc4" x="90" y="130" width="270" height="180" rx="4"/>
+                                    <rect fill="#c9a567" x="120" y="160" width="90" height="120" rx="3"/>
+                                    <rect fill="#8a7f6d" x="240" y="170" width="90" height="100" rx="3"/>
+                                    <circle fill="#b89968" cx="285" cy="280" r="20"/>
+                                </svg>
+                            </div>
+                            <p class="ritual-whisper-hero">For slow mornings before the city wakes up</p>
+                            <span class="ritual-tag-hero">Deluxe Room</span>
+                        </div>
+                    </div>
+
+                    <!-- Room Type 2: Super Deluxe -->
+                    <div class="carousel-slide ritual-slide-hero">
+                        <div class="slide-content ritual-content-hero">
+                            <div class="ritual-visual-placeholder">
+                                <svg viewBox="0 0 450 450" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="#f5f3f0" width="450" height="450"/>
+                                    <rect fill="#e0ddd8" x="50" y="80" width="350" height="290" rx="8"/>
+                                    <rect fill="#c9c4b8" x="80" y="120" width="290" height="200" rx="4"/>
+                                    <rect fill="#c9a567" x="110" y="150" width="110" height="140" rx="3"/>
+                                    <rect fill="#8a7f6d" x="250" y="160" width="100" height="120" rx="3"/>
+                                    <rect fill="#b89968" x="140" y="240" width="60" height="40" rx="3"/>
+                                </svg>
+                            </div>
+                            <p class="ritual-whisper-hero">When sleep needs fewer interruptions</p>
+                            <span class="ritual-tag-hero">Super Deluxe Room</span>
+                        </div>
+                    </div>
+
+                    <!-- Room Type 3: Suites -->
+                    <div class="carousel-slide ritual-slide-hero">
+                        <div class="slide-content ritual-content-hero">
+                            <div class="ritual-visual-placeholder">
+                                <svg viewBox="0 0 450 450" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="#f5f3f0" width="450" height="450"/>
+                                    <rect fill="#e8e3dd" x="40" y="70" width="370" height="310" rx="8"/>
+                                    <rect fill="#d4cfc4" x="70" y="110" width="310" height="220" rx="4"/>
+                                    <rect fill="#c9a567" x="100" y="140" width="130" height="160" rx="3"/>
+                                    <rect fill="#8a7f6d" x="260" y="150" width="120" height="140" rx="3"/>
+                                    <circle fill="#b89968" cx="320" cy="270" r="25"/>
+                                    <rect fill="#a89a88" x="140" y="220" width="70" height="50" rx="3"/>
+                                </svg>
+                            </div>
+                            <p class="ritual-whisper-hero">For evenings that ask for quiet, not entertainment</p>
+                            <span class="ritual-tag-hero">Executive Suite</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <div class="carousel-dot active" data-slide="0" role="button" tabindex="0" aria-label="Show deluxe room"></div>
+                    <div class="carousel-dot" data-slide="1" role="button" tabindex="0" aria-label="Show super deluxe room"></div>
+                    <div class="carousel-dot" data-slide="2" role="button" tabindex="0" aria-label="Show executive suite"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Carousel -->
+        <section class="experiences">
+            <div class="experiences-content">
+                <h2>How we serve you</h2>
+                <p class="experiences-intro">Without saying much, this is what a stay here feels like.</p>
+                
+                <div class="experience-carousel-container">
+                    <div class="experience-carousel">
+                        <!-- Eat -->
+                        <div class="experience-slide active">
+                            <div class="experience-visual">
+                                <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="#fdfcfb" width="600" height="400"/>
+                                    <!-- Table surface -->
+                                    <ellipse cx="300" cy="350" rx="250" ry="40" fill="#e8e3dd" opacity="0.6"/>
+                                    <!-- Plate -->
+                                    <ellipse cx="300" cy="200" rx="120" ry="15" fill="#d4cfc4"/>
+                                    <circle cx="300" cy="200" r="110" fill="#f5f3f0" stroke="#c9c4b8" stroke-width="2"/>
+                                    <!-- Food elements - South Indian -->
+                                    <circle cx="260" cy="200" r="35" fill="#c9a567"/>
+                                    <circle cx="340" cy="200" r="35" fill="#e8a05d"/>
+                                    <circle cx="300" cy="170" r="25" fill="#8a7f6d"/>
+                                    <!-- Steam lines -->
+                                    <path d="M 250 160 Q 245 150 250 140" stroke="#b89968" stroke-width="2" fill="none" opacity="0.4"/>
+                                    <path d="M 270 155 Q 265 145 270 135" stroke="#b89968" stroke-width="2" fill="none" opacity="0.4"/>
+                                    <path d="M 330 155 Q 325 145 330 135" stroke="#b89968" stroke-width="2" fill="none" opacity="0.4"/>
+                                    <path d="M 350 160 Q 345 150 350 140" stroke="#b89968" stroke-width="2" fill="none" opacity="0.4"/>
+                                    <!-- Coffee cup -->
+                                    <ellipse cx="450" cy="220" rx="30" ry="8" fill="#3a3a3a"/>
+                                    <rect x="420" y="190" width="60" height="30" rx="5" fill="#5a5a5a"/>
+                                    <path d="M 480 200 Q 495 200 495 210 Q 495 220 480 220" stroke="#5a5a5a" stroke-width="3" fill="none"/>
+                                </svg>
+                            </div>
+                            <div class="experience-text">
+                                <h3>Eat</h3>
+                                <p>Fresh breakfast. South Indian & continental. Made when you order. Coffee that's actually good.</p>
+                            </div>
+                        </div>
+
+                        <!-- Sleep -->
+                        <div class="experience-slide">
+                            <div class="experience-visual">
+                                <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="#fdfcfb" width="600" height="400"/>
+                                    <!-- Bed base -->
+                                    <rect x="100" y="250" width="400" height="120" rx="8" fill="#d4cfc4"/>
+                                    <!-- Mattress -->
+                                    <rect x="100" y="200" width="400" height="50" rx="6" fill="#e8e3dd"/>
+                                    <!-- Pillows -->
+                                    <ellipse cx="200" cy="180" rx="60" ry="25" fill="#f5f3f0"/>
+                                    <ellipse cx="400" cy="180" rx="60" ry="25" fill="#f5f3f0"/>
+                                    <!-- Blanket fold -->
+                                    <path d="M 150 250 L 150 230 Q 300 220 450 230 L 450 250 Z" fill="#c9a567" opacity="0.7"/>
+                                    <!-- Window with moon -->
+                                    <rect x="480" y="80" width="90" height="120" rx="8" fill="#5a5a5a" opacity="0.2"/>
+                                    <circle cx="525" cy="120" r="20" fill="#e8e3dd" opacity="0.5"/>
+                                    <!-- Bedside lamp (off) -->
+                                    <rect x="50" y="200" width="30" height="60" rx="3" fill="#8a7f6d" opacity="0.4"/>
+                                    <path d="M 35 200 L 95 200 L 85 170 L 45 170 Z" fill="#8a7f6d" opacity="0.3"/>
+                                    <!-- ZZZ -->
+                                    <text x="280" y="140" font-family="system-ui" font-size="40" fill="#b89968" opacity="0.3">z</text>
+                                    <text x="310" y="120" font-family="system-ui" font-size="35" fill="#b89968" opacity="0.4">z</text>
+                                    <text x="335" y="105" font-family="system-ui" font-size="30" fill="#b89968" opacity="0.5">z</text>
+                                </svg>
+                            </div>
+                            <div class="experience-text">
+                                <h3>Sleep</h3>
+                                <p>Blackout curtains. Soundproofing. Comfortable mattress. No interruptions unless you ask for them.</p>
+                            </div>
+                        </div>
+
+                        <!-- Relax -->
+                        <div class="experience-slide">
+                            <div class="experience-visual">
+                                <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="#fdfcfb" width="600" height="400"/>
+                                    <!-- Armchair -->
+                                    <rect x="180" y="220" width="240" height="140" rx="12" fill="#c9a567"/>
+                                    <rect x="180" y="180" width="240" height="80" rx="8" fill="#d4b896"/>
+                                    <!-- Armrests -->
+                                    <rect x="150" y="200" width="40" height="100" rx="8" fill="#b89968"/>
+                                    <rect x="410" y="200" width="40" height="100" rx="8" fill="#b89968"/>
+                                    <!-- Cushion -->
+                                    <ellipse cx="300" cy="210" rx="70" ry="30" fill="#8a7f6d" opacity="0.6"/>
+                                    <!-- Book on armrest -->
+                                    <rect x="155" y="185" width="30" height="20" rx="2" fill="#5a5a5a" opacity="0.7"/>
+                                    <!-- Side table with tea -->
+                                    <ellipse cx="480" cy="280" rx="40" ry="12" fill="#d4cfc4"/>
+                                    <rect x="460" y="250" width="40" height="30" fill="#e8e3dd"/>
+                                    <!-- Tea cup -->
+                                    <ellipse cx="480" cy="245" rx="15" ry="4" fill="#8a7f6d"/>
+                                    <rect x="465" y="235" width="30" height="10" rx="3" fill="#c9a567"/>
+                                    <!-- Plant in corner -->
+                                    <ellipse cx="520" cy="350" rx="30" ry="15" fill="#8a8a8a" opacity="0.3"/>
+                                    <path d="M 520 350 Q 510 320 515 290 Q 520 280 525 290 Q 530 320 520 350" fill="#6d8362" opacity="0.6"/>
+                                    <path d="M 520 320 Q 535 310 545 305" stroke="#6d8362" stroke-width="2" fill="none" opacity="0.5"/>
+                                    <path d="M 520 330 Q 505 320 495 315" stroke="#6d8362" stroke-width="2" fill="none" opacity="0.5"/>
+                                </svg>
+                            </div>
+                            <div class="experience-text">
+                                <h3>Relax</h3>
+                                <p>Quiet corners. Comfortable seating. A space that doesn't demand anything from you.</p>
+                            </div>
+                        </div>
+
+                        <!-- Style -->
+                        <div class="experience-slide">
+                            <div class="experience-visual">
+                                <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="#fdfcfb" width="600" height="400"/>
+                                    <!-- Bathroom counter -->
+                                    <rect x="100" y="250" width="400" height="120" rx="6" fill="#d4cfc4"/>
+                                    <!-- Mirror -->
+                                    <rect x="150" y="80" width="300" height="160" rx="8" fill="#e8e3dd" opacity="0.3"/>
+                                    <rect x="155" y="85" width="290" height="150" rx="6" fill="#5a5a5a" opacity="0.1"/>
+                                    <!-- Sink -->
+                                    <ellipse cx="300" cy="280" rx="80" ry="25" fill="#f5f3f0"/>
+                                    <ellipse cx="300" cy="280" rx="70" ry="20" fill="#e8e3dd"/>
+                                    <!-- Faucet -->
+                                    <rect x="295" y="240" width="10" height="40" rx="2" fill="#8a8a8a"/>
+                                    <path d="M 300 240 Q 285 235 280 245" stroke="#8a8a8a" stroke-width="3" fill="none"/>
+                                    <!-- Toiletries -->
+                                    <rect x="200" y="260" width="20" height="30" rx="2" fill="#c9a567"/>
+                                    <rect x="230" y="265" width="15" height="25" rx="2" fill="#8a7f6d"/>
+                                    <rect x="370" y="260" width="25" height="35" rx="2" fill="#b89968"/>
+                                    <!-- Towels folded -->
+                                    <rect x="420" y="270" width="60" height="40" rx="3" fill="#f5f3f0"/>
+                                    <rect x="420" y="285" width="60" height="3" fill="#d4cfc4"/>
+                                    <rect x="420" y="295" width="60" height="3" fill="#d4cfc4"/>
+                                    <!-- Light reflection on mirror -->
+                                    <circle cx="380" cy="130" r="25" fill="#ffffff" opacity="0.2"/>
+                                </svg>
+                            </div>
+                            <div class="experience-text">
+                                <h3>Style</h3>
+                                <p>Clean bathroom. Fresh towels. Everything works. The kind of attention that doesn't need to announce itself.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation dots -->
+                    <div class="experience-nav">
+                        <div class="experience-dot active" data-exp-slide="0" role="button" tabindex="0" aria-label="Show Eat"></div>
+                        <div class="experience-dot" data-exp-slide="1" role="button" tabindex="0" aria-label="Show Sleep"></div>
+                        <div class="experience-dot" data-exp-slide="2" role="button" tabindex="0" aria-label="Show Relax"></div>
+                        <div class="experience-dot" data-exp-slide="3" role="button" tabindex="0" aria-label="Show Style"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Is This Right For You -->
+        <section class="right-for-you">
+            <div class="right-for-you-content">
+                <h2>This works well if you're</h2>
+                <div class="fit-grid">
+                    <div class="fit-item">
+                        <h3>Visiting BIEC</h3>
+                        <p>Close enough to walk back between sessions. Far enough to feel away from the crowds.</p>
+                    </div>
+                    <div class="fit-item">
+                        <h3>Travelling alone</h3>
+                        <p>Suites designed for solo professionals. Quiet floors. Helpful staff without hovering.</p>
+                    </div>
+                    <div class="fit-item">
+                        <h3>Here for work</h3>
+                        <p>Reliable Wi-Fi. Real desks. Rooms that stay quiet during calls.</p>
+                    </div>
+                    <div class="fit-item">
+                        <h3>Taking a weekend break</h3>
+                        <p>Couples looking for a quiet escape. Away from city noise. Close to malls and cafes.</p>
+                    </div>
+                    <div class="fit-item">
+                        <h3>Checking in late</h3>
+                        <p>We're used to it. Someone is always here. Room will be ready.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location -->
+        <section class="location" id="location">
+            <div class="location-content">
+                <div class="location-left">
+                    <h2>How easy is it to get around from here?</h2>
+                    <p class="location-intro">Yeshwanthpur area. Close to what matters, on a quieter street.</p>
+                    
+                    <div class="distance-grid">
+                        <div class="distance-item">
+                            <div class="distance-item-left">
+                                <strong>BIEC</strong>
+                                <span class="detail">Bangalore International Exhibition Centre</span>
+                            </div>
+                            <div class="time">12 min by car</div>
+                        </div>
+                        <div class="distance-item">
+                            <div class="distance-item-left">
+                                <strong>Yeshwanthpur Metro</strong>
+                                <span class="detail">Green Line station</span>
+                            </div>
+                            <div class="time">8 min walk</div>
+                        </div>
+                        <div class="distance-item">
+                            <div class="distance-item-left">
+                                <strong>Kempegowda Airport</strong>
+                                <span class="detail">Terminal 1 & 2</span>
+                            </div>
+                            <div class="time">35 min by car</div>
+                        </div>
+                        <div class="distance-item">
+                            <div class="distance-item-left">
+                                <strong>Orion Mall</strong>
+                                <span class="detail">Brigade Gateway</span>
+                            </div>
+                            <div class="time">5 min by car</div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=13.0162471,77.5124934" target="_blank" rel="noopener" class="map-button">
+                        Get directions from your location
+                    </a>
+                </div>
+                
+                <div class="location-right">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0!2d77.5124934!3d13.0162471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAwJzU4LjUiTiA3N8KwMzAnNDUuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Oasis Executive Suites location map">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suites -->
+        <section class="suites" id="suites">
+            <div class="suites-content">
+                <h2>Choose based on how you're staying</h2>
+                <p class="suites-intro">All suites have the same essentials: clean bathroom, proper bed, workspace, reliable Wi-Fi. The difference is fit. Pick the one that matches your stay, check availability, and book directly.</p>
+                
+                <div class="suites-grid">
+                    <div class="suite-card" data-suite="standard">
+                        <div class="suite-header">
+                            <div class="suite-name">Standard Suite</div>
+                            <div class="suite-for">For short stays (1–2 nights)</div>
+                        </div>
+                        <div class="suite-body">
+                            <div class="suite-why">Ground floor with easy access. Everything you need, nothing extra. Good for quick work trips.</div>
+                            <div class="suite-context" data-context-target="standard">A comfortable base for short, focused stays.</div>
+                            <div class="suite-features">Queen bed · Work desk · En-suite bathroom · 280 sq ft</div>
+                            <a href="#" class="suite-cta" data-suite-key="standard" aria-label="Check availability for Standard Suite">
+                                Check availability
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="suite-card" data-suite="work">
+                        <div class="suite-header">
+                            <div class="suite-name">Work-Focused Suite</div>
+                            <div class="suite-for">For guests with calls and deadlines</div>
+                        </div>
+                        <div class="suite-body">
+                            <div class="suite-why">First floor. Larger desk with proper chair. Extra power outlets. Quieter than ground level.</div>
+                            <div class="suite-context" data-context-target="work">Designed for long workdays and early starts.</div>
+                            <div class="suite-features">Queen bed · Larger workspace · Seating area · 320 sq ft</div>
+                            <a href="#" class="suite-cta" data-suite-key="work" aria-label="Check availability for Work-Focused Suite">
+                                Check availability
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="suite-card" data-suite="quiet">
+                        <div class="suite-header">
+                            <div class="suite-name">Quiet Suite</div>
+                            <div class="suite-for">For guests who need uninterrupted rest</div>
+                        </div>
+                        <div class="suite-body">
+                            <div class="suite-why">Second floor, away from street noise. Blackout curtains. Soundproofing in walls.</div>
+                            <div class="suite-context" data-context-target="quiet">Calm and settled for uninterrupted rest.</div>
+                            <div class="suite-features">Queen bed · Quiet location · Balcony · 300 sq ft</div>
+                            <a href="#" class="suite-cta" data-suite-key="quiet" aria-label="Check availability for Quiet Suite">
+                                Check availability
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="suite-card" data-suite="extended">
+                        <div class="suite-header">
+                            <div class="suite-name">Extended Stay Suite</div>
+                            <div class="suite-for">For stays over 4 nights</div>
+                        </div>
+                        <div class="suite-body">
+                            <div class="suite-why">Top floor with separate living area. Small kitchenette. More storage. Feels less like a hotel room.</div>
+                            <div class="suite-context" data-context-target="extended">Chosen for guests staying a little longer.</div>
+                            <div class="suite-features">Queen bed · Living area · Kitchenette · 400 sq ft</div>
+                            <a href="#" class="suite-cta" data-suite-key="extended" aria-label="Check availability for Extended Stay Suite">
+                                Check availability
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="suites-helper">
+                    <p class="helper-text">Not sure which suite fits your stay? <a href="tel:+918041127000" class="helper-link">Call us</a> or <a href="https://wa.me/918041127000" class="helper-link" target="_blank" rel="noopener">message on WhatsApp</a> — we'll help you decide.</p>
+                </div>
+                
+                <!-- Intent Reinforcement Helper (appears after user interaction) -->
+                <div class="intent-helper" id="intentHelper" style="display: none;">
+                    <p class="intent-text" id="bookingHelperText">A straightforward place to settle in and stay focused.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Questions -->
+        <section class="questions">
+            <h2>Questions guests usually ask</h2>
+            
+            <div class="qa-list">
+                <div class="qa-item">
+                    <div class="qa-question">Will the Wi-Fi handle video calls?</div>
+                    <div class="qa-answer">Yes. 100 Mbps fiber connection in every suite, tested daily.</div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">Can I check in late?</div>
+                    <div class="qa-answer">Yes. Reception is staffed 24/7, just let us know your arrival time.</div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">Is there a proper work desk?</div>
+                    <div class="qa-answer">Every suite has a desk (120cm × 60cm) with an ergonomic chair and task lighting.</div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">Is parking included?</div>
+                    <div class="qa-answer">Yes, covered parking is included at no extra charge.</div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">What about breakfast?</div>
+                    <div class="qa-answer">Available 7–10am. South Indian and continental options, made fresh. ₹200 per person.</div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">Are the rooms actually quiet?</div>
+                    <div class="qa-answer">Double-glazed windows, solid doors, and we're on a residential street with minimal traffic.</div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">How clean is it really?</div>
+                    <div class="qa-answer">Housekeeping daily, hospital-grade disinfection protocol. We're particular about this.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews -->
+        <section class="reviews">
+            <div class="reviews-content">
+                <h2>What guests say</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <p class="review-text">"Checked in at 11pm after a delayed flight. Room was ready, staff didn't make it complicated. Slept well, left early. Exactly what I needed."</p>
+                        <div class="review-meta">
+                            <span>Business</span>
+                            <span>·</span>
+                            <span>Solo</span>
+                            <span>·</span>
+                            <span>BIEC visit</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-text">"Came with three colleagues for a BIEC exhibition. Booked two suites on the same floor. Made coordinating easy—quick meetings in the corridor, shared breakfast, but everyone had their own space. Staff helped arrange transport together. Practical setup for a work group."</p>
+                        <div class="review-meta">
+                            <span>Business</span>
+                            <span>·</span>
+                            <span>Group booking</span>
+                            <span>·</span>
+                            <span>BIEC exhibition</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-text">"Our daughter was joining Christ University. We stayed here for three days while helping her find accommodation nearby. The extended stay suite had space to organize paperwork and plan. Staff knew the area well—gave us practical directions to rental agents and neighborhoods to check. Made a stressful time feel manageable."</p>
+                        <div class="review-meta">
+                            <span>Family</span>
+                            <span>·</span>
+                            <span>Parents</span>
+                            <span>·</span>
+                            <span>University admission</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-text">"Early morning exam at the Digital ION Centre in Peenya. Oasis was the most practical option nearby. The rooftop café was quiet—I could revise before heading out. Met a few other exam-takers from Bangalore doing the same. Simple breakfast, calm space. Felt supportive, not distracting."</p>
+                        <div class="review-meta">
+                            <span>Professional</span>
+                            <span>·</span>
+                            <span>Solo</span>
+                            <span>·</span>
+                            <span>Exam visit (Peenya)</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-text">"Wi-Fi worked perfectly for three days of back-to-back calls. Desk was comfortable. Room stayed quiet even during the day."</p>
+                        <div class="review-meta">
+                            <span>Business</span>
+                            <span>·</span>
+                            <span>Solo</span>
+                            <span>·</span>
+                            <span>Extended work stay</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-text">"12 minutes to BIEC by Uber. Easy to get cabs anytime. Clean room. Staff remembered my name. No drama, just good hospitality."</p>
+                        <div class="review-meta">
+                            <span>Business</span>
+                            <span>·</span>
+                            <span>Solo</span>
+                            <span>·</span>
+                            <span>Exhibition visit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <h2>Ready to book your stay?</h2>
+            <p>Check real-time availability and pricing. Instant confirmation, no phone calls needed.</p>
+            
+            <!-- Stayflexi Booking Widget -->
+            <div class="booking-widget">
+                <div class="booking-widget-label">
+                    Select your dates below to see availability and pricing
+                </div>
+                <iframe
+                    src="https://bookingengine.stayflexi.com/?hotel_id=23268"
+                    loading="lazy"
+                    title="Oasis Executive Suites booking calendar"
+                    allowfullscreen>
+                </iframe>
+                
+                <div class="booking-widget-footer">
+                    <div class="booking-widget-hint">
+                        Need multiple rooms for a group? Call us at +91 80 4112 7000 for coordinated bookings.
+                    </div>
+                    <div>
+                        Prefer full-screen view? <a href="https://bookingengine.stayflexi.com?hotel_id=23268" target="_blank" rel="noopener">Open booking engine in new window</a>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="https://bookingengine.stayflexi.com?hotel_id=23268" class="final-cta-button">
+                Confirm your dates
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Oasis Executive Suites</h3>
+                <p>Yeshwanthpur, Bangalore<br>
+                Near BIEC and Metro</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>
+                    +91 80 4112 7000<br>
+                    <a href="mailto:stay@oasisexecutive.com">stay@oasisexecutive.com</a>
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Useful</h3>
+                <p>
+                    <a href="#location">Directions</a><br>
+                    <a href="https://bookingengine.stayflexi.com?hotel_id=23268">Book direct</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Oasis Executive Suites</p>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <a href="https://bookingengine.stayflexi.com?hotel_id=23268" class="floating-cta" aria-label="Book your stay now">
+        Book now
+    </a>
+
+    <!-- Carousel JavaScript -->
+    <script>
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let autoplayInterval;
+
+        function showSlide(n) {
+            // Remove active class from all slides and dots
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Add active class to current slide and dot
+            slides[n].classList.add('active');
+            dots[n].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+            // Reset autoplay when manually navigating
+            clearInterval(autoplayInterval);
+            startAutoplay();
+        }
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Manual navigation with dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+            
+            // Keyboard accessibility
+            dot.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    goToSlide(index);
+                }
+            });
+        });
+
+        // Start autoplay
+        startAutoplay();
+
+        // Pause autoplay when user is interacting with the carousel
+        const carouselContainer = document.querySelector('.carousel-container');
+        carouselContainer.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+        carouselContainer.addEventListener('mouseleave', startAutoplay);
+
+        // Experience Carousel functionality
+        let currentExpSlide = 0;
+        const expSlides = document.querySelectorAll('.experience-slide');
+        const expDots = document.querySelectorAll('.experience-dot');
+        let expAutoplayInterval;
+
+        function showExpSlide(n) {
+            expSlides.forEach(slide => slide.classList.remove('active'));
+            expDots.forEach(dot => dot.classList.remove('active'));
+            
+            expSlides[n].classList.add('active');
+            expDots[n].classList.add('active');
+        }
+
+        function nextExpSlide() {
+            currentExpSlide = (currentExpSlide + 1) % expSlides.length;
+            showExpSlide(currentExpSlide);
+        }
+
+        function goToExpSlide(n) {
+            currentExpSlide = n;
+            showExpSlide(currentExpSlide);
+            clearInterval(expAutoplayInterval);
+            startExpAutoplay();
+        }
+
+        function startExpAutoplay() {
+            expAutoplayInterval = setInterval(nextExpSlide, 6000);
+        }
+
+        // Manual navigation with dots
+        expDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToExpSlide(index));
+            
+            dot.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    goToExpSlide(index);
+                }
+            });
+        });
+
+        // Start experience carousel autoplay
+        startExpAutoplay();
+
+        // Pause autoplay when user is interacting
+        const expCarouselContainer = document.querySelector('.experience-carousel');
+        expCarouselContainer.addEventListener('mouseenter', () => clearInterval(expAutoplayInterval));
+        expCarouselContainer.addEventListener('mouseleave', startExpAutoplay);
+
+        // =================================================================
+        // SUITE BOOKING SYSTEM - Smart CTA with Room-Type Biasing
+        // =================================================================
+        
+        /**
+         * SUITE_BOOKING_MAP: Configuration for suite types and Stayflexi parameters
+         * 
+         * HOW TO UPDATE:
+         * 1. To add a new suite type: Add a new key with label and stayflexiParam
+         * 2. To change parameter format: Update stayflexiParam values
+         * 3. To change Stayflexi parameter name: Update buildBookingURL function
+         * 
+         * FUTURE-READY FOR:
+         * - Room IDs (when Stayflexi provides them)
+         * - Rate plans (e.g., corporate rates, weekend deals)
+         * - Event-based biasing (BIEC dates, exam season)
+         * - Promo codes
+         */
+        const SUITE_BOOKING_MAP = {
+            standard: {
+                label: "Standard Suite",
+                stayflexiParam: "room_type=standard",
+                // Future: roomId: "12345", rateCode: "CORP"
+            },
+            work: {
+                label: "Work-Focused Suite",
+                stayflexiParam: "room_type=work-focused",
+                // Future: roomId: "12346", rateCode: "BUSINESS"
+            },
+            quiet: {
+                label: "Quiet Suite",
+                stayflexiParam: "room_type=quiet",
+                // Future: roomId: "12347", rateCode: "REST"
+            },
+            extended: {
+                label: "Extended Stay Suite",
+                stayflexiParam: "room_type=extended-stay",
+                // Future: roomId: "12348", rateCode: "WEEKLY"
+            }
+        };
+
+        /**
+         * buildBookingURL: Constructs the Stayflexi booking URL with room biasing
+         * 
+         * @param {string} suiteKey - The suite identifier (e.g., "standard", "work")
+         * @returns {string} Complete booking engine URL with parameters
+         * 
+         * URL STRUCTURE:
+         * Base: https://bookingengine.stayflexi.com/
+         * Required: ?hotel_id=23268
+         * Room Bias: &room_type=standard (or whatever Stayflexi uses)
+         * 
+         * EXTENSIBLE FOR:
+         * - Check-in/out dates: &checkin=2024-01-15&checkout=2024-01-17
+         * - Promo codes: &promo=BIEC2024
+         * - Adult/child counts: &adults=2&children=0
+         * - Source tracking: &source=website-suite-card
+         */
+        function buildBookingURL(suiteKey) {
+            const BASE_URL = 'https://bookingengine.stayflexi.com/';
+            const HOTEL_ID = '23268';
+            
+            const suiteConfig = SUITE_BOOKING_MAP[suiteKey];
+            
+            if (!suiteConfig) {
+                console.warn(`Suite key "${suiteKey}" not found in SUITE_BOOKING_MAP. Redirecting to base booking engine.`);
+                return `${BASE_URL}?hotel_id=${HOTEL_ID}`;
+            }
+            
+            // Build URL with room type parameter
+            // Adjust parameter name if Stayflexi uses different format
+            // Common alternatives: room_id, room_category_id, rate_plan_id
+            let url = `${BASE_URL}?hotel_id=${HOTEL_ID}`;
+            
+            if (suiteConfig.stayflexiParam) {
+                url += `&${suiteConfig.stayflexiParam}`;
+            }
+            
+            // FUTURE: Add date parameters if available
+            // const urlParams = new URLSearchParams(window.location.search);
+            // const checkin = urlParams.get('checkin');
+            // const checkout = urlParams.get('checkout');
+            // if (checkin) url += `&checkin=${checkin}`;
+            // if (checkout) url += `&checkout=${checkout}`;
+            
+            // FUTURE: Add source tracking
+            // url += '&source=website-suite-card';
+            // url += `&suite=${suiteKey}`;
+            
+            return url;
+        }
+
+        /**
+         * handleSuiteCTAClick: Event handler for suite booking CTAs
+         * Prevents default, builds URL, and redirects to booking engine
+         */
+        function handleSuiteCTAClick(event) {
+            event.preventDefault();
+            
+            const suiteKey = event.currentTarget.getAttribute('data-suite-key');
+            const bookingURL = buildBookingURL(suiteKey);
+            
+            // Analytics tracking (if needed)
+            // gtag('event', 'suite_booking_click', { suite_type: suiteKey });
+            
+            // Redirect to booking engine
+            window.location.href = bookingURL;
+        }
+
+        /**
+         * Initialize suite booking CTAs
+         * Attach click handlers to all suite card CTAs
+         */
+        function initializeSuiteBooking() {
+            const suiteCTAs = document.querySelectorAll('.suite-cta');
+            
+            suiteCTAs.forEach(cta => {
+                cta.addEventListener('click', handleSuiteCTAClick);
+                
+                // Keyboard accessibility
+                cta.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleSuiteCTAClick(e);
+                    }
+                });
+            });
+            
+            console.log(`✓ Suite booking system initialized for ${suiteCTAs.length} suite types`);
+        }
+
+        // Initialize suite booking system when DOM is ready
+        initializeSuiteBooking();
+
+        // =================================================================
+        // PASSIVE INTENT REINFORCEMENT SYSTEM
+        // Tracks user behavior to show contextual reassurance
+        // =================================================================
+        
+        /**
+         * Intent Tracking: Monitors user interaction with suite cards
+         * Shows exhibition-context helper after meaningful engagement
+         * 
+         * TRIGGERS:
+         * - User views multiple suites (scrolls through cards)
+         * - User pauses on Work-Focused or Quiet suites
+         * - User clicks any suite CTA
+         * 
+         * SHOWS: "Many guests stay with us during busy exhibition weeks."
+         * 
+         * NON-INTRUSIVE:
+         * - Text only, no interaction required
+         * - Fades in naturally
+         * - No data dependency
+         * - No tracking beyond session
+         */
+        
+        let userEngagement = {
+            suitesViewed: new Set(),
+            workOrQuietPaused: false,
+            ctaClicked: false
+        };
+        
+        function showIntentHelper() {
+            const helper = document.getElementById('intentHelper');
+            if (helper && !helper.classList.contains('visible')) {
+                helper.style.display = 'block';
+                // Delay for smooth fade-in
+                setTimeout(() => {
+                    helper.classList.add('visible');
+                }, 100);
+            }
+        }
+        
+        function checkIntentThreshold() {
+            // Show helper if user has:
+            // - Viewed 2+ different suites, OR
+            // - Paused on work/quiet suites, OR
+            // - Clicked any CTA
+            if (userEngagement.suitesViewed.size >= 2 || 
+                userEngagement.workOrQuietPaused || 
+                userEngagement.ctaClicked) {
+                showIntentHelper();
+            }
+        }
+        
+        // Track suite card views using Intersection Observer
+        const suiteCards = document.querySelectorAll('.suite-card');
+        const suiteObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+                    const suiteType = entry.target.getAttribute('data-suite');
+                    userEngagement.suitesViewed.add(suiteType);
+                    checkIntentThreshold();
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        suiteCards.forEach(card => suiteObserver.observe(card));
+        
+        // Track pause duration on work/quiet suites
+        let pauseTimer = null;
+        suiteCards.forEach(card => {
+            const suiteType = card.getAttribute('data-suite');
+            
+            card.addEventListener('mouseenter', () => {
+                if (suiteType === 'work' || suiteType === 'quiet') {
+                    pauseTimer = setTimeout(() => {
+                        userEngagement.workOrQuietPaused = true;
+                        checkIntentThreshold();
+                    }, 2000); // 2 second pause threshold
+                }
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                if (pauseTimer) {
+                    clearTimeout(pauseTimer);
+                    pauseTimer = null;
+                }
+            });
+        });
+        
+        // Track CTA clicks
+        document.querySelectorAll('.suite-cta').forEach(cta => {
+            cta.addEventListener('click', () => {
+                userEngagement.ctaClicked = true;
+                checkIntentThreshold();
+            });
+        });
+        
+        // =================================================================
+        // END PASSIVE INTENT REINFORCEMENT
+        // =================================================================
+
+        // =================================================================
+        // SEASONAL CONTEXT SYSTEM
+        // Adapts site messaging based on BIEC exhibitions and CHRIST admissions
+        // WITHOUT showing events, dates, or external links
+        // =================================================================
+        
+        /**
+         * SEASONAL COPY MAP
+         * Complete copy variations for each context
+         * 
+         * CONTEXTS:
+         * - normal: Default state (no upcoming events)
+         * - biec: BIEC exhibition within 7 days
+         * - christ: CHRIST admission activity within 10 days
+         * - mixed: Both BIEC and CHRIST active
+         * 
+         * DESIGN PHILOSOPHY:
+         * - Never promotional, always observational
+         * - No urgency language
+         * - No event names or dates
+         * - One context active at a time
+         * - Copy swaps happen silently (no animations)
+         */
+        const SEASONAL_COPY = {
+            normal: {
+                contextStrip: "We're used to guests arriving with plans, paperwork, and early mornings.",
+                suiteContexts: {
+                    standard: "A comfortable base for short, focused stays.",
+                    work: "Designed for long workdays and early starts.",
+                    quiet: "Calm and settled for uninterrupted rest.",
+                    extended: "Chosen for guests staying a little longer."
+                },
+                bookingHelper: "A straightforward place to settle in and stay focused."
+            },
+            biec: {
+                contextStrip: "The coming week is usually busy with exhibitions. We're prepared for it.",
+                suiteContexts: {
+                    standard: "Often chosen for short exhibition visits.",
+                    work: "Designed for long days around exhibition schedules.",
+                    quiet: "Preferred by guests returning late.",
+                    extended: "Used by exhibitors staying through multi-day shows."
+                },
+                bookingHelper: "Many guests stay with us during busy exhibition weeks."
+            },
+            christ: {
+                contextStrip: "These weeks are often busy with university visits. We're prepared for it.",
+                suiteContexts: {
+                    standard: "A comfortable choice for brief campus visits.",
+                    work: "Suitable for days that start early and run long.",
+                    quiet: "Chosen by families looking for a calm place to rest.",
+                    extended: "Often chosen by families staying through admission processes."
+                },
+                bookingHelper: "Families often stay with us during important academic visits."
+            },
+            mixed: {
+                contextStrip: "The coming days are often busy with professional and academic visits.",
+                suiteContexts: {
+                    standard: "A practical base for short, purposeful stays.",
+                    work: "Designed for full days and early starts.",
+                    quiet: "Preferred when returning late or needing rest.",
+                    extended: "Chosen for visits that span several days."
+                },
+                bookingHelper: "Many guests stay with us during particularly busy weeks."
+            }
+        };
+
+        /**
+         * applySiteContext: Applies seasonal copy to all context-aware elements
+         * 
+         * @param {string} context - One of: normal, biec, christ, mixed
+         * 
+         * UPDATES:
+         * 1. Context reassurance strip (between experiences and suites)
+         * 2. Suite-level context helpers (4 suites)
+         * 3. Booking helper text (intent reinforcement)
+         * 
+         * DESIGN RULES:
+         * - No animations (instant text swap)
+         * - No layout changes
+         * - No emphasis styling
+         * - Fails silently if elements not found
+         */
+        function applySiteContext(context) {
+            const copy = SEASONAL_COPY[context] || SEASONAL_COPY.normal;
+            
+            // Update context strip
+            const contextText = document.getElementById('contextText');
+            if (contextText) {
+                contextText.textContent = copy.contextStrip;
+            }
+            
+            // Update suite context helpers
+            Object.keys(copy.suiteContexts).forEach(suiteKey => {
+                const element = document.querySelector(`[data-context-target="${suiteKey}"]`);
+                if (element) {
+                    element.textContent = copy.suiteContexts[suiteKey];
+                }
+            });
+            
+            // Update booking helper (intent reinforcement)
+            const bookingHelperText = document.getElementById('bookingHelperText');
+            if (bookingHelperText) {
+                bookingHelperText.textContent = copy.bookingHelper;
+            }
+            
+            // Log context change for debugging (remove in production if needed)
+            console.log(`✓ Site context applied: ${context}`);
+        }
+
+        /**
+         * fetchSeasonalContext: Retrieves current seasonal context from backend
+         * 
+         * API ENDPOINT: /api/context-season
+         * 
+         * EXPECTED RESPONSE:
+         * {
+         *   "context": "normal|biec|christ|mixed",
+         *   "biecSeason": true|false,
+         *   "christSeason": true|false,
+         *   "checkedAt": "ISO_TIMESTAMP"
+         * }
+         * 
+         * FAILURE HANDLING:
+         * - If fetch fails → do nothing (keep default copy)
+         * - If response invalid → do nothing
+         * - No loading states, no error messages
+         * - Site remains functional with default copy
+         */
+        async function fetchSeasonalContext() {
+            try {
+                const response = await fetch('/api/context-season', {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    // Don't block page load if this is slow
+                    signal: AbortSignal.timeout(3000)
+                });
+                
+                if (!response.ok) {
+                    console.warn('Seasonal context API returned non-OK status. Using default copy.');
+                    return;
+                }
+                
+                const data = await response.json();
+                
+                // Validate response structure
+                if (!data.context || !['normal', 'biec', 'christ', 'mixed'].includes(data.context)) {
+                    console.warn('Invalid context value received. Using default copy.');
+                    return;
+                }
+                
+                // Apply the context
+                applySiteContext(data.context);
+                
+                // Optional: Store context in sessionStorage for consistency during session
+                try {
+                    sessionStorage.setItem('oasis_context', JSON.stringify({
+                        context: data.context,
+                        fetchedAt: new Date().toISOString()
+                    }));
+                } catch (e) {
+                    // SessionStorage might be disabled, continue without it
+                }
+                
+            } catch (error) {
+                // Network error, timeout, or other fetch failure
+                // Site remains functional with default copy
+                console.log('Seasonal context check skipped (offline or timeout)');
+            }
+        }
+
+        /**
+         * initializeSeasonalContext: Entry point for seasonal context system
+         * 
+         * STRATEGY:
+         * 1. Check sessionStorage for cached context (avoid redundant API calls)
+         * 2. If cached and fresh (< 30 minutes) → use cached
+         * 3. Otherwise → fetch from API
+         * 
+         * TIMING:
+         * - Runs after DOM is ready
+         * - Does not block page interactivity
+         * - Uses default copy until API responds
+         */
+        function initializeSeasonalContext() {
+            // Try to use cached context first (performance optimization)
+            try {
+                const cached = sessionStorage.getItem('oasis_context');
+                if (cached) {
+                    const { context, fetchedAt } = JSON.parse(cached);
+                    const age = Date.now() - new Date(fetchedAt).getTime();
+                    
+                    // Use cached context if less than 30 minutes old
+                    if (age < 30 * 60 * 1000) {
+                        applySiteContext(context);
+                        console.log('✓ Using cached seasonal context');
+                        return;
+                    }
+                }
+            } catch (e) {
+                // Cache read failed or invalid, proceed to fetch
+            }
+            
+            // Fetch fresh context from backend
+            fetchSeasonalContext();
+        }
+
+        // Initialize seasonal context system
+        // Runs after DOM is ready but doesn't block other scripts
+        initializeSeasonalContext();
+
+        // =================================================================
+        // END SEASONAL CONTEXT SYSTEM
+        // =================================================================
+
+        // =================================================================
+        // END SUITE BOOKING SYSTEM
+        // =================================================================
+
+        // Structured Data for SEO
+        const structuredData = {
+            "@context": "https://schema.org",
+            "@type": "Hotel",
+            "name": "Oasis Executive Suites",
+            "description": "Executive suites near BIEC Bangalore. Clean, quiet rooms with proper workspaces. Perfect for business travelers.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Yeshwanthpur",
+                "addressLocality": "Bangalore",
+                "addressRegion": "Karnataka",
+                "postalCode": "560022",
+                "addressCountry": "IN"
+            },
+            "telephone": "+91-80-4112-7000",
+            "email": "stay@oasisexecutive.com",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "13.0162471",
+                "longitude": "77.5124934"
+            },
+            "starRating": {
+                "@type": "Rating",
+                "ratingValue": "4"
+            },
+            "priceRange": "₹₹",
+            "amenityFeature": [
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Free WiFi",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Free parking",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "24-hour front desk",
+                    "value": true
+                }
+            ]
+        };
+
+        // Insert structured data
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(structuredData);
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>
