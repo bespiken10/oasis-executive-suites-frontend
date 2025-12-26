@@ -154,6 +154,18 @@
             max-width: 450px;
             color: rgba(31, 31, 31, 0.95);
         }
+/* Fix hero image cropping */
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* fills without distortion – recommended for hero */
+    object-position: center;  /* keeps subject centered */
+}
+
+/* If you prefer full image without cropping switch to contain later */
+.hero-visual .carousel-slide img {
+    object-fit: cover; 
+}
         
         .ritual-whisper-hero {
             font-size: 0.95rem;
