@@ -11,13 +11,25 @@
 
 
     .hero{
-    height:320px;
+    position:relative;
+    height:220px;  /* reduced from 260px */
     background:url('images/hero/hero-oasis-exterior.webp') center/cover no-repeat;
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
-    padding:30px;
+    padding:20px;
     color:#fff;
+}
+.hero::after{
+    content:"";
+    position:absolute;
+    top:0;left:0;width:100%;height:100%;
+    background:rgba(0,0,0,.28);
+    z-index:0;
+}
+.hero h2, .hero p, .view-btn{
+    position:relative;
+    z-index:1;
 }
 
     .hero h2{font-size:1.7rem;margin:0 0 6px;font-weight:600;text-shadow:0 4px 14px rgba(0,0,0,.6);}
@@ -90,8 +102,10 @@
     padding:0 14px 18px;
 }
     #dining-section{
-    display:none;
-    padding-top:30px;
+    margin-top:-10px; /* adjust tighter if you want */
+    padding-top:10px;
+}
+
 }
 .view-btn{
     display:inline-block;
@@ -138,6 +152,10 @@ function showDining(){
 }
 </script>
 
+#dining-section{
+    padding-top:0;   /* reduce gap */
+    margin-top:-40px; /* pull up under hero */
+}
 
 <!-- Hidden dining section -->
 <section id="dining-section">
