@@ -32,7 +32,82 @@
     .meal-card p{margin:0 0 12px;font-size:.86rem;opacity:.8;}
 
     @media(max-width:600px){.meal-grid{grid-template-columns:1fr;}}
+     /* ===== Experience Cards Upgrade ===== */
+
+.experience-section{
+    max-width:1100px;
+    margin:0 auto;
+    padding:80px 22px;
+}
+
+.experience-heading{
+    font-size:1.6rem;
+    font-weight:600;
+    color:#1a1a1a;
+    margin-bottom:32px;
+}
+
+.card-grid{
+    display:grid;
+    gap:22px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+.card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+    transition:.25s ease;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 28px rgba(0,0,0,.10);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-bottom:1px solid #eee;
+}
+
+.card h3{
+    margin:14px 0 6px;
+    font-size:1.1rem;
+    font-weight:600;
+}
+
+.card p{
+    font-size:.90rem;
+    opacity:.75;
+    padding:0 14px 18px;
+}
+    #dining-section{
+    display:none;
+    padding-top:30px;
+}
+.view-btn{
+    display:inline-block;
+    margin:28px auto 0;
+    background:#0a7f52;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:10px;
+    font-size:1rem;
+    cursor:pointer;
+    text-align:center;
+    transition:.25s;
+}
+.view-btn:hover{
+    background:#066040;
+}
+
 </style>
+   
+
 </head>
 
 <body>
@@ -41,6 +116,41 @@
     <h2>🍃 Oasis Rooftop Dining</h2>
     <p>Order via Zomato. Enjoy it on our 4th floor terrace.</p>
 </section>
+<section class="experience-section">
+    <h2 class="experience-heading">Experience Your Stay</h2>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <img src="images/experience/eat.webp" alt="Eat at Oasis">
+            <h3>Eat</h3>
+            <p>Warm meals. Slow mornings. Coffee that feels like home.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/experience/sleep.webp" alt="Sleep well">
+            <h3>Sleep</h3>
+            <p>Deep rest. Quiet rooms. Nights without hurry.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/experience/relax.webp" alt="Relax and unwind">
+            <h3>Relax</h3>
+            <p>Soft light. A space to breathe and slow down.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/experience/style.webp" alt="Get ready in style">
+            <h3>Style</h3>
+            <p>Take your time. Dress well. Step out confident.</p>
+        </div>
+
+    </div>
+    <div style="text-align:center;">
+    <button class="view-btn" onclick="showDining()">View Menu 🍽</button>
+</div>
+
+
 
 <section class="meal-grid">
     <div class="meal-card" onclick="alert('Lunch Menu Coming 🔜')">
@@ -67,6 +177,53 @@
         <p>Pasta, sizzlers & ambience</p>
     </div>
 </section>
+<script>
+function showDining(){
+    document.getElementById("dining-section").style.display = "block";
+    document.querySelector(".view-btn").style.display = "none";
+}
+</script>
+
+<!-- Hidden dining section -->
+<section id="dining-section">
+    <h2 style="text-align:center;margin-top:20px;">Our Menu</h2>
+
+    <section class="meal-grid">
+        <div class="meal-card">
+            <img src="images/dining/lunch.webp">
+            <h3>Lunch Plates 🍲</h3>
+            <p>Balanced bowls & meals</p>
+        </div>
+
+        <div class="meal-card">
+            <img src="images/dining/snacks.webp">
+            <h3>Mid-Day Snacks ☕</h3>
+            <p>Coffee, fries & bites</p>
+        </div>
+
+        <div class="meal-card">
+            <img src="images/dining/dinner.webp">
+            <h3>Dinner Meals 🍛</h3>
+            <p>Warm mains & grills</p>
+        </div>
+
+        <div class="meal-card">
+            <img src="images/dining/finedine.webp">
+            <h3>Fine Dine ✨</h3>
+            <p>Pasta, sizzlers & ambience</p>
+        </div>
+    </section>
+</section>
+<script>
+function showDining(){
+    document.getElementById("dining-section").style.display = "block";
+    document.querySelector(".view-btn").style.display = "none";
+    window.scrollTo({
+        top: document.getElementById("dining-section").offsetTop - 50,
+        behavior: "smooth"
+    });
+}
+</script>
 
 </body>
 </html>
