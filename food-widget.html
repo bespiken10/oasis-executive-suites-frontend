@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oasis Rooftop Dining</title>
+
+<style>
+    body{margin:0;font-family:system-ui;background:#f5f7f2;}
+
+    .hero{
+        height:260px;
+        background:url('images/hero-oasis-exterior.webp') center/cover no-repeat;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-end;
+        padding:20px;color:#fff;
+    }
+    .hero h2{font-size:1.7rem;margin:0 0 6px;font-weight:600;text-shadow:0 4px 14px rgba(0,0,0,.6);}
+    .hero p{margin:0 0 14px;opacity:.9;text-shadow:0 3px 10px rgba(0,0,0,.7);}
+
+    .meal-grid{
+        display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px;
+    }
+    .meal-card{
+        background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.08);
+        overflow:hidden;text-align:center;cursor:pointer;transition:.25s;
+    }
+    .meal-card:hover{transform:translateY(-4px);}
+    .meal-card img{width:100%;height:120px;object-fit:cover;}
+    .meal-card h3{margin:10px 0 4px;font-size:1.05rem;font-weight:600;}
+    .meal-card p{margin:0 0 12px;font-size:.86rem;opacity:.8;}
+
+    @media(max-width:600px){.meal-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <h2>🍃 Oasis Rooftop Dining</h2>
+    <p>Order via Zomato. Enjoy it on our 4th floor terrace.</p>
+</section>
+
+<section class="meal-grid">
+    <div class="meal-card" onclick="alert('Lunch Menu Coming 🔜')">
+        <img src="images/sample-lunch.webp">
+        <h3>Lunch Plates 🍲</h3>
+        <p>Balanced bowls & meals</p>
+    </div>
+
+    <div class="meal-card" onclick="alert('Snacks Menu Coming 🔜')">
+        <img src="images/sample-snacks.webp">
+        <h3>Mid-Day Snacks ☕</h3>
+        <p>Coffee, fries & bites</p>
+    </div>
+
+    <div class="meal-card" onclick="alert('Dinner Menu Coming 🔜')">
+        <img src="images/sample-dinner.webp">
+        <h3>Dinner Meals 🍛</h3>
+        <p>Warm mains & grills</p>
+    </div>
+
+    <div class="meal-card" onclick="alert('Fine Dine Menu Coming 🔜')">
+        <img src="images/sample-finedine.webp">
+        <h3>Fine Dine ✨</h3>
+        <p>Pasta, sizzlers & ambience</p>
+    </div>
+</section>
+
+</body>
+</html>
