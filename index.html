@@ -1160,6 +1160,24 @@
     height: 100%;
     object-fit: cover;        /* this removes white space */
 }
+/* Position caption inside image and remove bottom gap */
+.ritual-caption-hero {
+    position: absolute;
+    bottom: 2rem;          /* raise/lower text */
+    left: 2rem;
+    right: 2rem;          /* keep text inside image */
+    text-align: left;
+    z-index: 10;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-slide.ritual-slide-hero {
+    position: relative;   /* required for absolute caption */
+}
 
 /* paste ABOVE this */
 </style>
