@@ -139,77 +139,63 @@
 </style>
    
 
-</head>
-
 <body>
 
-<section class="hero">
+  <section class="hero">
     <h2>🍃 Oasis Rooftop Dining</h2>
     <p>Order via Zomato. Enjoy it on our 4th floor terrace.</p>
 
-    </div>
     <div style="text-align:center;">
-    
+      <button class="view-btn" onclick="showDining()">View Menu 🍽</button>
+    </div>
+  </section>
 
-<button class="view-btn" onclick="showDining()">View Menu 🍽</button>
+  <!-- Hidden dining section -->
+  <section id="dining-section">
+    <h2>Our Menu</h2>
 
+    <div class="meal-grid">
+      <div class="meal-card">
+        <img src="images/dining/lunch.webp" alt="Lunch Plates">
+        <h3>Lunch Plates 🍲</h3>
+        <p>Balanced bowls & meals</p>
+      </div>
 
-<script>
-function showDining(){
-    document.getElementById("dining-section").style.display = "block";
-    document.querySelector(".view-btn").style.display = "none";
-    window.scrollTo({
-        top: document.getElementById("dining-section").offsetTop - 50,
+      <div class="meal-card">
+        <img src="images/dining/snacks.webp" alt="Snacks">
+        <h3>Mid-Day Snacks ☕</h3>
+        <p>Coffee, fries & bites</p>
+      </div>
+
+      <div class="meal-card">
+        <img src="images/dining/dinner.webp" alt="Dinner">
+        <h3>Dinner Meals 🍛</h3>
+        <p>Warm mains & grills</p>
+      </div>
+
+      <div class="meal-card">
+        <img src="images/dining/finedine.webp" alt="Fine Dine">
+        <h3>Fine Dine ✨</h3>
+        <p>Pasta, sizzlers & ambience</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function showDining(){
+      const section = document.getElementById("dining-section");
+      const button  = document.querySelector(".view-btn");
+
+      section.style.display = "block";
+      button.style.display  = "none";
+
+      window.scrollTo({
+        top: section.offsetTop - 50,
         behavior: "smooth"
-    });
-}
-</script>
-
-#dining-section{
-    padding-top:0;   /* reduce gap */
-    margin-top:-40px; /* pull up under hero */
-}
-
-<!-- Hidden dining section -->
-<section id="dining-section">
-    <h2 style="text-align:center;margin-top:20px;">Our Menu</h2>
-
-    <section class="meal-grid">
-        <div class="meal-card">
-            <img src="images/dining/lunch.webp">
-            <h3>Lunch Plates 🍲</h3>
-            <p>Balanced bowls & meals</p>
-        </div>
-
-        <div class="meal-card">
-            <img src="images/dining/snacks.webp">
-            <h3>Mid-Day Snacks ☕</h3>
-            <p>Coffee, fries & bites</p>
-        </div>
-
-        <div class="meal-card">
-            <img src="images/dining/dinner.webp">
-            <h3>Dinner Meals 🍛</h3>
-            <p>Warm mains & grills</p>
-        </div>
-
-        <div class="meal-card">
-            <img src="images/dining/finedine.webp">
-            <h3>Fine Dine ✨</h3>
-            <p>Pasta, sizzlers & ambience</p>
-        </div>
-    </section>
-</section>
-<script>
-function showDining(){
-    document.getElementById("dining-section").style.display = "block";
-    document.querySelector(".view-btn").style.display = "none";
-    window.scrollTo({
-        top: document.getElementById("dining-section").offsetTop - 50,
-        behavior: "smooth"
-    });
-}
-</script>
+      });
+    }
+  </script>
 
 </body>
+
 </html>
