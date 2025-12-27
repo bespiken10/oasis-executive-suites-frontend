@@ -5,21 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Oasis Rooftop Dining</title>
 
-</style>
-</head>
-
-<body>
-{
+<style>
+  body{
     margin:0;
     font-family:system-ui;
     background:#f5f7f2;
   }
 
   /* HERO */
-
   .hero{
     position:relative;
-    height:220px;  /* reduced from 260px */
+    height:220px;
     background:url('images/hero/hero-oasis-exterior.webp') center/cover no-repeat;
     display:flex;
     flex-direction:column;
@@ -31,17 +27,12 @@
   .hero::after{
     content:"";
     position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    top:0;left:0;width:100%;height:100%;
     background:rgba(0,0,0,.28);
     z-index:0;
   }
 
-  .hero h2,
-  .hero p,
-  .view-btn{
+  .hero h2, .hero p, .view-btn{
     position:relative;
     z-index:1;
   }
@@ -61,7 +52,7 @@
 
   .view-btn{
     display:inline-block;
-    margin:16px auto 4px;
+    margin:16px auto;
     background:#0a7f52;
     color:#fff;
     padding:12px 22px;
@@ -78,19 +69,15 @@
   }
 
   /* DINING SECTION */
-
-    #dining-section{
-    display:none;
-    background:#f5f7f2;   /* FIX: covers hero behind menu */
-    padding:40px 16px 60px;
-    margin-top:0;
-}
-
-
+  #dining-section{
+    display:none;               /* hidden until clicked */
+    background:#f5f7f2;         /* FIX: solid background */
+    padding:40px 20px 60px;
+  }
 
   #dining-section h2{
     text-align:center;
-    margin:0 0 18px;
+    margin-bottom:20px;
     color:#222;
   }
 
@@ -108,41 +95,20 @@
     box-shadow:0 6px 18px rgba(0,0,0,.12);
     overflow:hidden;
     text-align:center;
-    cursor:pointer;
     transition:.25s;
   }
 
-  .meal-card:hover{
-    transform:translateY(-4px);
-  }
-
-  .meal-card img{
-    width:100%;
-    height:120px;
-    object-fit:cover;
-  }
-
-  .meal-card h3{
-    margin:10px 0 4px;
-    font-size:1.05rem;
-    font-weight:600;
-  }
-
-  .meal-card p{
-    margin:0 0 12px;
-    font-size:.86rem;
-    opacity:.8;
-  }
+  .meal-card:hover{transform:translateY(-4px);}
+  .meal-card img{width:100%;height:120px;object-fit:cover;}
+  .meal-card h3{margin:10px 0 4px;font-size:1.05rem;font-weight:600;}
+  .meal-card p{margin:0 0 12px;font-size:.86rem;opacity:.8;}
 
   @media(max-width:600px){
-    .meal-grid{
-      grid-template-columns:1fr;
-    }
-    .hero{
-      height:200px;
-    }
+    .meal-grid{grid-template-columns:1fr;}
+    .hero{height:200px;}
   }
 </style>
+
    
 
 <body>
