@@ -101,37 +101,34 @@
     height:135px;                  /* More visual appeal */
 }
 
-</section>
-<section class="experience-section">
-    <div class="exp-grid">
+<section id="dining-section">
+    <h2>Our Menu</h2>
 
-        <div class="exp-card">
-            <img src="/experience/eat.webp">
-            <h3>Eat</h3>
-            <p>Warm meals. Slow mornings. Coffee that feels like home.</p>
-            <a href="#dining-section" class="exp-btn" onclick="showDining()">🍽 Explore Rooftop Dining</a>
+    <div class="meal-grid">
+
+        <div class="meal-card simple">
+            <h3>Lunch Plates 🍲</h3>
+            <p>Balanced bowls & meals</p>
         </div>
 
-        <div class="exp-card">
-            <img src="/experience/sleep.webp">
-            <h3>Sleep</h3>
-            <p>Deep sleep. Silence that resets you.</p>
+        <div class="meal-card simple">
+            <h3>Mid-Day Snacks ☕</h3>
+            <p>Coffee, fries & bites</p>
         </div>
 
-        <div class="exp-card">
-            <img src="/experience/relax.webp">
-            <h3>Relax</h3>
-            <p>Rooftop breeze. Soft evenings. Unwind and breathe.</p>
+        <div class="meal-card simple">
+            <h3>Dinner Meals 🍛</h3>
+            <p>Warm mains & grills</p>
         </div>
 
-        <div class="exp-card">
-            <img src="/experience/style.webp">
-            <h3>Style</h3>
-            <p>Dress, step out, feel your best.</p>
+        <div class="meal-card simple">
+            <h3>Fine Dine ✨</h3>
+            <p>Pasta, sizzlers & ambience</p>
         </div>
 
     </div>
 </section>
+
 
   /* DINING SECTION */
   #dining-section{
@@ -317,6 +314,29 @@ function closeDining(){
 .exp-btn:hover{
   background:#066040;
 }
+/* Clean Minimal Menu Style (No Images) */
+.meal-card.simple{
+    padding:28px 22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:120px;
+}
+
+.meal-card.simple h3{
+    font-size:1.25rem;
+    margin-bottom:6px;
+    font-weight:700;
+}
+
+.meal-card.simple p{
+    font-size:.9rem;
+    opacity:.75;
+}
+
+/* Remove old image reserved spacing */
+.meal-card img{ display:none !important; }
 
 </style>
 
