@@ -1210,6 +1210,24 @@
     padding: 0;
     text-align: left;
 }
+/* ===== Rooftop Dining Popup ===== */
+.oasis-modal{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);justify-content:center;align-items:center;z-index:9999;}
+.oasis-modal-content{background:#fff;width:90%;max-width:900px;height:85vh;border-radius:18px;overflow:hidden;position:relative;animation:oasisPop .35s ease-out;box-shadow:0 18px 60px rgba(0,0,0,0.35);}
+#foodFrame{width:100%;height:100%;border:none;}
+.oasis-close{position:absolute;top:14px;right:20px;font-size:30px;cursor:pointer;}
+.oasis-food-btn{background:#1e7f55;color:#fff;padding:10px 22px;border-radius:10px;border:none;font-size:1rem;cursor:pointer;margin-top:10px;transition:0.3s;}
+.oasis-food-btn:hover{background:#146a41;transform:translateY(-2px);}
+@keyframes oasisPop{
+  from{
+    transform:scale(.95);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
 
 /* paste ABOVE this */
 </style>
@@ -1284,6 +1302,11 @@
                 <div class="exp-icon">🍽</div>
                 <h3>Eat</h3>
                 <p>Warm meals. Slow mornings. Coffee that feels like home.</p>
+               <button id="openFoodWidget" class="oasis-food-btn">
+   🍽 Explore Rooftop Dining
+</button>
+
+
             </div>
         </div>
 
@@ -2277,6 +2300,30 @@
         script.type = 'application/ld+json';
         script.text = JSON.stringify(structuredData);
         document.head.appendChild(script);
+
+        <!-- Oasis Dining Popup Modal -->
     </script>
+    
+<div id="foodModal" class="oasis-modal">
+  <div class="oasis-modal-content">
+    <span id="closeFoodModal" class="oasis-close">&times;</span>
+    <iframe id="foodFrame" src="food-widget.html" loading="lazy"></iframe>
+  </div>
+</div>
+
+<script>
+document.getElementById("openFoodWidget").onclick = () =>{
+  document.getElementById("foodModal").style.display = "flex";
+}
+document.getElementById("closeFoodModal").onclick = () =>{
+  document.getElementById("foodModal").style.display = "none";
+}
+window.onclick = (e)=>{
+  if(e.target === document.getElementById("foodModal")){
+    document.getElementById("foodModal").style.display = "none";
+  }
+}
+</script>
+
 </body>
 </html>
