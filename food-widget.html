@@ -152,37 +152,17 @@
 
 
 
-<section class="meal-grid">
-    <div class="meal-card" onclick="alert('Lunch Menu Coming 🔜')">
-        <img src="images/sample-lunch.webp">
-        <h3>Lunch Plates 🍲</h3>
-        <p>Balanced bowls & meals</p>
-    </div>
-
-    <div class="meal-card" onclick="alert('Snacks Menu Coming 🔜')">
-        <img src="images/sample-snacks.webp">
-        <h3>Mid-Day Snacks ☕</h3>
-        <p>Coffee, fries & bites</p>
-    </div>
-
-    <div class="meal-card" onclick="alert('Dinner Menu Coming 🔜')">
-        <img src="images/sample-dinner.webp">
-        <h3>Dinner Meals 🍛</h3>
-        <p>Warm mains & grills</p>
-    </div>
-
-    <div class="meal-card" onclick="alert('Fine Dine Menu Coming 🔜')">
-        <img src="images/sample-finedine.webp">
-        <h3>Fine Dine ✨</h3>
-        <p>Pasta, sizzlers & ambience</p>
-    </div>
-</section>
 <script>
 function showDining(){
     document.getElementById("dining-section").style.display = "block";
     document.querySelector(".view-btn").style.display = "none";
+    window.scrollTo({
+        top: document.getElementById("dining-section").offsetTop - 50,
+        behavior: "smooth"
+    });
 }
 </script>
+
 
 <!-- Hidden dining section -->
 <section id="dining-section">
