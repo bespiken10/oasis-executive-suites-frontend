@@ -107,6 +107,24 @@
     .meal-grid{grid-template-columns:1fr;}
     .hero{height:200px;}
   }
+  .meal-card{
+    background:#fff;
+    border-radius:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
+    overflow:hidden;
+    text-align:center;
+    cursor:pointer;
+    transition:.35s;
+    opacity:0;
+    transform:translateY(10px);
+}
+
+/* Reveal when visible */
+#dining-section.show .meal-card{
+    opacity:1;
+    transform:translateY(0);
+}
+
 </style>
 
    
