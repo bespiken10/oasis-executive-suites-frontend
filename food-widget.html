@@ -188,6 +188,45 @@
 body{
     background:#f5f7f2;
 }
+.meal-card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    transition:.3s ease;
+}
+.meal-card:hover img{
+    transform:scale(1.05);
+}
+#dining-section{
+    opacity:0;
+    transform:translateY(20px);
+    transition:0.5s ease;
+}
+
+#dining-section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+<button class="close-menu" onclick="closeDining()">✕ Close</button>
+.close-menu{
+    background:none;
+    border:none;
+    font-size:20px;
+    opacity:.6;
+    cursor:pointer;
+    margin:auto;
+    display:block;
+    margin-top:18px;
+}
+function closeDining(){
+    document.getElementById("dining-section").classList.remove("show");
+    setTimeout(()=>{
+        document.getElementById("dining-section").style.display="none";
+        document.querySelector(".view-btn").style.display="inline-block";
+    },300);
+
+    window.scrollTo({top:0,behavior:"smooth"});
+}
 
 </style>
 
