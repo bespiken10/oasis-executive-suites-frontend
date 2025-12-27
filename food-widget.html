@@ -172,19 +172,22 @@
   </section>
 
   <script>
-    function showDining(){
-      const section = document.getElementById("dining-section");
-      const button  = document.querySelector(".view-btn");
+function showDining(){
+    const section = document.getElementById("dining-section");
+    const button  = document.querySelector(".view-btn");
 
-      section.style.display = "block";
-      button.style.display  = "none";
+    section.style.display = "block";       // show dining section
+    button.style.display  = "none";        // hide View Menu button
 
-      window.scrollTo({
-        top: section.offsetTop - 50,
+    // Fade-in animation
+    setTimeout(()=> section.classList.add("show"),150);
+
+    window.scrollTo({
+        top: section.offsetTop - 40,
         behavior: "smooth"
-      });
-    }
-  </script>
+    });
+}
+</script>
 
 </body>
 
