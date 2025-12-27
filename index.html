@@ -1178,6 +1178,38 @@
 .carousel-slide.ritual-slide-hero {
     position: relative;   /* required for absolute caption */
 }
+/* Fix ritual slide height and caption overlay */
+.carousel-slide.ritual-slide-hero {
+    position: relative;
+    height: 700px;         /* increase height so text fits inside */
+    overflow: hidden;
+    background: #f7f5f2;
+}
+
+/* Make room image fill the container fully */
+.carousel-slide.ritual-slide-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Place caption inside bottom area of image */
+.ritual-caption-hero {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.55);
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
 
 /* paste ABOVE this */
 </style>
