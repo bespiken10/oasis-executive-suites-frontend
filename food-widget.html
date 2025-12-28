@@ -45,7 +45,6 @@ body{
   transition:.45s ease;
   background:#f5f7f2;
   padding:40px 20px 60px;
-  margin-top:-10px;
 }
 #dining-section.show{
   display:block;
@@ -64,7 +63,7 @@ body{
   .meal-grid{grid-template-columns:1fr;}
 }
 
-/* CLEAN MINIMAL MENU CARDS */
+/* MINIMAL MENU CARDS */
 .meal-card{
   background:#fff;
   border-radius:14px;
@@ -75,16 +74,8 @@ body{
   transition:.3s;
 }
 .meal-card:hover{transform:translateY(-4px);}
-
-.meal-card h3{
-  font-size:1.25rem;
-  font-weight:700;
-  margin-bottom:6px;
-}
-.meal-card p{
-  font-size:.9rem;
-  opacity:.75;
-}
+.meal-card h3{font-size:1.25rem;font-weight:700;margin-bottom:6px;}
+.meal-card p{font-size:.9rem;opacity:.75;}
 </style>
 </head>
 
@@ -98,107 +89,61 @@ body{
     <button class="view-btn" onclick="showDining()">View Menu 🍽</button>
   </div>
 </section>
-<div style="text-align:center;margin-top:20px;">
+
+<!-- BUTTON UNDER HERO -->
+<div style="text-align:center;margin:20px 0;">
   <button class="view-btn" onclick="showSleep()">Explore Sleep Rituals 🌙</button>
 </div>
 
-<!-- MENU SECTION (minimal version) -->
+<!-- DINING SECTION -->
 <section id="dining-section">
   <h2>Our Menu</h2>
 
   <div class="meal-grid">
-    <div class="meal-card">
-      <h3>Lunch Plates 🍲</h3>
-      <p>Balanced bowls & meals</p>
-    </div>
-
-    <div class="meal-card">
-      <h3>Mid-Day Snacks ☕</h3>
-      <p>Coffee, fries & bites</p>
-    </div>
-
-    <div class="meal-card">
-      <h3>Dinner Meals 🍛</h3>
-      <p>Warm mains & grills</p>
-    </div>
-
-    <div class="meal-card">
-      <h3>Fine Dine ✨</h3>
-      <p>Pasta, sizzlers & ambience</p>
-    </div>
+    <div class="meal-card"><h3>Lunch Plates 🍲</h3><p>Balanced bowls & meals</p></div>
+    <div class="meal-card"><h3>Mid-Day Snacks ☕</h3><p>Coffee, fries & bites</p></div>
+    <div class="meal-card"><h3>Dinner Meals 🍛</h3><p>Warm mains & grills</p></div>
+    <div class="meal-card"><h3>Fine Dine ✨</h3><p>Pasta, sizzlers & ambience</p></div>
   </div>
 </section>
-<!-- SLEEP RITUALS SECTION -->
-<section id="sleep-section" style="display:none;opacity:0;transform:translateY(20px);transition:.45s ease;padding:40px 20px 60px;background:#f5f7f2;margin-top:-10px;">
+
+<!-- SLEEP SECTION -->
+<section id="sleep-section" style="display:none;opacity:0;transform:translateY(20px);transition:.45s ease;padding:40px 20px;background:#f5f7f2;">
   <h2 style="text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650;">Sleep Rituals 🌙</h2>
 
   <div class="meal-grid">
-
-    <div class="meal-card">
-      <h3>Herbal Tea Wind Down 🍵</h3>
-      <p>Chamomile • Lemongrass • Warm soothing brew</p>
-    </div>
-
-    <div class="meal-card">
-      <h3>Aromatherapy 🌾</h3>
-      <p>Lavender diffuser • Calm oils • Slow night energy</p>
-    </div>
-
-    <div class="meal-card">
-      <h3>Soft Lighting Candle Hour 🕯</h3>
-      <p>Warm lamps • Low lux • Golden ambiance</p>
-    </div>
-
-    <div class="meal-card">
-      <h3>Breathing + Stretching 😮‍💨</h3>
-      <p>4-7-8 breathing • Light stretches • Release tension</p>
-    </div>
-
+    <div class="meal-card"><h3>Herbal Tea Wind Down 🍵</h3><p>Chamomile • Lemongrass • Soothing brew</p></div>
+    <div class="meal-card"><h3>Aromatherapy 🌾</h3><p>Lavender diffuser • Calm oils</p></div>
+    <div class="meal-card"><h3>Candle Light Hour 🕯</h3><p>Warm glow • Low lux ambience</p></div>
+    <div class="meal-card"><h3>Breath + Stretch 😮‍💨</h3><p>4-7-8 breathing • Relax body</p></div>
   </div>
 
   <div style="text-align:center;margin-top:25px;">
-    <button class="view-btn" onclick="closeSleep()">Close Rituals ✕</button>
+    <button class="view-btn" onclick="closeSleep()">Close ✕</button>
   </div>
 </section>
 
 <script>
+/* MENU */
 function showDining(){
   const section=document.getElementById("dining-section");
-  const button=document.querySelector(".view-btn");
-
   section.style.display="block";
-  setTimeout(()=>section.classList.add("show"),50);
-  button.style.display="none";
-
-  window.scrollTo({top:section.offsetTop-40,behavior:"smooth"});
-}
-  <script>
-function showDining(){
-  const section=document.getElementById("dining-section");
-  const button=document.querySelector(".view-btn");
-
-  section.style.display="block";
-  setTimeout(()=>section.classList.add("show"),50);
-  button.style.display="none";
+  setTimeout(()=>section.classList.add("show"),60);
   window.scrollTo({top:section.offsetTop-40,behavior:"smooth"});
 }
 
-/* NEW — Show Sleep Section */
+/* SLEEP */
 function showSleep(){
   const sleep=document.getElementById("sleep-section");
   sleep.style.display="block";
-  setTimeout(()=> sleep.style.opacity="1",80);
+  setTimeout(()=>sleep.style.opacity="1",80);
   window.scrollTo({top:sleep.offsetTop-40,behavior:"smooth"});
 }
-
-/* Close Sleep Section */
 function closeSleep(){
   const sleep=document.getElementById("sleep-section");
   sleep.style.opacity="0";
-  setTimeout(()=> sleep.style.display="none",300);
+  setTimeout(()=>sleep.style.display="none",300);
 }
-</script>
-
 </script>
 
 </body>
