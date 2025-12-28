@@ -6,72 +6,71 @@
 <title>Oasis Rooftop Dining</title>
 
 <style>
-body{
-  margin:0;font-family:system-ui;background:#f5f7f2;
-}
+body{margin:0;font-family:system-ui;background:#f5f7f2;}
 
-/******** HERO ********/
+/* HERO */
 .hero{
-  position:relative;height:200px;
-  background:url('images/hero/hero-oasis-exterior.webp') center/cover no-repeat;
+  height:220px;position:relative;color:#fff;padding:20px;
   display:flex;flex-direction:column;justify-content:flex-end;
-  padding:20px;color:#fff;
+  background:url('images/hero/hero-oasis-exterior.webp') center/cover no-repeat;
 }
-.hero::after{
-  content:"";position:absolute;top:0;left:0;width:100%;height:100%;
-  background:rgba(0,0,0,.28);z-index:0;
-}
-.hero h2,.hero p,.view-btn{position:relative;z-index:1;}
-.hero h2{font-size:1.7rem;margin:0 0 6px;font-weight:600;text-shadow:0 4px 14px rgba(0,0,0,.6);}
-.hero p{margin:0 0 14px;opacity:.9;text-shadow:0 3px 10px rgba(0,0,0,.7);}
+.hero::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,.28);z-index:0;}
+.hero h2,.hero p{position:relative;z-index:1;text-shadow:0 4px 14px rgba(0,0,0,.5);}
+.hero h2{font-size:1.8rem;margin:0 0 6px;font-weight:600;}
+.hero p{margin:0 0 14px;opacity:.9;}
+.hero .btn-main{position:relative;z-index:2;}
 
-/*** BUTTON STYLE ***/
-.view-btn{
+/* BUTTON */
+.btn-main,.view-btn{
   display:inline-flex;justify-content:center;align-items:center;
-  margin:auto;background:#0a7f52;color:#fff;padding:12px 24px;
-  border-radius:10px;font-size:1rem;border:none;cursor:pointer;transition:.25s;
+  background:#0a7f52;color:#fff;border:none;cursor:pointer;
+  padding:12px 22px;border-radius:10px;font-size:1rem;transition:.25s;
 }
-.view-btn:hover{background:#066040;}
+.btn-main:hover,.view-btn:hover{background:#066040;}
 
-/******** GRID ********/
+/* CARD GRID (HOME) */
+.ritual-grid{
+  max-width:1100px;margin:35px auto;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;padding:0 20px;
+}
+.ritual-card{
+  background:#fff;text-align:center;padding:35px 22px;border-radius:18px;
+  box-shadow:0 6px 20px rgba(0,0,0,.07);transition:.3s;cursor:pointer;
+}
+.ritual-card:hover{transform:translateY(-6px);}
+.ritual-card h3{font-size:1.4rem;margin-bottom:6px;font-weight:700;}
+.ritual-card p{font-size:.95rem;opacity:.75;margin-bottom:18px;}
+.card-btn{padding:12px 18px;border-radius:12px;margin-top:12px;}
+
+/* SECTIONS BELOW */
+section{max-width:1000px;margin:40px auto;padding:40px 20px;display:none;opacity:0;transform:translateY(25px);transition:.45s ease;}
+section.show{display:block;opacity:1;transform:translateY(0);}
+
+/* MENU GRID */
 .meal-grid{
-  max-width:960px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(2,1fr);
-  gap:24px;padding-bottom:20px;
+  margin-top:25px;display:grid;gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 }
-@media(max-width:600px){.meal-grid{grid-template-columns:1fr;}}
-
 .meal-card{
-  background:#fff;padding:28px 22px;
-  border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.12);
-  text-align:center;cursor:pointer;transition:.3s;
+  background:#fff;border-radius:14px;padding:26px;text-align:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);transition:.3s;cursor:pointer;
 }
 .meal-card:hover{transform:translateY(-4px);}
-.meal-card h3{font-size:1.25rem;font-weight:700;margin-bottom:6px;}
-.meal-card p{opacity:.8;font-size:.9rem}
+.meal-card h3{margin-bottom:8px;font-size:1.15rem;font-weight:700;}
+.meal-card p{opacity:.75;font-size:.9rem;}
 
-/*** SECTIONS ***/
-#dining-section,#sleep-section{
-  display:none;opacity:0;transform:translateY(20px);
-  transition:.45s;padding:40px 20px;
-}
-#dining-section.show{opacity:1;transform:translateY(0);}
-#sleep-section.show{opacity:1;transform:translateY(0);}
-section h2{text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650;}
-
-/******** FIXED BOTTOM NAV ********/
+/* BOTTOM NAV */
 .bottom-nav{
   position:fixed;bottom:15px;left:50%;transform:translateX(-50%);
-  background:#fff;display:flex;gap:12px;padding:10px 18px;border-radius:40px;
+  background:#fff;display:flex;gap:12px;padding:10px 16px;border-radius:35px;
   box-shadow:0 6px 20px rgba(0,0,0,.12);z-index:999;
 }
 .bottom-nav button{
-  background:#0a7f52;color:#fff;border:none;
-  padding:9px 14px;border-radius:30px;font-size:.8rem;
-  cursor:pointer;transition:.3s;
+  background:#0a7f52;color:white;border:none;padding:8px 14px;border-radius:22px;
+  font-size:.8rem;cursor:pointer;transition:.2s;
 }
 .bottom-nav button:hover{background:#066040;}
-
 </style>
 </head>
 
@@ -81,40 +80,59 @@ section h2{text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650
 <section class="hero">
   <h2>🍃 Oasis Rooftop Dining</h2>
   <p>Order via Zomato. Enjoy it on our 4th floor terrace.</p>
-  <button class="view-btn" onclick="showDining()">View Menu 🍽</button>
+  <button class="btn-main" onclick="showDining()">View Menu 🍽</button>
 </section>
 
-<!-- Sleep CTA stays OUTSIDE dining -->
-<div style="text-align:center;margin:30px 0;">
-  <button class="view-btn" onclick="showSleep()">Explore Sleep Rituals 🌙</button>
+<!-- HOME 4-CARD RITUAL SECTION -->
+<div class="ritual-grid">
+  <div class="ritual-card" onclick="showDining()">
+    <h3>🍽 Eat</h3>
+    <p>Warm meals. Slow mornings. Coffee that feels like home.</p>
+    <button class="view-btn card-btn">Explore Rooftop Dining</button>
+  </div>
+
+  <div class="ritual-card" onclick="showSleep()">
+    <h3>🛏 Sleep</h3>
+    <p>Deep rest. Quiet nights. Reset your energy.</p>
+    <button class="view-btn card-btn">Sleep Rituals</button>
+  </div>
+
+  <div class="ritual-card" onclick="showRelax()">
+    <h3>🌿 Relax</h3>
+    <p>Rooftop breeze. Soft evenings. Let go.</p>
+    <button class="view-btn card-btn">Coming Soon</button>
+  </div>
+
+  <div class="ritual-card" onclick="showStyle()">
+    <h3>👗 Style</h3>
+    <p>Dress well. Step out confident.</p>
+    <button class="view-btn card-btn">Coming Soon</button>
+  </div>
 </div>
 
-<!-- EAT SECTION -->
+<!-- DINING SECTION -->
 <section id="dining-section">
-  <h2>Our Menu</h2>
+  <h2 style="text-align:center;">Our Menu</h2>
   <div class="meal-grid">
     <div class="meal-card"><h3>Lunch Plates 🍲</h3><p>Balanced bowls & meals</p></div>
     <div class="meal-card"><h3>Mid-Day Snacks ☕</h3><p>Coffee, fries & bites</p></div>
     <div class="meal-card"><h3>Dinner Meals 🍛</h3><p>Warm mains & grills</p></div>
-    <div class="meal-card"><h3>Fine Dine ✨</h3><p>Pasta • Sizzlers • Ambience</p></div>
+    <div class="meal-card"><h3>Fine Dine ✨</h3><p>Pasta, sizzlers & ambience</p></div>
   </div>
 </section>
 
 <!-- SLEEP SECTION -->
 <section id="sleep-section">
-  <h2>Sleep Rituals 🌙</h2>
+  <h2 style="text-align:center;">Sleep Rituals 🌙</h2>
   <div class="meal-grid">
     <div class="meal-card"><h3>Herbal Tea 🍵</h3><p>Chamomile • Lemongrass</p></div>
-    <div class="meal-card"><h3>Aromatherapy 🌾</h3><p>Lavender diffuser</p></div>
-    <div class="meal-card"><h3>Candle Hour 🕯</h3><p>Warm golden ambience</p></div>
-    <div class="meal-card"><h3>Breath + Stretch 😮‍💨</h3><p>4-7-8 routine for calm sleep</p></div>
-  </div>
-  <div style="text-align:center;margin-top:25px;">
-    <button class="view-btn" onclick="closeSleep()">Close ✕</button>
+    <div class="meal-card"><h3>Aromatherapy 🌾</h3><p>Lavender oil • Calm mind</p></div>
+    <div class="meal-card"><h3>Candle Hour 🕯</h3><p>Warm light • Slow breathing</p></div>
+    <div class="meal-card"><h3>Night Stretch 😮‍💨</h3><p>4-7-8 breathing routine</p></div>
   </div>
 </section>
 
-<!-- FIXED NAV BAR -->
+<!-- Navigation -->
 <div class="bottom-nav">
   <button onclick="showDining()">Eat</button>
   <button onclick="showSleep()">Sleep</button>
@@ -124,25 +142,24 @@ section h2{text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650
 
 <script>
 function showDining(){
-  let s=document.getElementById("dining-section");
-  s.style.display="block";setTimeout(()=>s.classList.add("show"),70);
-  window.scrollTo({top:s.offsetTop-40,behavior:"smooth"});
+  openSection("dining-section");
 }
-
 function showSleep(){
-  let s=document.getElementById("sleep-section");
-  s.style.display="block";setTimeout(()=>s.classList.add("show"),70);
-  window.scrollTo({top:s.offsetTop-40,behavior:"smooth"});
+  openSection("sleep-section");
 }
+function showRelax(){ alert("Relax section coming soon 🌿"); }
+function showStyle(){ alert("Style section coming soon 👗"); }
 
-function closeSleep(){
-  let s=document.getElementById("sleep-section");
-  s.classList.remove("show");
-  setTimeout(()=>s.style.display="none",300);
+function openSection(id){
+  document.querySelectorAll("section").forEach(s=>{
+    if(s.id!=="" && s.id!=="") s.style.display="none";
+    s.classList.remove("show");
+  });
+  let sec=document.getElementById(id);
+  sec.style.display="block";
+  setTimeout(()=>sec.classList.add("show"),10);
+  window.scrollTo({top:sec.offsetTop-60,behavior:"smooth"});
 }
-
-function showRelax(){alert("Relax Rituals Coming Soon 🌿");}
-function showStyle(){alert("Style Rituals Coming Soon 👗");}
 </script>
 
 </body>
