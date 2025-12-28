@@ -30,76 +30,61 @@ body{
 .hero h2,.hero p,.view-btn{position:relative;z-index:1;}
 .hero h2{font-size:1.7rem;margin:0 0 6px;font-weight:600;text-shadow:0 4px 14px rgba(0,0,0,.6);}
 .hero p{margin:0 0 14px;opacity:.9;text-shadow:0 3px 10px rgba(0,0,0,.7);}
+
+/* BUTTON STYLE */
 .view-btn{
-  display:inline-block;margin:16px auto;background:#0a7f52;color:#fff;
-  padding:12px 22px;border-radius:10px;font-size:1rem;cursor:pointer;border:none;
-  transition:.25s;
+  display:inline-flex;align-items:center;justify-content:center;
+  margin:14px auto;background:#0a7f52;color:#fff;
+  padding:12px 24px;border-radius:10px;font-size:1rem;
+  cursor:pointer;border:none;transition:.25s;
 }
 .view-btn:hover{background:#066040;}
 
-/* DINING SECTION */
-#dining-section{
-  display:none;
-  opacity:0;
-  transform:translateY(20px);
-  transition:.45s ease;
-  background:#f5f7f2;
-  padding:40px 20px 60px;
-}
-#dining-section.show{
-  display:block;
-  opacity:1;transform:translateY(0);
-}
-#dining-section h2{text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650;}
+/* SECTION DEFAULTS */
+section{max-width:1000px;margin:auto;}
 
+/* MENU GRID */
 .meal-grid{
-  max-width:960px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:24px;
+  max-width:960px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:24px;padding-bottom:20px;
 }
-@media(max-width:600px){
-  .meal-grid{grid-template-columns:1fr;}
-}
+@media(max-width:600px){.meal-grid{grid-template-columns:1fr;}}
 
-/* Minimal Cards */
+/* CARD STYLE */
 .meal-card{
-  background:#fff;
-  border-radius:14px;
-  box-shadow:0 6px 18px rgba(0,0,0,.12);
-  padding:28px 22px;
-  text-align:center;
-  cursor:pointer;
-  transition:.3s;
+  background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.12);
+  padding:28px 22px;text-align:center;transition:.3s;cursor:pointer;
 }
 .meal-card:hover{transform:translateY(-4px);}
 .meal-card h3{font-size:1.25rem;font-weight:700;margin-bottom:6px;}
 .meal-card p{font-size:.9rem;opacity:.75;}
 
-/* NEW — Bottom Navigation Bar */
+/* DINING SECTION */
+#dining-section{
+  display:none;opacity:0;transform:translateY(20px);
+  transition:.45s ease;padding:40px 20px 60px;
+}
+#dining-section.show{display:block;opacity:1;transform:translateY(0);}
+#dining-section h2{text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650;}
+
+/* SLEEP SECTION */
+#sleep-section{
+  display:none;opacity:0;transform:translateY(20px);
+  transition:.45s ease;padding:40px 20px 60px;
+}
+#sleep-section h2{text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650;}
+
+/* BOTTOM NAV */
 .bottom-nav{
-  position:fixed;
-  bottom:15px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#ffffff;
-  display:flex;
-  gap:14px;
-  padding:10px 18px;
-  border-radius:40px;
-  box-shadow:0 6px 20px rgba(0,0,0,.10);
-  z-index:999;
+  position:fixed;bottom:15px;left:50%;transform:translateX(-50%);
+  background:#fff;display:flex;gap:12px;padding:10px 18px;border-radius:40px;
+  box-shadow:0 6px 20px rgba(0,0,0,.10);z-index:999;
 }
 .bottom-nav button{
-  background:#0a7f52;
-  color:#fff;
-  border:none;
-  padding:10px 16px;
-  border-radius:30px;
-  font-size:.8rem;
-  cursor:pointer;
-  transition:.3s;
+  background:#0a7f52;color:#fff;border:none;
+  padding:9px 14px;border-radius:30px;font-size:.8rem;
+  cursor:pointer;transition:.3s;
 }
 .bottom-nav button:hover{background:#066040;}
 </style>
@@ -111,13 +96,11 @@ body{
 <section class="hero">
   <h2>🍃 Oasis Rooftop Dining</h2>
   <p>Order via Zomato. Enjoy it on our 4th floor terrace.</p>
-  <div style="text-align:center;">
-    <button class="view-btn" onclick="showDining()">View Menu 🍽</button>
-  </div>
+  <button class="view-btn" onclick="showDining()">View Menu 🍽</button>
 </section>
 
-<!-- Separate Sleep Button -->
-<div style="text-align:center;margin:20px 0;">
+<!-- SLEEP CTA BELOW HERO -->
+<div style="text-align:center;margin:25px 0;">
   <button class="view-btn" onclick="showSleep()">Explore Sleep Rituals 🌙</button>
 </div>
 
@@ -133,8 +116,8 @@ body{
 </section>
 
 <!-- SLEEP SECTION -->
-<section id="sleep-section" style="display:none;opacity:0;transform:translateY(20px);transition:.45s ease;padding:40px 20px;background:#f5f7f2;">
-  <h2 style="text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650;">Sleep Rituals 🌙</h2>
+<section id="sleep-section">
+  <h2>Sleep Rituals 🌙</h2>
 
   <div class="meal-grid">
     <div class="meal-card"><h3>Herbal Tea Wind Down 🍵</h3><p>Chamomile • Lemongrass</p></div>
@@ -148,7 +131,7 @@ body{
   </div>
 </section>
 
-<!-- 🔥 Bottom Navigation Bar -->
+<!-- BOTTOM NAV -->
 <div class="bottom-nav">
   <button onclick="showDining()">Eat</button>
   <button onclick="showSleep()">Sleep</button>
@@ -157,30 +140,27 @@ body{
 </div>
 
 <script>
-/* OPEN DINING */
+/* DINING VIEW */
 function showDining(){
-  const s=document.getElementById("dining-section");
-  s.style.display="block";
-  setTimeout(()=>s.classList.add("show"),80);
+  let s=document.getElementById("dining-section");
+  s.style.display="block";setTimeout(()=>s.classList.add("show"),80);
   window.scrollTo({top:s.offsetTop-40,behavior:"smooth"});
 }
 
-/* SHOW SLEEP */
+/* SLEEP VIEW */
 function showSleep(){
-  const s=document.getElementById("sleep-section");
-  s.style.display="block";
-  setTimeout(()=>s.style.opacity="1",80);
+  let s=document.getElementById("sleep-section");
+  s.style.display="block";setTimeout(()=>s.style.opacity="1",80);
   window.scrollTo({top:s.offsetTop-40,behavior:"smooth"});
 }
 function closeSleep(){
-  const s=document.getElementById("sleep-section");
-  s.style.opacity="0";
-  setTimeout(()=>s.style.display="none",300);
+  let s=document.getElementById("sleep-section");
+  s.style.opacity="0";setTimeout(()=>s.style.display="none",300);
 }
 
-/* Placeholders for future pages */
-function showRelax(){ alert("Relax · Coming soon 🌿"); }
-function showStyle(){ alert("Style · Coming soon 👗"); }
+/* FUTURE PAGES */
+function showRelax(){ alert("Relax Rituals Coming Soon 🌿"); }
+function showStyle(){ alert("Style Rituals Coming Soon 👗"); }
 </script>
 
 </body>
