@@ -7,21 +7,15 @@
 
 <style>
 body{
-  margin:0;
-  font-family:system-ui;
-  background:#f5f7f2;
+  margin:0;font-family:system-ui;background:#f5f7f2;
 }
 
-/* HERO SECTION */
+/******** HERO ********/
 .hero{
-  position:relative;
-  height:200px;
+  position:relative;height:200px;
   background:url('images/hero/hero-oasis-exterior.webp') center/cover no-repeat;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  padding:20px;
-  color:#fff;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:20px;color:#fff;
 }
 .hero::after{
   content:"";position:absolute;top:0;left:0;width:100%;height:100%;
@@ -31,19 +25,15 @@ body{
 .hero h2{font-size:1.7rem;margin:0 0 6px;font-weight:600;text-shadow:0 4px 14px rgba(0,0,0,.6);}
 .hero p{margin:0 0 14px;opacity:.9;text-shadow:0 3px 10px rgba(0,0,0,.7);}
 
-/* BUTTON STYLE */
+/*** BUTTON STYLE ***/
 .view-btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  margin:14px auto;background:#0a7f52;color:#fff;
-  padding:12px 24px;border-radius:10px;font-size:1rem;
-  cursor:pointer;border:none;transition:.25s;
+  display:inline-flex;justify-content:center;align-items:center;
+  margin:auto;background:#0a7f52;color:#fff;padding:12px 24px;
+  border-radius:10px;font-size:1rem;border:none;cursor:pointer;transition:.25s;
 }
 .view-btn:hover{background:#066040;}
 
-/* SECTION DEFAULTS */
-section{max-width:1000px;margin:auto;}
-
-/* MENU GRID */
+/******** GRID ********/
 .meal-grid{
   max-width:960px;margin:0 auto;
   display:grid;grid-template-columns:repeat(2,1fr);
@@ -51,35 +41,29 @@ section{max-width:1000px;margin:auto;}
 }
 @media(max-width:600px){.meal-grid{grid-template-columns:1fr;}}
 
-/* CARD STYLE */
 .meal-card{
-  background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.12);
-  padding:28px 22px;text-align:center;transition:.3s;cursor:pointer;
+  background:#fff;padding:28px 22px;
+  border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.12);
+  text-align:center;cursor:pointer;transition:.3s;
 }
 .meal-card:hover{transform:translateY(-4px);}
 .meal-card h3{font-size:1.25rem;font-weight:700;margin-bottom:6px;}
-.meal-card p{font-size:.9rem;opacity:.75;}
+.meal-card p{opacity:.8;font-size:.9rem}
 
-/* DINING SECTION */
-#dining-section{
+/*** SECTIONS ***/
+#dining-section,#sleep-section{
   display:none;opacity:0;transform:translateY(20px);
-  transition:.45s ease;padding:40px 20px 60px;
+  transition:.45s;padding:40px 20px;
 }
-#dining-section.show{display:block;opacity:1;transform:translateY(0);}
-#dining-section h2{text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650;}
+#dining-section.show{opacity:1;transform:translateY(0);}
+#sleep-section.show{opacity:1;transform:translateY(0);}
+section h2{text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650;}
 
-/* SLEEP SECTION */
-#sleep-section{
-  display:none;opacity:0;transform:translateY(20px);
-  transition:.45s ease;padding:40px 20px 60px;
-}
-#sleep-section h2{text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650;}
-
-/* BOTTOM NAV */
+/******** FIXED BOTTOM NAV ********/
 .bottom-nav{
   position:fixed;bottom:15px;left:50%;transform:translateX(-50%);
   background:#fff;display:flex;gap:12px;padding:10px 18px;border-radius:40px;
-  box-shadow:0 6px 20px rgba(0,0,0,.10);z-index:999;
+  box-shadow:0 6px 20px rgba(0,0,0,.12);z-index:999;
 }
 .bottom-nav button{
   background:#0a7f52;color:#fff;border:none;
@@ -87,6 +71,7 @@ section{max-width:1000px;margin:auto;}
   cursor:pointer;transition:.3s;
 }
 .bottom-nav button:hover{background:#066040;}
+
 </style>
 </head>
 
@@ -99,39 +84,37 @@ section{max-width:1000px;margin:auto;}
   <button class="view-btn" onclick="showDining()">View Menu 🍽</button>
 </section>
 
-<!-- SLEEP CTA BELOW HERO -->
-<div style="text-align:center;margin:25px 0;">
+<!-- Sleep CTA stays OUTSIDE dining -->
+<div style="text-align:center;margin:30px 0;">
   <button class="view-btn" onclick="showSleep()">Explore Sleep Rituals 🌙</button>
 </div>
 
-<!-- DINING MENU -->
+<!-- EAT SECTION -->
 <section id="dining-section">
   <h2>Our Menu</h2>
   <div class="meal-grid">
     <div class="meal-card"><h3>Lunch Plates 🍲</h3><p>Balanced bowls & meals</p></div>
     <div class="meal-card"><h3>Mid-Day Snacks ☕</h3><p>Coffee, fries & bites</p></div>
     <div class="meal-card"><h3>Dinner Meals 🍛</h3><p>Warm mains & grills</p></div>
-    <div class="meal-card"><h3>Fine Dine ✨</h3><p>Pasta, sizzlers & ambience</p></div>
+    <div class="meal-card"><h3>Fine Dine ✨</h3><p>Pasta • Sizzlers • Ambience</p></div>
   </div>
 </section>
 
 <!-- SLEEP SECTION -->
 <section id="sleep-section">
   <h2>Sleep Rituals 🌙</h2>
-
   <div class="meal-grid">
-    <div class="meal-card"><h3>Herbal Tea Wind Down 🍵</h3><p>Chamomile • Lemongrass</p></div>
-    <div class="meal-card"><h3>Aromatherapy 🌾</h3><p>Lavender diffuser • Calm oils</p></div>
-    <div class="meal-card"><h3>Candle Light Hour 🕯</h3><p>Warm glow • Low lux ambience</p></div>
-    <div class="meal-card"><h3>Breath + Stretch 😮‍💨</h3><p>4-7-8 breathing routine</p></div>
+    <div class="meal-card"><h3>Herbal Tea 🍵</h3><p>Chamomile • Lemongrass</p></div>
+    <div class="meal-card"><h3>Aromatherapy 🌾</h3><p>Lavender diffuser</p></div>
+    <div class="meal-card"><h3>Candle Hour 🕯</h3><p>Warm golden ambience</p></div>
+    <div class="meal-card"><h3>Breath + Stretch 😮‍💨</h3><p>4-7-8 routine for calm sleep</p></div>
   </div>
-
   <div style="text-align:center;margin-top:25px;">
     <button class="view-btn" onclick="closeSleep()">Close ✕</button>
   </div>
 </section>
 
-<!-- BOTTOM NAV -->
+<!-- FIXED NAV BAR -->
 <div class="bottom-nav">
   <button onclick="showDining()">Eat</button>
   <button onclick="showSleep()">Sleep</button>
@@ -140,27 +123,26 @@ section{max-width:1000px;margin:auto;}
 </div>
 
 <script>
-/* DINING VIEW */
 function showDining(){
   let s=document.getElementById("dining-section");
-  s.style.display="block";setTimeout(()=>s.classList.add("show"),80);
+  s.style.display="block";setTimeout(()=>s.classList.add("show"),70);
   window.scrollTo({top:s.offsetTop-40,behavior:"smooth"});
 }
 
-/* SLEEP VIEW */
 function showSleep(){
   let s=document.getElementById("sleep-section");
-  s.style.display="block";setTimeout(()=>s.style.opacity="1",80);
+  s.style.display="block";setTimeout(()=>s.classList.add("show"),70);
   window.scrollTo({top:s.offsetTop-40,behavior:"smooth"});
 }
+
 function closeSleep(){
   let s=document.getElementById("sleep-section");
-  s.style.opacity="0";setTimeout(()=>s.style.display="none",300);
+  s.classList.remove("show");
+  setTimeout(()=>s.style.display="none",300);
 }
 
-/* FUTURE PAGES */
-function showRelax(){ alert("Relax Rituals Coming Soon 🌿"); }
-function showStyle(){ alert("Style Rituals Coming Soon 👗"); }
+function showRelax(){alert("Relax Rituals Coming Soon 🌿");}
+function showStyle(){alert("Style Rituals Coming Soon 👗");}
 </script>
 
 </body>
