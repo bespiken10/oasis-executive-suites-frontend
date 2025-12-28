@@ -172,6 +172,33 @@ function showDining(){
 
   window.scrollTo({top:section.offsetTop-40,behavior:"smooth"});
 }
+  <script>
+function showDining(){
+  const section=document.getElementById("dining-section");
+  const button=document.querySelector(".view-btn");
+
+  section.style.display="block";
+  setTimeout(()=>section.classList.add("show"),50);
+  button.style.display="none";
+  window.scrollTo({top:section.offsetTop-40,behavior:"smooth"});
+}
+
+/* NEW — Show Sleep Section */
+function showSleep(){
+  const sleep=document.getElementById("sleep-section");
+  sleep.style.display="block";
+  setTimeout(()=> sleep.style.opacity="1",80);
+  window.scrollTo({top:sleep.offsetTop-40,behavior:"smooth"});
+}
+
+/* Close Sleep Section */
+function closeSleep(){
+  const sleep=document.getElementById("sleep-section");
+  sleep.style.opacity="0";
+  setTimeout(()=> sleep.style.display="none",300);
+}
+</script>
+
 </script>
 
 </body>
