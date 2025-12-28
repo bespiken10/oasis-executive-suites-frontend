@@ -30,27 +30,40 @@ nav{max-width:1100px;margin:auto;padding:1rem 1.5rem;display:flex;justify-conten
 .carousel-dot{width:9px;height:9px;background:#fff;border-radius:50%;opacity:.5;cursor:pointer;}
 .carousel-dot.active{opacity:1;}
 
-.experience-section{text-align:center;padding:70px 20px;background:#fafafa;}
-.experience-section h2{font-size:1.8rem;margin-bottom:12px;}
+/* =================== NEW ROOFTOP HUB =================== */
+.rooftop-section{text-align:center;padding:70px 20px;background:#fafafa;}
+.rooftop-section h2{font-size:1.9rem;margin-bottom:10px;font-weight:600;}
+.rooftop-section p{opacity:.75;margin-top:4px;}
 
-.rooftop-mini-buttons{
-display:flex;justify-content:center;gap:14px;margin-top:26px;flex-wrap:wrap;
+.activities-grid{
+  max-width:1000px;margin:40px auto;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:26px;padding:0 20px;
 }
-.roof-btn{
-background:#0a7f52;color:#fff;padding:10px 22px;border-radius:8px;border:none;
-font-size:.95rem;cursor:pointer;transition:.3s;
+.activity-card{
+ background:#fff;padding:30px 20px;border-radius:14px;text-align:center;
+ box-shadow:0 6px 20px rgba(0,0,0,.07);cursor:pointer;transition:.3s;
 }
-.roof-btn:hover{background:#066040;}
+.activity-card:hover{transform:translateY(-5px);}
+.activity-card h3{font-size:1.35rem;margin-bottom:6px;}
+.activity-card p{opacity:.75;font-size:.92rem;margin-bottom:14px;color:#333;}
+.activity-card button{
+ padding:10px 22px;border-radius:10px;border:none;background:#0a7f52;color:#fff;
+ cursor:pointer;transition:.3s;font-size:.88rem;
+}
+.activity-card button:hover{background:#066040;}
 
-.sleep-section{max-width:900px;margin:50px auto;padding:20px;}
-.sleep-section h2{text-align:center;font-size:1.7rem;margin-bottom:26px;}
+/* =================== EAT SECTION =================== */
+#eat-section{display:none;opacity:0;transition:.45s;padding:50px 20px;max-width:900px;margin:auto;}
+#eat-section.show{display:block;opacity:1;}
+.nav-back{text-align:center;margin-bottom:20px;}
+.nav-back button{padding:9px 14px;background:#000;color:#fff;border:none;border-radius:6px;cursor:pointer;}
 
+/* =================== SLEEP SECTION =================== */
+#sleep-section{display:none;opacity:0;transition:.45s;padding:50px 20px;max-width:900px;margin:auto;}
+#sleep-section.show{display:block;opacity:1;}
 .ritual-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
-.ritual-card{background:white;padding:20px;border-radius:12px;text-align:center;
-box-shadow:0 6px 18px rgba(0,0,0,.08);}
-.ritual-card h3{margin-bottom:6px;font-size:1.1rem;}
-.ritual-card p{font-size:.9rem;color:#666;margin-top:6px;}
-
+.ritual-card{background:white;padding:20px;border-radius:12px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.08);}
 </style>
 </head>
 <body>
@@ -81,29 +94,74 @@ box-shadow:0 6px 18px rgba(0,0,0,.08);}
 </div>
 </section>
 
-<section class="experience-section">
-<h2>Activities at The Rooftop 🍃</h2>
-<p style="opacity:.8;">Eat • Sleep • Relax • Style.</p>
+<!-- ⭐ NEW ROOFTOP ACTIVITIES HUB -->
+<section class="rooftop-section">
+<h2>Explore Activities at the Rooftop 🍃</h2>
+<p>Choose how you want to spend your evening.</p>
 
-<div class="rooftop-mini-buttons">
-<button class="roof-btn" onclick="openFood()">Eat</button>
-<button class="roof-btn" onclick="scrollToSleep()">Sleep</button>
-<button class="roof-btn" onclick="alert('Relax coming soon 🌿')">Relax</button>
-<button class="roof-btn" onclick="alert('Style coming soon 👗')">Style</button>
+<div class="activities-grid">
+  <div class="activity-card" onclick="openEat()">
+    <h3>🍽 Eat</h3>
+    <p>Warm meals. Slow mornings. Coffee that feels like home.</p>
+    <button>View Menu</button>
+  </div>
+
+  <div class="activity-card" onclick="openSleep()">
+    <h3>🛏 Sleep</h3>
+    <p>Deep rest. Quiet nights. Reset your energy.</p>
+    <button>Sleep Rituals</button>
+  </div>
+
+  <div class="activity-card" onclick="alert('Relax section coming soon 🌿')">
+    <h3>🌿 Relax</h3>
+    <p>Rooftop breeze. Slow evenings. Let go.</p>
+    <button>Coming Soon</button>
+  </div>
+
+  <div class="activity-card" onclick="alert('Style corner coming soon 👗')">
+    <h3>👗 Style</h3>
+    <p>Dress well. Step out confident.</p>
+    <button>Coming Soon</button>
+  </div>
 </div>
 </section>
 
-<section class="sleep-section" id="sleep-section">
-<h2>Sleep Rituals 🌙</h2>
+<!-- EAT SECTION -->
+<section id="eat-section">
+<div class="nav-back"><button onclick="closeSections()">← Back</button></div>
+<h2 style="text-align:center;margin-bottom:25px;">Dining Menu 🍽</h2>
+
 <div class="ritual-grid">
-<div class="ritual-card"><h3>Herbal Tea 🍵</h3><p>Chamomile and lemongrass to slow the mind.</p></div>
-<div class="ritual-card"><h3>Aromatherapy 🌾</h3><p>Lavender oil for calm breathing and rest.</p></div>
-<div class="ritual-card"><h3>Candle Hour 🕯</h3><p>Warm light. Gentle quiet. Screens away.</p></div>
-<div class="ritual-card"><h3>Night Stretch 😮‍💨</h3><p>4-7-8 routine for softer sleep onset.</p></div>
+  <div class="ritual-card"><h3>Lunch Plates</h3><p>Comfort meals & bowls</p></div>
+  <div class="ritual-card"><h3>Snacks & Coffee</h3><p>Fries • Sandwich • Tea</p></div>
+  <div class="ritual-card"><h3>Dinner Meals</h3><p>Home-style warm plates</p></div>
+  <div class="ritual-card"><h3>Fine Dine</h3><p>Sizzlers • Pasta</p></div>
 </div>
 </section>
 
-<!--  🔻 STOP HERE. Reply "Send Part 2" for remainder (Suites → Footer → JS) --><!-- ================= Suites ================= -->
+<!-- SLEEP SECTION -->
+<section id="sleep-section">
+<div class="nav-back"><button onclick="closeSections()">← Back</button></div>
+<h2 style="text-align:center;margin-bottom:25px;">Sleep Rituals 🌙</h2>
+
+<div class="ritual-grid">
+<div class="ritual-card"><h3>Herbal Tea 🍵</h3><p>Chamomile • Lemongrass</p></div>
+<div class="ritual-card"><h3>Aromatherapy 🌾</h3><p>Lavender diffuser</p></div>
+<div class="ritual-card"><h3>Candle Hour 🕯</h3><p>Warm glow ambience</p></div>
+<div class="ritual-card"><h3>Night Stretch 😮‍💨</h3><p>4-7-8 breath routine</p></div>
+</div>
+</section>
+
+<script>
+function closeSections(){
+  document.getElementById("eat-section").classList.remove("show");
+  document.getElementById("sleep-section").classList.remove("show");
+}
+function openEat(){ closeSections();document.getElementById("eat-section").classList.add("show"); }
+function openSleep(){ closeSections();document.getElementById("sleep-section").classList.add("show"); }
+</script>
+
+<!-- ================= Suites → Footer → JS continues here... -->
 <section class="suites" id="suites" style="background:#fff;padding:60px 20px;">
 <div style="max-width:1100px;margin:auto;">
 <h2 style="font-size:1.6rem;margin-bottom:14px;">Choose a suite that fits your stay</h2>
