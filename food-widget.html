@@ -63,7 +63,7 @@ body{
   .meal-grid{grid-template-columns:1fr;}
 }
 
-/* MINIMAL MENU CARDS */
+/* Minimal Cards */
 .meal-card{
   background:#fff;
   border-radius:14px;
@@ -76,6 +76,32 @@ body{
 .meal-card:hover{transform:translateY(-4px);}
 .meal-card h3{font-size:1.25rem;font-weight:700;margin-bottom:6px;}
 .meal-card p{font-size:.9rem;opacity:.75;}
+
+/* NEW — Bottom Navigation Bar */
+.bottom-nav{
+  position:fixed;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#ffffff;
+  display:flex;
+  gap:14px;
+  padding:10px 18px;
+  border-radius:40px;
+  box-shadow:0 6px 20px rgba(0,0,0,.10);
+  z-index:999;
+}
+.bottom-nav button{
+  background:#0a7f52;
+  color:#fff;
+  border:none;
+  padding:10px 16px;
+  border-radius:30px;
+  font-size:.8rem;
+  cursor:pointer;
+  transition:.3s;
+}
+.bottom-nav button:hover{background:#066040;}
 </style>
 </head>
 
@@ -90,15 +116,14 @@ body{
   </div>
 </section>
 
-<!-- BUTTON UNDER HERO -->
+<!-- Separate Sleep Button -->
 <div style="text-align:center;margin:20px 0;">
   <button class="view-btn" onclick="showSleep()">Explore Sleep Rituals 🌙</button>
 </div>
 
-<!-- DINING SECTION -->
+<!-- DINING MENU -->
 <section id="dining-section">
   <h2>Our Menu</h2>
-
   <div class="meal-grid">
     <div class="meal-card"><h3>Lunch Plates 🍲</h3><p>Balanced bowls & meals</p></div>
     <div class="meal-card"><h3>Mid-Day Snacks ☕</h3><p>Coffee, fries & bites</p></div>
@@ -112,10 +137,10 @@ body{
   <h2 style="text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650;">Sleep Rituals 🌙</h2>
 
   <div class="meal-grid">
-    <div class="meal-card"><h3>Herbal Tea Wind Down 🍵</h3><p>Chamomile • Lemongrass • Soothing brew</p></div>
+    <div class="meal-card"><h3>Herbal Tea Wind Down 🍵</h3><p>Chamomile • Lemongrass</p></div>
     <div class="meal-card"><h3>Aromatherapy 🌾</h3><p>Lavender diffuser • Calm oils</p></div>
     <div class="meal-card"><h3>Candle Light Hour 🕯</h3><p>Warm glow • Low lux ambience</p></div>
-    <div class="meal-card"><h3>Breath + Stretch 😮‍💨</h3><p>4-7-8 breathing • Relax body</p></div>
+    <div class="meal-card"><h3>Breath + Stretch 😮‍💨</h3><p>4-7-8 breathing routine</p></div>
   </div>
 
   <div style="text-align:center;margin-top:25px;">
@@ -123,27 +148,39 @@ body{
   </div>
 </section>
 
+<!-- 🔥 Bottom Navigation Bar -->
+<div class="bottom-nav">
+  <button onclick="showDining()">Eat</button>
+  <button onclick="showSleep()">Sleep</button>
+  <button onclick="showRelax()">Relax</button>
+  <button onclick="showStyle()">Style</button>
+</div>
+
 <script>
-/* MENU */
+/* OPEN DINING */
 function showDining(){
-  const section=document.getElementById("dining-section");
-  section.style.display="block";
-  setTimeout(()=>section.classList.add("show"),60);
-  window.scrollTo({top:section.offsetTop-40,behavior:"smooth"});
+  const s=document.getElementById("dining-section");
+  s.style.display="block";
+  setTimeout(()=>s.classList.add("show"),80);
+  window.scrollTo({top:s.offsetTop-40,behavior:"smooth"});
 }
 
-/* SLEEP */
+/* SHOW SLEEP */
 function showSleep(){
-  const sleep=document.getElementById("sleep-section");
-  sleep.style.display="block";
-  setTimeout(()=>sleep.style.opacity="1",80);
-  window.scrollTo({top:sleep.offsetTop-40,behavior:"smooth"});
+  const s=document.getElementById("sleep-section");
+  s.style.display="block";
+  setTimeout(()=>s.style.opacity="1",80);
+  window.scrollTo({top:s.offsetTop-40,behavior:"smooth"});
 }
 function closeSleep(){
-  const sleep=document.getElementById("sleep-section");
-  sleep.style.opacity="0";
-  setTimeout(()=>sleep.style.display="none",300);
+  const s=document.getElementById("sleep-section");
+  s.style.opacity="0";
+  setTimeout(()=>s.style.display="none",300);
 }
+
+/* Placeholders for future pages */
+function showRelax(){ alert("Relax · Coming soon 🌿"); }
+function showStyle(){ alert("Style · Coming soon 👗"); }
 </script>
 
 </body>
