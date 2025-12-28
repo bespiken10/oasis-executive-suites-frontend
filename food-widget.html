@@ -6,403 +6,138 @@
 <title>Oasis Rooftop Dining</title>
 
 <style>
-  body{
-    margin:0;
-    font-family:system-ui;
-    background:#f5f7f2;
-  }
-
-
-  /* HERO */
-  .hero{
-    position:relative;
-    height:220px;
-    background:url('images/hero/hero-oasis-exterior.webp') center/cover no-repeat;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    padding:20px;
-    color:#fff;
-  }
-
-  .hero::after{
-    content:"";
-    position:absolute;
-    top:0;left:0;width:100%;height:100%;
-    background:rgba(0,0,0,.28);
-    z-index:0;
-  }
-
-  .hero h2, .hero p, .view-btn{
-    position:relative;
-    z-index:1;
-  }
-
-  .hero h2{
-    font-size:1.7rem;
-    margin:0 0 6px;
-    font-weight:600;
-    text-shadow:0 4px 14px rgba(0,0,0,.6);
-  }
-
-  .hero p{
-    margin:0 0 14px;
-    opacity:.9;
-    text-shadow:0 3px 10px rgba(0,0,0,.7);
-  }
-.hero{
-   height:200px;        /* smaller hero */
-}
-
-@media(max-width:600px){
-   .hero{ height:170px; }
-}
-
-  .view-btn{
-    display:inline-block;
-    margin:16px auto;
-    background:#0a7f52;
-    color:#fff;
-    padding:12px 22px;
-    border-radius:10px;
-    font-size:1rem;
-    cursor:pointer;
-    text-align:center;
-    border:none;
-    transition:.25s;
-  }
-
-  .view-btn:hover{
-    background:#066040;
-  }
-.hero{
-    height:190px;                 /* Slightly shorter */
-    padding-bottom:12px;
-}
-
-#dining-section{
-    margin-top:-12px;             /* Pull menu a bit closer to hero */
-    padding-top:20px;
-}
-
-#dining-section h2{
-    margin-bottom:26px;           /* Better title spacing */
-    font-size:1.6rem;
-    font-weight:650;
-}
-
-.meal-grid{
-    max-width:900px;
-    margin:0 auto;
-    gap:22px;
-}
-
-.meal-card img{
-    height:135px;                  /* More visual appeal */
-}
-
-<section id="dining-section">
-    <h2>Our Menu</h2>
-
-    <div class="meal-grid">
-
-        <div class="meal-card simple">
-            <h3>Lunch Plates 🍲</h3>
-            <p>Balanced bowls & meals</p>
-        </div>
-
-        <div class="meal-card simple">
-            <h3>Mid-Day Snacks ☕</h3>
-            <p>Coffee, fries & bites</p>
-        </div>
-
-        <div class="meal-card simple">
-            <h3>Dinner Meals 🍛</h3>
-            <p>Warm mains & grills</p>
-        </div>
-
-        <div class="meal-card simple">
-            <h3>Fine Dine ✨</h3>
-            <p>Pasta, sizzlers & ambience</p>
-        </div>
-
-    </div>
-</section>
-
-
-  /* DINING SECTION */
-  #dining-section{
-    display:none;               /* hidden until clicked */
-    background:#f5f7f2;         /* FIX: solid background */
-    padding:40px 20px 60px;
-  }
-
-  #dining-section h2{
-    text-align:center;
-    margin-bottom:20px;
-    color:#222;
-  }
-
-  .meal-grid{
-    max-width:1100px;
-    margin:0 auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-  }
-
-  .meal-card{
-    background:#fff;
-    border-radius:14px;
-    box-shadow:0 6px 18px rgba(0,0,0,.12);
-    overflow:hidden;
-    text-align:center;
-    transition:.25s;
-  }
-
-  .meal-card:hover{transform:translateY(-4px);}
-  .meal-card img{width:100%;height:120px;object-fit:cover;}
-  .meal-card h3{margin:10px 0 4px;font-size:1.05rem;font-weight:600;}
-  .meal-card p{margin:0 0 12px;font-size:.86rem;opacity:.8;}
-
-  @media(max-width:600px){
-    .meal-grid{grid-template-columns:1fr;}
-    .hero{height:200px;}
-  }
-  .meal-card{
-    background:#fff;
-    border-radius:14px;
-    box-shadow:0 6px 18px rgba(0,0,0,.12);
-    overflow:hidden;
-    text-align:center;
-    cursor:pointer;
-    transition:.35s;
-    opacity:0;
-    transform:translateY(10px);
-}
-
-/* Reveal when visible */
-#dining-section.show .meal-card{
-    opacity:1;
-    transform:translateY(0);
-}
-#dining-section{
-    opacity:0;
-    transform:translateY(20px);
-    transition:opacity .4s ease, transform .4s ease;
-    display:none;
-}
-
-#dining-section.show{
-    opacity:1;
-    transform:translateY(0);
-}
-/* Improve layout spacing */
-#dining-section{
-    padding-top: 20px;      /* reduce top space */
-    margin-top: -10px;      /* pull section closer to hero */
-}
-
-/* Center & size menu container */
-.meal-grid{
-    max-width: 960px;
-    margin: 0 auto;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:24px;
-    padding-bottom:40px;
-}
-
-/* Reduce blank white space height */
 body{
-    background:#f5f7f2;
+  margin:0;
+  font-family:system-ui;
+  background:#f5f7f2;
 }
-.meal-card img{
-    width:100%;
-    height:150px;
-    object-fit:cover;
-    transition:.3s ease;
+
+/* HERO SECTION */
+.hero{
+  position:relative;
+  height:200px;
+  background:url('images/hero/hero-oasis-exterior.webp') center/cover no-repeat;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:20px;
+  color:#fff;
 }
-.meal-card:hover img{
-    transform:scale(1.05);
+.hero::after{
+  content:"";position:absolute;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,.28);z-index:0;
 }
+.hero h2,.hero p,.view-btn{position:relative;z-index:1;}
+.hero h2{font-size:1.7rem;margin:0 0 6px;font-weight:600;text-shadow:0 4px 14px rgba(0,0,0,.6);}
+.hero p{margin:0 0 14px;opacity:.9;text-shadow:0 3px 10px rgba(0,0,0,.7);}
+.view-btn{
+  display:inline-block;margin:16px auto;background:#0a7f52;color:#fff;
+  padding:12px 22px;border-radius:10px;font-size:1rem;cursor:pointer;border:none;
+  transition:.25s;
+}
+.view-btn:hover{background:#066040;}
+
+/* DINING SECTION */
 #dining-section{
-    opacity:0;
-    transform:translateY(20px);
-    transition:0.5s ease;
+  display:none;
+  opacity:0;
+  transform:translateY(20px);
+  transition:.45s ease;
+  background:#f5f7f2;
+  padding:40px 20px 60px;
+  margin-top:-10px;
 }
-
 #dining-section.show{
-    opacity:1;
-    transform:translateY(0);
+  display:block;
+  opacity:1;transform:translateY(0);
 }
-<button class="close-menu" onclick="closeDining()">✕ Close</button>
-.close-menu{
-    background:none;
-    border:none;
-    font-size:20px;
-    opacity:.6;
-    cursor:pointer;
-    margin:auto;
-    display:block;
-    margin-top:18px;
-}
-function closeDining(){
-    document.getElementById("dining-section").classList.remove("show");
-    setTimeout(()=>{
-        document.getElementById("dining-section").style.display="none";
-        document.querySelector(".view-btn").style.display="inline-block";
-    },300);
+#dining-section h2{text-align:center;margin-bottom:30px;font-size:1.6rem;font-weight:650;}
 
-    window.scrollTo({top:0,behavior:"smooth"});
-}
-/* EXPERIENCE SECTION */
-.experience-section{
-  padding:60px 20px;
-  max-width:1100px;
-  margin:auto;
-  text-align:center;
-}
-
-.exp-grid{
+.meal-grid{
+  max-width:960px;
+  margin:0 auto;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:26px;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+@media(max-width:600px){
+  .meal-grid{grid-template-columns:1fr;}
 }
 
-.exp-card{
+/* CLEAN MINIMAL MENU CARDS */
+.meal-card{
   background:#fff;
-  border-radius:18px;
-  padding:30px 22px;
-  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+  padding:28px 22px;
+  text-align:center;
+  cursor:pointer;
   transition:.3s;
 }
+.meal-card:hover{transform:translateY(-4px);}
 
-.exp-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 12px 28px rgba(0,0,0,.15);
-}
-
-.exp-card img{
-  width:80px;
-  height:80px;
-  object-fit:contain;
-  margin-bottom:12px;
-}
-
-.exp-card h3{
-  font-size:1.3rem;
+.meal-card h3{
+  font-size:1.25rem;
+  font-weight:700;
   margin-bottom:6px;
-  font-weight:600;
 }
-
-.exp-card p{
-  font-size:.95rem;
+.meal-card p{
+  font-size:.9rem;
   opacity:.75;
 }
-
-.exp-btn{
-  display:inline-block;
-  margin-top:14px;
-  background:#0a7f52;
-  color:#fff;
-  padding:10px 22px;
-  border-radius:10px;
-  font-size:.95rem;
-  text-decoration:none;
-}
-.exp-btn:hover{
-  background:#066040;
-}
-/* Clean Minimal Menu Style (No Images) */
-.meal-card.simple{
-    padding:28px 22px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    height:120px;
-}
-
-.meal-card.simple h3{
-    font-size:1.25rem;
-    margin-bottom:6px;
-    font-weight:700;
-}
-
-.meal-card.simple p{
-    font-size:.9rem;
-    opacity:.75;
-}
-
-/* Remove old image reserved spacing */
-.meal-card img{ display:none !important; }
-
 </style>
-
-   
+</head>
 
 <body>
 
-  <section class="hero">
-    <h2>🍃 Oasis Rooftop Dining</h2>
-    <p>Order via Zomato. Enjoy it on our 4th floor terrace.</p>
+<!-- HERO -->
+<section class="hero">
+  <h2>🍃 Oasis Rooftop Dining</h2>
+  <p>Order via Zomato. Enjoy it on our 4th floor terrace.</p>
+  <div style="text-align:center;">
+    <button class="view-btn" onclick="showDining()">View Menu 🍽</button>
+  </div>
+</section>
 
-    <div style="text-align:center;">
-      <button class="view-btn" onclick="showDining()">View Menu 🍽</button>
+<!-- MENU SECTION (minimal version) -->
+<section id="dining-section">
+  <h2>Our Menu</h2>
+
+  <div class="meal-grid">
+    <div class="meal-card">
+      <h3>Lunch Plates 🍲</h3>
+      <p>Balanced bowls & meals</p>
     </div>
-  </section>
 
-  <!-- Hidden dining section -->
-  <section id="dining-section">
-    <h2>Our Menu</h2>
+    <div class="meal-card">
+      <h3>Mid-Day Snacks ☕</h3>
+      <p>Coffee, fries & bites</p>
+    </div>
 
-    <div class="meal-grid">
-  <div class="meal-card">
-    <img src="/images/dining/lunch.webp" alt="Lunch Plates">
-    <h3>Lunch Plates 🍲</h3>
-    <p>Balanced bowls & meals</p>
+    <div class="meal-card">
+      <h3>Dinner Meals 🍛</h3>
+      <p>Warm mains & grills</p>
+    </div>
+
+    <div class="meal-card">
+      <h3>Fine Dine ✨</h3>
+      <p>Pasta, sizzlers & ambience</p>
+    </div>
   </div>
+</section>
 
-  <div class="meal-card">
-    <img src="/images/dining/snacks.webp" alt="Mid-Day Snacks">
-    <h3>Mid-Day Snacks ☕</h3>
-    <p>Coffee, fries & bites</p>
-  </div>
-
-  <div class="meal-card">
-    <img src="/images/dining/dinner.webp" alt="Dinner Meals">
-    <h3>Dinner Meals 🍛</h3>
-    <p>Warm mains & grills</p>
-  </div>
-
-  <div class="meal-card">
-    <img src="/images/dining/finedine.webp" alt="Fine Dine">
-    <h3>Fine Dine ✨</h3>
-    <p>Pasta, sizzlers & ambience</p>
-  </div>
-</div>
-
-  </section>
-
-  <script>
+<script>
 function showDining(){
-    const section = document.getElementById("dining-section");
-    const button  = document.querySelector(".view-btn");
+  const section=document.getElementById("dining-section");
+  const button=document.querySelector(".view-btn");
 
-    section.style.display = "block";       // show dining section
-    button.style.display  = "none";        // hide View Menu button
+  section.style.display="block";
+  setTimeout(()=>section.classList.add("show"),50);
+  button.style.display="none";
 
-    // Fade-in animation
-    setTimeout(()=> section.classList.add("show"),150);
-
-    window.scrollTo({
-        top: section.offsetTop - 40,
-        behavior: "smooth"
-    });
+  window.scrollTo({top:section.offsetTop-40,behavior:"smooth"});
 }
 </script>
 
 </body>
-
 </html>
