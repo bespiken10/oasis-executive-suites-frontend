@@ -37,6 +37,3 @@ async function loadReels() {
       "<p style='text-align:center;color:#888'>Unable to load reels</p>";
   }
 }
-
-loadReels();
-<script src="reels.js"></script>
