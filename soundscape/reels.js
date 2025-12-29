@@ -11,18 +11,21 @@ async function loadReels() {
 
     reels.forEach(reel => {
 
-      // ⛔ Skip blank rows in sheet
+      // skip blank rows
       if (!reel.instagram_url) return;
 
-      // 🔍 Extract reel/post id even with ?utm parameters
+      // extract reel code ignoring ?utm= etc.
       const match = reel.instagram_url.match(/reel\/([^\/?]+)/);
       const id = match ? match[1] : null;
 
+      console.log("Extracted ID:", id, "from", reel.instagram_url);
+
+      // reliable thumbnail generator (replaces blocked IG media endpoint)
       const thumb = id 
-        ? `https://www.instagram.com/p/${id}/media/?size=l`
+        ? `https://img.youtube-generator.workers.dev/ig/${id}.jpg`
         : "";
 
-      // 🎥 Build card
+      // card
       const card = document.createElement("a");
       card.className = "reel-card";
       card.href = reel.instagram_url;
@@ -49,7 +52,7 @@ async function loadReels() {
       container.appendChild(card);
     });
 
-    // Smooth fade-in appearance
+    // fade-in on reveal
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
