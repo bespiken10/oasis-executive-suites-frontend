@@ -6,36 +6,38 @@ async function loadReels() {
     const reels = await res.json();
 
     const container = document.querySelector(".reels-grid");
-    container.innerHTML = ""; // clears "loading..."
+    container.innerHTML = ""; // clears loader
 
     reels.forEach(reel => {
 
-      // Extract Instagram Reel ID
+      // Extract Reel ID
       const match = reel.instagram_url.match(/reel\/([^/?]+)/);
       const id = match ? match[1] : null;
 
-      // Auto thumbnail pull (Instagram public thumbnail trick)
+      // Auto-thumbnail source
       const thumb = id 
         ? `https://www.instagram.com/p/${id}/media/?size=l`
         : "";
 
-      // Card
+      // Create card
       const card = document.createElement("a");
       card.className = "reel-card";
       card.href = reel.instagram_url;
       card.target = "_blank";
+      card.rel = "noopener";
 
       card.innerHTML = `
         <div class="reel-thumb" 
           style="
             background:url('${thumb}') center/cover no-repeat;
             width:100%;
-            height:80%;
-            border-bottom:1px solid #ddd;
+            height:78%;
+            border-bottom:1px solid rgba(0,0,0,.06);
+            border-radius:12px 12px 0 0;
           ">
         </div>
 
-        <div class="reel-placeholder sans" style="padding:1.2rem;">
+        <div class="reel-placeholder sans" style="padding:1rem 1.4rem;text-align:center;">
           ${reel.Title || "Untitled"}<br>
           <small style="opacity:.7;">Tap to watch</small>
         </div>
@@ -51,5 +53,5 @@ async function loadReels() {
   }
 }
 
-// Run on page load
+// Run
 loadReels();
