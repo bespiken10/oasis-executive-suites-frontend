@@ -28,53 +28,95 @@
 }
 </script>
 
-<!-- Styles -->
+
+<!-- ------------------  STYLES  ------------------ -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--stone:#d4cfc4;--smoke:#9a958c;--deep-earth:#4a4640;--void:#2a2622;--gold:#c9a66b;--silence:#f5f3ef;}
+:root{
+ --stone:#d4cfc4;--smoke:#9a958c;--deep-earth:#4a4640;--void:#2a2622;
+ --gold:#c9a66b;--silence:#f5f3ef;
+}
 
 body{font-family:'Georgia',serif;background:var(--silence);color:var(--deep-earth);line-height:1.8;overflow-x:hidden;}
 h1,h2,h3{font-family:'Garamond','Georgia',serif;font-weight:300;letter-spacing:.05em;}
 .sans{-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;letter-spacing:.08em;}
 
-/* Smooth fade */
 section{opacity:0;transform:translateY(30px);transition:1.4s ease;}
 section.visible{opacity:1;transform:translateY(0);}
 
-/* Hero */
-.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 2rem;background:linear-gradient(135deg,var(--stone),var(--silence));}
-.hero h1{font-size:clamp(2.7rem,6vw,4.8rem);margin-bottom:1.8rem;}
-.identity-line{font-size:1.3rem;max-width:720px;margin:auto;opacity:.8;margin-bottom:2.2rem;}
-.cta-primary{padding:1.2rem 3rem;background:var(--deep-earth);color:#fff;border-radius:40px;text-decoration:none;transition:.3s;display:inline-block;}
-.cta-primary:hover{background:var(--void);}
 
-/* Tension */
+/* ------------------ HERO NEW ------------------ */
+
+.hero{
+  min-height:100vh;
+  background:url('soundscape-hero.webp') center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;position:relative;padding:6rem 2rem;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:rgba(0,0,0,0.28);
+  backdrop-filter:blur(2px);
+}
+.hero-content{
+  position:relative;color:#fff;max-width:780px;
+  opacity:0;transform:translateY(40px);
+  animation:fadeUp 1.7s ease forwards;
+}
+.hero-content h1{
+  font-size:clamp(2.7rem,6vw,4.6rem);
+  margin-bottom:1.5rem;
+}
+.hero-content .identity-line{
+  font-size:1.2rem;margin-bottom:2.2rem;opacity:.88;
+}
+.hero .cta-primary{
+  background:#f5f3ef;color:#2a2622;
+  padding:1.1rem 2.8rem;border-radius:40px;
+  text-decoration:none;font-weight:500;transition:.3s;
+}
+.hero .cta-primary:hover{
+  background:#c9a66b;color:#2a2622;
+}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+
+
+/* ------------------ CONTENT SECTIONS ------------------ */
+
 .tension{padding:7rem 2rem;max-width:1100px;margin:auto;}
 .tension-grid{margin-top:3rem;display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
 .tension-item{background:#fff;padding:2rem;border-radius:10px;box-shadow:0 5px 18px rgba(0,0,0,.06);}
 
-/* Opportunity */
 .opportunity{padding:7rem 2rem;text-align:center;max-width:900px;margin:auto;}
 .opportunity-text{font-size:1.2rem;opacity:.85;line-height:2;margin-top:2rem;}
 
-/* Offerings */
 .offers{padding:7rem 2rem;max-width:1200px;margin:auto;}
 .offers-grid{display:grid;gap:2.2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
 .offer-card{background:var(--silence);padding:2rem;border-radius:12px;transition:.4s;}
 .offer-card:hover{transform:scale(1.02);}
 
-/* Reels */
+
+/* ------------------ REELS ------------------ */
+
 .reels{padding:7rem 2rem;background:var(--stone);}
 .reels-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
-.reel-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.08);text-decoration:none;color:var(--void);}
-.reel-thumb{height:78%;background-size:cover;background-position:center;transition:.5s;}
-.reel-card:hover .reel-thumb{transform:scale(1.08);}
-.reel-placeholder{padding:1.4rem;text-align:center;opacity:.85;}
+.reel-card{
+ background:#fff;border-radius:12px;overflow:hidden;
+ box-shadow:0 6px 22px rgba(0,0,0,.08);text-decoration:none;color:var(--void);
+}
+.reel-thumb{
+ height:200px;background-size:cover;background-position:center;
+ transition:.4s;filter:brightness(.92);
+}
+.reel-card:hover .reel-thumb{transform:scale(1.05);}
+.reel-placeholder{padding:1rem 1.2rem;text-align:center;}
 
-/* Soul */
+
+/* ------------------ SOUL CALL ------------------ */
+
 .soul-call{text-align:center;padding:9rem 2rem;background:var(--void);color:#fff;}
 .soul-call h2{font-size:2.6rem;margin-bottom:2rem;color:var(--gold);}
-.cta-private{background:var(--gold);padding:1.4rem 3rem;border-radius:50px;font-size:1.2rem;text-decoration:none;color:var(--void);display:inline-block;margin-bottom:1.8rem;}
+.cta-private{background:var(--gold);padding:1.4rem 3rem;border-radius:50px;font-size:1.2rem;color:var(--void);text-decoration:none;}
 .cta-private:hover{opacity:.85;}
 .soul-ctas{margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:center;}
 .soul-cta{padding:1rem 2.4rem;border:1.8px solid var(--gold);color:var(--gold);border-radius:40px;text-decoration:none;transition:.3s;}
@@ -84,9 +126,10 @@ footer{text-align:center;padding:3rem;font-size:.9rem;background:var(--void);col
 </style>
 </head>
 
+
 <body>
 
-<!-- HERO -->
+<!-- ---------------- HERO BLOCK  ---------------- -->
 <section class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -97,55 +140,52 @@ footer{text-align:center;padding:3rem;font-size:.9rem;background:var(--void);col
 </section>
 
 
-<!-- TENSION -->
+
+<!-- ---------------- CONTENT ---------------- -->
 <section class="tension" id="tension">
-<h2 class="section-title">When the World Feels Heavy</h2>
+<h2>When the World Feels Heavy</h2>
 <div class="tension-grid">
 <div class="tension-item"><h3>Unseen</h3><p>You move through rooms like air.</p></div>
 <div class="tension-item"><h3>Stuck</h3><p>The page stays blank. The song won't come.</p></div>
-<div class="tension-item"><h3>Numb</h3><p>Feeling becomes distant. Flat.</p></div>
-<div class="tension-item"><h3>No Quiet</h3><p>Mind like traffic. No space.</p></div>
-<div class="tension-item"><h3>Wonder Lost</h3><p>The sky is just sky. Magic asleep.</p></div>
+<div class="tension-item"><h3>Numb</h3><p>Feeling becomes distant.</p></div>
+<div class="tension-item"><h3>No Quiet</h3><p>Mind like traffic.</p></div>
+<div class="tension-item"><h3>Wonder Lost</h3><p>Magic asleep.</p></div>
 <div class="tension-item"><h3>Always On</h3><p>You forgot how to pause.</p></div>
 </div>
 </section>
 
-<!-- OPPORTUNITY -->
+
 <section class="opportunity">
-<h2 class="section-title">One Note Can Open a Door</h2>
+<h2>One Note Can Open a Door</h2>
 <p class="opportunity-text">
-Sound is not background here — it is invitation.<br>
-A mirror. A returning.<br>
-The handpan hums like the earth remembering.<br>
-The clarinet breathes like wind through ancient trees.<br>
-You listen — and something inside loosens, softens, rises.
+Sound is not background — it is invitation.<br>
+The handpan hums like earth remembering.<br>
+The clarinet breathes like wind through ancient trees.
 </p>
 </section>
 
-<!-- OFFERINGS -->
+
 <section class="offers">
-<h2 class="section-title">What Awaits You Inside</h2>
+<h2>What Awaits You Inside</h2>
 <div class="offers-grid">
-<div class="offer-card"><h3>Sound Journeys</h3><p>Guided presence & release through tone and breath.</p></div>
-<div class="offer-card"><h3>Handpan Waves</h3><p>Earth-warm resonance in the chest.</p></div>
-<div class="offer-card"><h3>Clarinet Wind</h3><p>Breath that carries feeling.</p></div>
-<div class="offer-card"><h3>Sleep / Calm Loops</h3><p>Slow repeating soundscapes for night softness.</p></div>
+<div class="offer-card"><h3>Sound Journeys</h3></div>
+<div class="offer-card"><h3>Handpan Waves</h3></div>
+<div class="offer-card"><h3>Clarinet Wind</h3></div>
+<div class="offer-card"><h3>Sleep / Calm Loops</h3></div>
 </div>
 </section>
 
-<!-- REELS -->
+
 <section class="reels" id="reels">
-<h2 class="section-title">Soundscapes You Can Enter</h2>
+<h2>Soundscapes You Can Enter</h2>
 <p style="text-align:center;opacity:.6;">New journeys appear here automatically ↓</p>
-<div class="reels-grid" id="reels-container">
-<div class="reel-placeholder">Loading...</div>
-</div>
+<div class="reels-grid" id="reels-container"><div>Loading...</div></div>
 </section>
 
-<!-- SOUL CALL -->
+
 <section class="soul-call">
 <h2>This Is Your Invitation</h2>
-<p>Come as you are. Rest. Return to yourself through sound.</p>
+<p>Come as you are. Rest. Return through sound.</p>
 
 <a href="https://link.gobespoken.com/free_demo_booking" class="cta-private">Book Your Private Session</a>
 
@@ -156,8 +196,12 @@ You listen — and something inside loosens, softens, rises.
 </div>
 </section>
 
-<footer>© 2025 JC Soundscapes — hosted at Hotel Oasis. Sound. Stillness. Return.</footer>
 
+<footer>© 2025 JC Soundscapes — hosted at Hotel Oasis.</footer>
+
+
+
+<!-- ---------------- SCRIPTS ---------------- -->
 <script>
 // Fade-in On Scroll
 const sections=document.querySelectorAll("section");
@@ -166,7 +210,8 @@ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible");});
 },{threshold:0.15});
 sections.forEach(s=>observer.observe(s));
 
-// Dynamic Reels Loader
+
+// Load Reels (still no thumbnail API allowed by Instagram)
 async function loadReels(){
 const api="https://script.google.com/macros/s/AKfycbzWWyeOlGM8rHNGOdZJYx4h-p-oHnn_4B-tVTHonynZ3v15-NuCQdfjyW1WmT-FIQ4/exec";
 try{
@@ -174,13 +219,11 @@ const res=await fetch(api);const data=await res.json();
 const box=document.getElementById("reels-container");box.innerHTML="";
 
 data.forEach(r=>{
-const id=r.instagram_url.match(/reel\/([^\/]+)/)?.[1];
-const thumb=id?`https://www.instagram.com/p/${id}/media/?size=l`:``;
-
+if(!r.instagram_url)return;
 box.innerHTML+=`
-<a class="reel-card" href="${r.instagram_url}" target="_blank">
-<div class="reel-thumb" style="background-image:url('${thumb}')"></div>
-<div class="reel-placeholder">${r.Title||"Reel"}</div>
+<a class='reel-card' href='${r.instagram_url}' target='_blank'>
+<div class='reel-thumb'></div>
+<div class='reel-placeholder'>${r.Title||"Untitled"}</div>
 </a>`;
 });
 }catch(err){
