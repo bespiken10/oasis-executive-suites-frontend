@@ -27,7 +27,6 @@ section.hero{
 .carousel-slide{position:absolute;width:100%;height:100%;opacity:0;transition:.9s;}
 .carousel-slide.active{opacity:1;}
 .carousel-slide img{width:100%;height:100%;object-fit:cover;border-radius:4px;}
-
 .carousel-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;}
 .carousel-dot{width:9px;height:9px;background:#fff;border-radius:50%;opacity:.5;cursor:pointer;}
 .carousel-dot.active{opacity:1;}
@@ -40,42 +39,50 @@ section.hero{
 }
 .oasis-ritual-hero h2{color:#EAF7E8;font-size:32px;font-weight:400;}
 .rotate-text{color:#A2FFD0;font-weight:600;opacity:0;transition:.6s;display:inline-block;min-width:120px;}
-
-@media (min-width:768px){
- .oasis-ritual-hero h2{font-size:42px;}
-}
+@media (min-width:768px){ .oasis-ritual-hero h2{font-size:42px;} }
 
 /* ================= Rooftop Ritual Hub ================= */
 .rooftop-section{text-align:center;padding:70px 20px;background:#fafafa;}
 .rooftop-section h2{font-size:1.9rem;margin-bottom:10px;font-weight:600;}
-.rooftop-section p{opacity:.75;margin-top:4px;}
-
 .activities-grid{
  max-width:1000px;margin:40px auto;display:grid;
  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:26px;padding:0 20px;
-}
+ gap:26px;padding:0 20px;}
 .activity-card{
  background:#fff;padding:30px 20px;border-radius:14px;text-align:center;
- box-shadow:0 6px 20px rgba(0,0,0,.07);cursor:pointer;transition:.3s;
-}
+ box-shadow:0 6px 20px rgba(0,0,0,.07);cursor:pointer;transition:.3s;}
 .activity-card:hover{transform:translateY(-5px);}
-.activity-card h3{font-size:1.35rem;margin-bottom:6px;}
-.activity-card p{opacity:.75;font-size:.92rem;margin-bottom:14px;color:#333;}
 
 /* EAT + SLEEP pages */
-section.popup{
- display:none;opacity:0;transition:0.4s;padding:50px 20px;max-width:900px;margin:auto;
-}
+section.popup{display:none;opacity:0;transition:.4s;padding:50px 20px;max-width:900px;margin:auto;}
 section.popup.show{display:block;opacity:1;}
-
 .nav-back{text-align:center;margin-bottom:20px;}
 .nav-back button{padding:9px 14px;background:#000;color:#fff;border:none;border-radius:6px;cursor:pointer;}
-
 .ritual-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
 .ritual-card{background:white;padding:20px;border-radius:12px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.08);}
+
+/* ================= Collapsible Boxes ================= */
+.collapse-box{
+  background:#fff;border-radius:14px;margin:30px auto;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);max-width:1100px;overflow:hidden;
+}
+.collapse-header{
+  padding:18px 22px;font-size:1.15rem;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;cursor:pointer;
+}
+.collapse-toggle{transition:.3s;}
+.collapse-content{
+  max-height:0;overflow:hidden;transition:max-height .45s ease;padding:0 22px;
+}
+.collapse-content.open{padding:22px;max-height:900px;}
+@media(min-width:768px){
+  .collapse-content{max-height:none!important;padding:22px!important;}
+  .collapse-toggle{display:none;}
+}
+.booking-btn{margin-top:14px;background:#000;padding:10px 18px;border-radius:6px;color:#fff;text-decoration:none;display:inline-block;}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -110,7 +117,7 @@ section.popup.show{display:block;opacity:1;}
 <h2>At Oasis, small rituals restore your <span class="rotate-text"></span></h2>
 </section>
 
-<!-- ================= Rooftop Hub ================= -->
+<!-- ================= Rooftop Section ================= -->
 <section class="rooftop-section">
 <h2>Explore Rituals at the Oasis 🍃</h2>
 <p>How would you like to unwind today?</p>
@@ -123,7 +130,38 @@ section.popup.show{display:block;opacity:1;}
 </div>
 </section>
 
-<!-- Eat -->
+<!-- ================= COLLAPSIBLE LOCATION ================= -->
+<div class="collapse-box">
+  <div class="collapse-header" onclick="toggleCollapse('loc-box','loc-icon')">
+    📍 Location & Directions
+    <div id="loc-icon" class="collapse-toggle">▼</div>
+  </div>
+  <div id="loc-box" class="collapse-content">
+    <p style="opacity:.7;margin-bottom:14px;">Near BIEC · Metro reachable · Good commute access</p>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.30487490104!2d77.5166507!3d13.0181899"
+      width="100%" height="320" style="border:0;border-radius:10px;" loading="lazy">
+    </iframe>
+  </div>
+</div>
+
+<!-- ================= COLLAPSIBLE BOOKING ================= -->
+<div class="collapse-box">
+  <div class="collapse-header" onclick="toggleCollapse('book-box','book-icon')">
+    🛎 Book Your Stay
+    <div id="book-icon" class="collapse-toggle">▼</div>
+  </div>
+  <div id="book-box" class="collapse-content">
+    <p style="opacity:.7;margin-bottom:14px;">Instant confirmation · Early check-ins available</p>
+    <iframe 
+      src="https://bookingengine.stayflexi.com?hotel_id=23268"
+      style="width:100%;height:650px;border:none;border-radius:10px;">
+    </iframe>
+    <a href="https://bookingengine.stayflexi.com?hotel_id=23268" class="booking-btn">Open Fullscreen →</a>
+  </div>
+</div>
+
+<!-- ================= EAT & SLEEP POPUPS ================= -->
 <section id="eat" class="popup">
 <div class="nav-back"><button onclick="closePopup()">← Back</button></div>
 <h2 style="text-align:center;margin-bottom:25px;">Dining Menu 🍽</h2>
@@ -135,7 +173,6 @@ section.popup.show{display:block;opacity:1;}
 </div>
 </section>
 
-<!-- Sleep -->
 <section id="sleep" class="popup">
 <div class="nav-back"><button onclick="closePopup()">← Back</button></div>
 <h2 style="text-align:center;margin-bottom:25px;">Sleep Rituals 🌙</h2>
@@ -164,12 +201,16 @@ function closePopup(){document.querySelectorAll(".popup").forEach(e=>e.classList
 // Rotating Text
 const words=["Calm","Sleep","Energy","Mood","Balance","Morning"];
 const el=document.querySelector(".rotate-text");
-let i=0;
-function spin(){
- el.style.opacity=0;
- setTimeout(()=>{el.textContent=words[i];el.style.opacity=1;i=(i+1)%words.length;},300);
+let i=0;function spin(){el.style.opacity=0;
+ setTimeout(()=>{el.textContent=words[i];el.style.opacity=1;i=(i+1)%words.length;},300);}
+spin();setInterval(spin,2000);
+
+// Collapsible
+function toggleCollapse(box,id){
+const c=document.getElementById(box),i=document.getElementById(id);
+if(c.classList.contains("open")){c.classList.remove("open");i.style.transform="rotate(0deg)";}
+else{c.classList.add("open");i.style.transform="rotate(180deg)";}
 }
-spin(); setInterval(spin,2000);
 </script>
 
 </body>
