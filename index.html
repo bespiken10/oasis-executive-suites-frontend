@@ -21,7 +21,6 @@ section.hero{
 .hero-statement{font-size:1.1rem;color:#666;margin-bottom:2rem;}
 .hero-cta{background:#000;color:white;padding:1rem 2rem;border-radius:4px;text-decoration:none;}
 
-/* Carousel */
 .hero-visual{height:560px;position:relative;}
 .carousel-container{width:100%;height:100%;position:relative;}
 .carousel-slide{position:absolute;width:100%;height:100%;opacity:0;transition:.9s;}
@@ -112,12 +111,10 @@ section.popup.show{display:block;opacity:1;}
 </div>
 </section>
 
-<!-- ================= GREEN RITUAL HERO ================= -->
 <section class="oasis-ritual-hero">
 <h2>At Oasis, small rituals restore your <span class="rotate-text"></span></h2>
 </section>
 
-<!-- ================= Rooftop Section ================= -->
 <section class="rooftop-section">
 <h2>Explore Rituals at the Oasis 🍃</h2>
 <p>How would you like to unwind today?</p>
@@ -130,7 +127,6 @@ section.popup.show{display:block;opacity:1;}
 </div>
 </section>
 
-<!-- ================= COLLAPSIBLE LOCATION ================= -->
 <div class="collapse-box">
   <div class="collapse-header" onclick="toggleCollapse('loc-box','loc-icon')">
     📍 Location & Directions
@@ -138,14 +134,11 @@ section.popup.show{display:block;opacity:1;}
   </div>
   <div id="loc-box" class="collapse-content">
     <p style="opacity:.7;margin-bottom:14px;">Near BIEC · Metro reachable · Good commute access</p>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.30487490104!2d77.5166507!3d13.0181899"
-      width="100%" height="320" style="border:0;border-radius:10px;" loading="lazy">
-    </iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.30487490104!2d77.5166507!3d13.0181899"
+      width="100%" height="320" style="border:0;border-radius:10px;" loading="lazy"></iframe>
   </div>
 </div>
 
-<!-- ================= COLLAPSIBLE BOOKING ================= -->
 <div class="collapse-box">
   <div class="collapse-header" onclick="toggleCollapse('book-box','book-icon')">
     🛎 Book Your Stay
@@ -153,15 +146,12 @@ section.popup.show{display:block;opacity:1;}
   </div>
   <div id="book-box" class="collapse-content">
     <p style="opacity:.7;margin-bottom:14px;">Instant confirmation · Early check-ins available</p>
-    <iframe 
-      src="https://bookingengine.stayflexi.com?hotel_id=23268"
-      style="width:100%;height:650px;border:none;border-radius:10px;">
-    </iframe>
+    <iframe src="https://bookingengine.stayflexi.com?hotel_id=23268"
+      style="width:100%;height:650px;border:none;border-radius:10px;"></iframe>
     <a href="https://bookingengine.stayflexi.com?hotel_id=23268" class="booking-btn">Open Fullscreen →</a>
   </div>
 </div>
 
-<!-- ================= EAT & SLEEP POPUPS ================= -->
 <section id="eat" class="popup">
 <div class="nav-back"><button onclick="closePopup()">← Back</button></div>
 <h2 style="text-align:center;margin-bottom:25px;">Dining Menu 🍽</h2>
@@ -184,7 +174,6 @@ section.popup.show{display:block;opacity:1;}
 </div>
 </section>
 
-<!-- ================= JS ================= -->
 <script>
 // Hero Carousel
 let s=0,slides=document.querySelectorAll('.carousel-slide'),dots=document.querySelectorAll('.carousel-dot');
@@ -193,16 +182,29 @@ slides[n].classList.add('active');dots[n].classList.add('active');}
 function next(){s=(s+1)%slides.length;show(s);} setInterval(next,4500);
 dots.forEach((d,i)=>d.onclick=()=>{s=i;show(i);});
 
-// Popups
-function openEat(){closePopup();document.getElementById("eat").classList.add("show");}
-function openSleep(){closePopup();document.getElementById("sleep").classList.add("show");}
-function closePopup(){document.querySelectorAll(".popup").forEach(e=>e.classList.remove("show"));}
+// ===== Updated Popup Behaviour (Fix) =====
+function openEat(){
+  closePopup();
+  const el=document.getElementById("eat");
+  el.classList.add("show");
+  el.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function openSleep(){
+  closePopup();
+  const el=document.getElementById("sleep");
+  el.classList.add("show");
+  el.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function closePopup(){
+  document.querySelectorAll(".popup").forEach(e=>e.classList.remove("show"));
+}
 
-// Rotating Text
+// Rotating Words
 const words=["Calm","Sleep","Energy","Mood","Balance","Morning"];
-const el=document.querySelector(".rotate-text");
-let i=0;function spin(){el.style.opacity=0;
- setTimeout(()=>{el.textContent=words[i];el.style.opacity=1;i=(i+1)%words.length;},300);}
+const rt=document.querySelector(".rotate-text");
+let i=0;
+function spin(){rt.style.opacity=0;
+ setTimeout(()=>{rt.textContent=words[i];rt.style.opacity=1;i=(i+1)%words.length;},300);}
 spin();setInterval(spin,2000);
 
 // Collapsible
