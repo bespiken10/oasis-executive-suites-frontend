@@ -12,15 +12,17 @@ nav{max-width:1100px;margin:auto;padding:1rem 1.5rem;display:flex;justify-conten
 .logo{font-weight:600;}
 .nav-cta{background:#000;color:#fff;padding:.65rem 1.4rem;border-radius:4px;text-decoration:none;font-size:.9rem;}
 
-.hero{
- margin-top:80px;display:grid;grid-template-columns:1fr 1fr;min-height:580px;
+/* ================= HERO MAIN ================= */
+section.hero{
+ margin-top:80px;display:grid;grid-template-columns:1fr 1fr;min-height:560px;
  max-width:1100px;margin-inline:auto;gap:2rem;padding:2rem;
 }
-.hero-content h1{font-size:2.3rem;margin-bottom:1rem;}
+.hero-content h1{font-size:2.4rem;margin-bottom:1rem;}
 .hero-statement{font-size:1.1rem;color:#666;margin-bottom:2rem;}
 .hero-cta{background:#000;color:white;padding:1rem 2rem;border-radius:4px;text-decoration:none;}
 
-.hero-visual{height:580px;position:relative;}
+/* Carousel */
+.hero-visual{height:560px;position:relative;}
 .carousel-container{width:100%;height:100%;position:relative;}
 .carousel-slide{position:absolute;width:100%;height:100%;opacity:0;transition:.9s;}
 .carousel-slide.active{opacity:1;}
@@ -30,15 +32,28 @@ nav{max-width:1100px;margin:auto;padding:1rem 1.5rem;display:flex;justify-conten
 .carousel-dot{width:9px;height:9px;background:#fff;border-radius:50%;opacity:.5;cursor:pointer;}
 .carousel-dot.active{opacity:1;}
 
-/* =================== NEW ROOFTOP HUB =================== */
+/* ================= SOLID GREEN HERO BLOCK ================= */
+.oasis-ritual-hero{
+ width:100%;min-height:60vh;background:#143725;
+ display:flex;justify-content:center;align-items:center;text-align:center;
+ padding:4rem 2rem;margin-top:60px;
+}
+.oasis-ritual-hero h2{color:#EAF7E8;font-size:32px;font-weight:400;}
+.rotate-text{color:#A2FFD0;font-weight:600;opacity:0;transition:.6s;display:inline-block;min-width:120px;}
+
+@media (min-width:768px){
+ .oasis-ritual-hero h2{font-size:42px;}
+}
+
+/* ================= Rooftop Ritual Hub ================= */
 .rooftop-section{text-align:center;padding:70px 20px;background:#fafafa;}
 .rooftop-section h2{font-size:1.9rem;margin-bottom:10px;font-weight:600;}
 .rooftop-section p{opacity:.75;margin-top:4px;}
 
 .activities-grid{
-  max-width:1000px;margin:40px auto;display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:26px;padding:0 20px;
+ max-width:1000px;margin:40px auto;display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:26px;padding:0 20px;
 }
 .activity-card{
  background:#fff;padding:30px 20px;border-radius:14px;text-align:center;
@@ -47,21 +62,16 @@ nav{max-width:1100px;margin:auto;padding:1rem 1.5rem;display:flex;justify-conten
 .activity-card:hover{transform:translateY(-5px);}
 .activity-card h3{font-size:1.35rem;margin-bottom:6px;}
 .activity-card p{opacity:.75;font-size:.92rem;margin-bottom:14px;color:#333;}
-.activity-card button{
- padding:10px 22px;border-radius:10px;border:none;background:#0a7f52;color:#fff;
- cursor:pointer;transition:.3s;font-size:.88rem;
-}
-.activity-card button:hover{background:#066040;}
 
-/* =================== EAT SECTION =================== */
-#eat-section{display:none;opacity:0;transition:.45s;padding:50px 20px;max-width:900px;margin:auto;}
-#eat-section.show{display:block;opacity:1;}
+/* EAT + SLEEP pages */
+section.popup{
+ display:none;opacity:0;transition:0.4s;padding:50px 20px;max-width:900px;margin:auto;
+}
+section.popup.show{display:block;opacity:1;}
+
 .nav-back{text-align:center;margin-bottom:20px;}
 .nav-back button{padding:9px 14px;background:#000;color:#fff;border:none;border-radius:6px;cursor:pointer;}
 
-/* =================== SLEEP SECTION =================== */
-#sleep-section{display:none;opacity:0;transition:.45s;padding:50px 20px;max-width:900px;margin:auto;}
-#sleep-section.show{display:block;opacity:1;}
 .ritual-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
 .ritual-card{background:white;padding:20px;border-radius:12px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.08);}
 </style>
@@ -75,6 +85,7 @@ nav{max-width:1100px;margin:auto;padding:1rem 1.5rem;display:flex;justify-conten
 </nav>
 </header>
 
+<!-- ================= HERO ================= -->
 <section class="hero">
 <div class="hero-content">
 <div class="hero-label">For Business Stays Near BIEC</div>
@@ -94,264 +105,71 @@ nav{max-width:1100px;margin:auto;padding:1rem 1.5rem;display:flex;justify-conten
 </div>
 </section>
 
-<!-- 🌿 OASIS HERO SECTION — SOLID GREEN + ROTATING TEXT -->
-<section class="oasis-hero">
-  <div class="hero-inner">
-    <h2>At Oasis, small rituals restore your <span class="rotate-text"></span></h2>
-  </div>
+<!-- ================= GREEN RITUAL HERO ================= -->
+<section class="oasis-ritual-hero">
+<h2>At Oasis, small rituals restore your <span class="rotate-text"></span></h2>
 </section>
 
-<style>
-/* === Solid Green Oasis Hero — Minimal Premium === */
+<!-- ================= Rooftop Hub ================= -->
+<section class="rooftop-section">
+<h2>Explore Rituals at the Oasis 🍃</h2>
+<p>How would you like to unwind today?</p>
 
-.oasis-hero {
-  position: relative;
-  width: 100%;
-  height: 40vh; /* calmer space */
-  background: #143725; /* solid deep botanical green */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
+<div class="activities-grid">
+  <div class="activity-card" onclick="openEat()">🍽 Eat</div>
+  <div class="activity-card" onclick="openSleep()">🛏 Sleep</div>
+  <div class="activity-card" onclick="alert('Relax Section Coming Soon 🌿')">🌿 Relax</div>
+  <div class="activity-card" onclick="alert('Style Section Coming Soon 👗')">👗 Style</div>
+</div>
+</section>
 
-/* Center text */
-.hero-inner {
-  text-align: center;
-  z-index: 2;
-}
+<!-- Eat -->
+<section id="eat" class="popup">
+<div class="nav-back"><button onclick="closePopup()">← Back</button></div>
+<h2 style="text-align:center;margin-bottom:25px;">Dining Menu 🍽</h2>
+<div class="ritual-grid">
+<div class="ritual-card"><h3>Lunch Plates</h3><p>Comfort meals & bowls</p></div>
+<div class="ritual-card"><h3>Snacks</h3><p>Sandwich • Fries • Coffee</p></div>
+<div class="ritual-card"><h3>Dinner Meals</h3><p>Warm home-style servings</p></div>
+<div class="ritual-card"><h3>Fine Dine</h3><p>Pasta • Sizzlers</p></div>
+</div>
+</section>
 
-.hero-inner h2 {
-  color: #EAF7E8; /* soft white-green */
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 1.4;
-}
+<!-- Sleep -->
+<section id="sleep" class="popup">
+<div class="nav-back"><button onclick="closePopup()">← Back</button></div>
+<h2 style="text-align:center;margin-bottom:25px;">Sleep Rituals 🌙</h2>
+<div class="ritual-grid">
+<div class="ritual-card"><h3>Herbal Tea 🍵</h3></div>
+<div class="ritual-card"><h3>Aromatherapy 🌾</h3></div>
+<div class="ritual-card"><h3>Candle Hour 🕯</h3></div>
+<div class="ritual-card"><h3>Night Stretch 😮‍💨</h3></div>
+</div>
+</section>
 
-/* Rotating highlight word */
-.rotate-text {
-  font-weight: 600;
-  color: #A2FFD0; /* mint highlight */
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.7s ease;
-  min-width: 110px;
-}
-
-/* Responsiveness */
-@media (min-width: 768px){
-  .oasis-hero { height: 48vh; }
-  .hero-inner h2 { font-size: 38px; }
-}
-</style>
-
+<!-- ================= JS ================= -->
 <script>
-/* Rotating Words Animation */
+// Hero Carousel
+let s=0,slides=document.querySelectorAll('.carousel-slide'),dots=document.querySelectorAll('.carousel-dot');
+function show(n){slides.forEach(i=>i.classList.remove('active'));dots.forEach(i=>i.classList.remove('active'));
+slides[n].classList.add('active');dots[n].classList.add('active');}
+function next(){s=(s+1)%slides.length;show(s);} setInterval(next,4500);
+dots.forEach((d,i)=>d.onclick=()=>{s=i;show(i);});
+
+// Popups
+function openEat(){closePopup();document.getElementById("eat").classList.add("show");}
+function openSleep(){closePopup();document.getElementById("sleep").classList.add("show");}
+function closePopup(){document.querySelectorAll(".popup").forEach(e=>e.classList.remove("show"));}
+
+// Rotating Text
 const words=["Calm","Sleep","Energy","Mood","Balance","Morning"];
 const el=document.querySelector(".rotate-text");
 let i=0;
 function spin(){
-  el.style.opacity=0;
-  el.style.transform="translateY(10px)";
-  setTimeout(()=>{
-    el.textContent=words[i];
-    el.style.opacity=1;
-    el.style.transform="translateY(0)";
-    i=(i+1)%words.length;
-  },400);
+ el.style.opacity=0;
+ setTimeout(()=>{el.textContent=words[i];el.style.opacity=1;i=(i+1)%words.length;},300);
 }
-spin();
-setInterval(spin,2000);
-</script>
-<!-- =============================
-     HERO SECTION — FINAL
-============================= -->
-<section class="oasis-hero">
-  <div class="oasis-overlay"></div>
-
-  <h2 class="oasis-line">
-    At Oasis, small rituals restore your 
-    <span class="rotate-text"></span>
-  </h2>
-</section>
-
-<script>
-/* Rotating Words Animation */
-const words = ["Calm", "Sleep", "Energy", "Mood", "Balance", "Morning"];
-const el = document.querySelector(".rotate-text");
-let index = 0;
-
-function cycleWords() {
-  el.style.opacity = 0;
-  el.style.transform = "translateY(10px)";
-
-  setTimeout(() => {
-    el.textContent = words[index];
-    el.style.opacity = 1;
-    el.style.transform = "translateY(0)";
-    index = (index + 1) % words.length;
-  }, 400);
-}
-
-cycleWords();
-setInterval(cycleWords, 2000);
-</script>
-
-</body>
-</html>
-
-<section class="rooftop-section">
-<h2>Explore Rituals at the Oasis 🍃</h2>
-<p>Choose how you want to spend your evening.</p>
-
-<div class="activities-grid">
-  <div class="activity-card" onclick="openEat()">
-    <h3>🍽 Eat</h3>
-    <p>Warm meals. Slow mornings. Coffee that feels like home.</p>
-  </div>
-
-  <div class="activity-card" onclick="openSleep()">
-    <h3>🛏 Sleep</h3>
-    <p>Deep rest. Quiet nights. Reset your energy.</p>
-  </div>
-
-  <div class="activity-card" onclick="alert('Relax section coming soon 🌿')">
-    <h3>🌿 Relax</h3>
-    <p>Rooftop breeze. Slow evenings. Let go.</p>
-  </div>
-
-  <div class="activity-card" onclick="alert('Style corner coming soon 👗')">
-    <h3>👗 Style</h3>
-    <p>Dress well. Step out confident.</p>
-  </div>
-</div>
-</section>
-
-<!-- EAT SECTION -->
-<section id="eat-section">
-<div class="nav-back"><button onclick="closeSections()">← Back</button></div>
-<h2 style="text-align:center;margin-bottom:25px;">Dining Menu 🍽</h2>
-
-<div class="ritual-grid">
-  <div class="ritual-card"><h3>Lunch Plates</h3><p>Comfort meals & bowls</p></div>
-  <div class="ritual-card"><h3>Snacks & Coffee</h3><p>Fries • Sandwich • Tea</p></div>
-  <div class="ritual-card"><h3>Dinner Meals</h3><p>Home-style warm plates</p></div>
-  <div class="ritual-card"><h3>Fine Dine</h3><p>Sizzlers • Pasta</p></div>
-</div>
-</section>
-
-<!-- SLEEP SECTION -->
-<section id="sleep-section">
-<div class="nav-back"><button onclick="closeSections()">← Back</button></div>
-<h2 style="text-align:center;margin-bottom:25px;">Sleep Rituals 🌙</h2>
-
-<div class="ritual-grid">
-<div class="ritual-card"><h3>Herbal Tea 🍵</h3><p>Chamomile • Lemongrass</p></div>
-<div class="ritual-card"><h3>Aromatherapy 🌾</h3><p>Lavender diffuser</p></div>
-<div class="ritual-card"><h3>Candle Hour 🕯</h3><p>Warm glow ambience</p></div>
-<div class="ritual-card"><h3>Night Stretch 😮‍💨</h3><p>4-7-8 breath routine</p></div>
-</div>
-</section>
-
-<script>
-function closeSections(){
-  document.getElementById("eat-section").classList.remove("show");
-  document.getElementById("sleep-section").classList.remove("show");
-}
-function openEat(){ closeSections();document.getElementById("eat-section").classList.add("show"); }
-function openSleep(){ closeSections();document.getElementById("sleep-section").classList.add("show"); }
-</script>
-
-<!-- ================= Suites → Footer → JS continues here... -->
-<section class="suites" id="suites" style="background:#fff;padding:60px 20px;">
-<div style="max-width:1100px;margin:auto;">
-<h2 style="font-size:1.6rem;margin-bottom:14px;">Choose a suite that fits your stay</h2>
-<p style="max-width:650px;color:#666;margin-bottom:2.5rem;">
-All suites have the same basics — clean rooms, Wi-Fi, work desk.  
-Choose based on how long you're staying.
-</p>
-
-<div class="suites-grid" style="display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));">
-
-<div class="suite-card" style="border:1px solid #eee;border-radius:8px;padding:22px;">
-<h3>Standard Suite</h3>
-<p style="color:#777;font-size:.9rem;margin:6px 0 14px;">For short stays (1–2 nights)</p>
-<p style="font-size:.9rem;color:#666;">Good for quick work trips.</p>
-<a href="https://bookingengine.stayflexi.com?hotel_id=23268" style="display:inline-block;margin-top:16px;padding:10px 16px;border:1px solid #000;border-radius:4px;text-decoration:none;color:#000;">Check availability</a>
-</div>
-
-<div class="suite-card" style="border:1px solid #eee;border-radius:8px;padding:22px;">
-<h3>Work-Focused Suite</h3>
-<p style="color:#777;font-size:.9rem;margin:6px 0 14px;">For calls and deadlines</p>
-<p style="font-size:.9rem;color:#666;">Desk + task lighting + quiet floor.</p>
-<a href="https://bookingengine.stayflexi.com?hotel_id=23268" style="display:inline-block;margin-top:16px;padding:10px 16px;border:1px solid #000;border-radius:4px;text-decoration:none;color:#000;">Check availability</a>
-</div>
-
-<div class="suite-card" style="border:1px solid #eee;border-radius:8px;padding:22px;">
-<h3>Quiet Suite</h3>
-<p style="color:#777;font-size:.9rem;margin:6px 0 14px;">For uninterrupted sleep</p>
-<p style="font-size:.9rem;color:#666;">Blackout curtains + calm floor.</p>
-<a href="https://bookingengine.stayflexi.com?hotel_id=23268" style="display:inline-block;margin-top:16px;padding:10px 16px;border:1px solid #000;border-radius:4px;text-decoration:none;color:#000;">Check availability</a>
-</div>
-
-<div class="suite-card" style="border:1px solid #eee;border-radius:8px;padding:22px;">
-<h3>Extended Stay Suite</h3>
-<p style="color:#777;font-size:.9rem;margin:6px 0 14px;">4+ night stays</p>
-<p style="font-size:.9rem;color:#666;">More storage + lounge area.</p>
-<a href="https://bookingengine.stayflexi.com?hotel_id=23268" style="display:inline-block;margin-top:16px;padding:10px 16px;border:1px solid #000;border-radius:4px;text-decoration:none;color:#000;">Check availability</a>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- ================= Footer ================= -->
-<footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px;">
-<div style="max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px;">
-
-<div>
-<h3 style="color:#fff;font-size:.95rem;margin-bottom:10px;">Oasis Executive Suites</h3>
-<p style="font-size:.9rem;opacity:.8;">Yeshwanthpur, Bangalore<br>Near BIEC and Metro</p>
-</div>
-
-<div>
-<h3 style="color:#fff;font-size:.95rem;margin-bottom:10px;">Contact</h3>
-<p style="font-size:.9rem;opacity:.85;"><a href="tel:+919972366414" style="color:#fff;">+91 9972366414</a><br>
-<a href="mailto:gm@hoteloasis.in" style="color:#ddd;">gm@hoteloasis.in</a></p>
-</div>
-
-<div>
-<h3 style="color:#fff;font-size:.95rem;margin-bottom:10px;">Useful</h3>
-<p style="font-size:.9rem;"><a href="#suites" style="color:#ddd;">Suites</a><br>
-<a href="#sleep-section" style="color:#ddd;">Rooftop Rituals</a></p>
-</div>
-
-</div>
-<p style="text-align:center;margin-top:40px;font-size:.85rem;opacity:.7;">© 2025 Oasis Executive Suites</p>
-</footer>
-
-<!-- ================= JavaScript ================= -->
-<script>
-// Hero Slider
-let s=0,slides=document.querySelectorAll('.carousel-slide'),dots=document.querySelectorAll('.carousel-dot');
-function show(n){
-slides.forEach(i=>i.classList.remove('active'));dots.forEach(i=>i.classList.remove('active'));
-slides[n].classList.add('active');dots[n].classList.add('active');
-}
-function next(){s=(s+1)%slides.length;show(s);} setInterval(next,4500);
-dots.forEach((d,i)=>d.onclick=()=>{s=i;show(i);});
-
-// Food Modal placeholder action
-function openFood(){
-alert("Food menu opens via Zomato widget soon 🍽");
-}
-
-// Sleep scroll
-function scrollToSleep(){
-document.querySelector("#sleep-section").scrollIntoView({behavior:'smooth'});
-}
+spin(); setInterval(spin,2000);
 </script>
 
 </body>
