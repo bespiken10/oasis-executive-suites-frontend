@@ -67,23 +67,23 @@ section{padding:6rem 2rem;max-width:1200px;margin:auto;}
 /* 🔥 REELS BLOCK */
 .reels{background:var(--stone);}
 .reels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:3rem;}
-.reel-card{background:#fff;border-radius:12px;height:480px;display:flex;flex-direction:column;overflow:hidden;text-decoration:none;color:var(--deep-earth);box-shadow:0 6px 25px rgba(0,0,0,.1);transition:.3s;}
+
+.reel-card{
+    background:#fff;border-radius:12px;height:480px;display:flex;flex-direction:column;
+    overflow:hidden;text-decoration:none;color:var(--deep-earth);
+    box-shadow:0 6px 25px rgba(0,0,0,.1);
+    transform:translateY(30px);opacity:0;
+    transition:opacity .8s ease,transform .8s ease;
+}
+.reel-card.visible{opacity:1;transform:translateY(0);}
 .reel-card:hover{transform:scale(1.03);}
 
-/* 🔥 New hover thumbnail animation added */
+/* Hover + Lazy image animated */
 .reel-thumb{
-    width:100%;
-    height:80%;
-    background-size:cover;
-    background-position:center;
-    border-bottom:1px solid #ddd;
-    transition:transform .45s ease,opacity .4s;
-    opacity:.96;
+    width:100%;height:80%;background-size:cover;background-position:center;
+    border-bottom:1px solid #ddd;opacity:.96;transition:transform .45s ease,opacity .4s;
 }
-.reel-card:hover .reel-thumb{
-    transform:scale(1.05);
-    opacity:1;
-}
+.reel-card:hover .reel-thumb{transform:scale(1.05);opacity:1;}
 
 .reel-placeholder{text-align:center;padding:1.4rem;font-size:1rem;}
 
