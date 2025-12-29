@@ -1,21 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>JC Soundscapes | Sound that awakens what wants to emerge</title>
+
+    <!-- 🔥 SEO Meta -->
+    <meta name="description" content="JC Soundscapes — Handpan & clarinet journeys for presence, calm, and inner awakening. A sanctuary of sound where music becomes a doorway into what wants to emerge." />
+    <meta name="keywords" content="sound healing, handpan, clarinet meditation, calming music, sleep loops, mindfulness sound, soundscapes, JC soundscapes" />
+    <link rel="canonical" href="https://hoteloasis.in/soundscape/" />
+
+    <!-- 🟡 Social Share Cards -->
+    <meta property="og:title" content="JC Soundscapes — Sound that awakens what wants to emerge" />
+    <meta property="og:description" content="Handpan & clarinet journeys that open breath, presence and emergence within you." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hoteloasis.in/soundscape/" />
+    <meta property="og:image" content="https://hoteloasis.in/soundscape/preview.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JC Soundscapes — Handpan & Clarinet Journeys" />
+    <meta name="twitter:description" content="A space for inner emergence through sound, silence & breath." />
+    <meta name="twitter:image" content="https://hoteloasis.in/soundscape/preview.jpg" />
+
+    <!-- Schema for Google Understanding -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "JC Soundscapes",
+        "description": "Handpan & clarinet sound journeys for meditation, calm, creativity & emotional release.",
+        "url": "https://hoteloasis.in/soundscape/",
+        "sameAs": [
+            "https://www.instagram.com/your_profile_here",
+            "https://youtube.com/",
+            "https://spotify.com/"
+        ]
+    }
+    </script>
+
+    <!-- Styles -->
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
 
         :root{--stone:#d4cfc4;--smoke:#9a958c;--deep-earth:#4a4640;--void:#2a2622;--gold:#c9a66b;--silence:#f5f3ef;}
+
         body{font-family:'Georgia',serif;background:var(--silence);color:var(--deep-earth);line-height:1.8;overflow-x:hidden;}
         h1,h2,h3{font-family:'Garamond','Georgia',serif;font-weight:300;letter-spacing:.05em;}
         .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;letter-spacing:.08em;}
 
         /* HERO */
         .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2rem;background:linear-gradient(135deg,var(--stone),var(--silence));position:relative;overflow:hidden;}
-        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(201,166,107,.1),transparent 70%);animation:breathe 8s ease-in-out infinite;}
-        @keyframes breathe{0%,100%{transform:scale(1);opacity:.3;}50%{transform:scale(1.1);opacity:.6;}}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(201,166,107,.12),transparent 70%);animation:breathe 8s ease-in-out infinite;}
+        @keyframes breathe{0%,100%{opacity:.3;transform:scale(1);}50%{opacity:.6;transform:scale(1.1);}}
         .hero-content{position:relative;z-index:2;max-width:900px;animation:fadeIn 2s ease-out;}
         @keyframes fadeIn{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
         .hero h1{font-size:clamp(2.5rem,6vw,5rem);margin-bottom:2rem;color:var(--void);}
@@ -24,16 +61,18 @@
         .cta-primary:hover{background:var(--void);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3);}
         .sub-cta{display:block;color:var(--smoke);margin-top:1rem;font-size:.95rem;}
 
+        /* Sections */
         section{padding:6rem 2rem;max-width:1200px;margin:auto;}
         .section-title{text-align:center;font-size:clamp(2rem,4vw,3rem);margin-bottom:3rem;color:var(--void);}
 
-        /* REELS GRID */
-        .reels{background:var(--stone);padding:6rem 2rem;}
+        /* Reels */
+        .reels{background:var(--stone);}
         .reels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:3rem;}
         .reel-card{background:#fff;border-radius:12px;height:480px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--deep-earth);box-shadow:0 6px 25px rgba(0,0,0,.1);transition:.3s;}
         .reel-card:hover{transform:scale(1.03);}
         .reel-placeholder{text-align:center;padding:2rem;}
-        footer{background:var(--void);color:var(--smoke);text-align:center;padding:3rem;}
+
+        footer{background:var(--void);color:var(--smoke);text-align:center;padding:3rem;margin-top:4rem;}
 
         @media(max-width:768px){section{padding:4rem 1.2rem;}.reel-card{height:420px;}}
     </style>
@@ -41,15 +80,17 @@
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
     <div class="hero-content">
         <h1>Sound that awakens<br>what wants to emerge.</h1>
-        <p class="identity-line">Handpan & clarinet journeys — a doorway to presence, breath & inner emergence.</p>
+        <p class="identity-line">Handpan & clarinet journeys — a doorway into presence, breath & creative emergence.</p>
         <a href="#sound-reels" class="cta-primary sans">Enter Soundspace</a>
-        <span class="sub-cta sans">Listen. Breathe. Return.</span>
+        <span class="sub-cta sans">Listen · Breathe · Return</span>
     </div>
 </section>
 
+<!-- Dynamic Reels -->
 <section class="reels" id="sound-reels">
     <h2 class="section-title">Soundscapes You Can Enter</h2>
     <p style="text-align:center;color:var(--smoke)">New reels load automatically ↓</p>
@@ -58,14 +99,13 @@
     </div>
 </section>
 
-<footer>
-    © 2025 JC Soundscapes — A sanctuary of sound & silence.
-</footer>
+<!-- Footer -->
+<footer>© 2025 JC Soundscapes — A sanctuary of sound & silence.</footer>
 
-<!-- Instagram Embed (optional) -->
+<!-- Instagram (if using embedded reels) -->
 <script async src="//www.instagram.com/embed.js"></script>
 
-<!-- Load dynamic reels -->
+<!-- Dynamic feed -->
 <script src="reels.js"></script>
 
 </body>
