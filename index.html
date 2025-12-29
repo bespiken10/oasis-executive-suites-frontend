@@ -12,7 +12,7 @@ nav{max-width:1100px;margin:auto;padding:1rem 1.5rem;display:flex;justify-conten
 .logo{font-weight:600;}
 .nav-cta{background:#000;color:#fff;padding:.65rem 1.4rem;border-radius:4px;text-decoration:none;font-size:.9rem;}
 
-/* ================= HERO MAIN ================= */
+/* ================= HERO ================= */
 section.hero{
  margin-top:80px;display:grid;grid-template-columns:1fr 1fr;min-height:560px;
  max-width:1100px;margin-inline:auto;gap:2rem;padding:2rem;
@@ -30,55 +30,55 @@ section.hero{
 .carousel-dot{width:9px;height:9px;background:#fff;border-radius:50%;opacity:.5;cursor:pointer;}
 .carousel-dot.active{opacity:1;}
 
-/* ================= SOLID GREEN HERO BLOCK ================= */
+/* ================= GREEN RITUAL HERO ================= */
 .oasis-ritual-hero{
- width:100%;min-height:60vh;background:#143725;
- display:flex;justify-content:center;align-items:center;text-align:center;
- padding:4rem 2rem;margin-top:60px;
-}
+ width:100%;min-height:60vh;background:#143725;display:flex;justify-content:center;
+ align-items:center;text-align:center;padding:4rem 2rem;margin-top:60px;}
 .oasis-ritual-hero h2{color:#EAF7E8;font-size:32px;font-weight:400;}
 .rotate-text{color:#A2FFD0;font-weight:600;opacity:0;transition:.6s;display:inline-block;min-width:120px;}
-@media (min-width:768px){ .oasis-ritual-hero h2{font-size:42px;} }
+@media(min-width:768px){.oasis-ritual-hero h2{font-size:42px;}}
 
 /* ================= Rooftop Ritual Hub ================= */
 .rooftop-section{text-align:center;padding:70px 20px;background:#fafafa;}
-.rooftop-section h2{font-size:1.9rem;margin-bottom:10px;font-weight:600;}
-.activities-grid{
- max-width:1000px;margin:40px auto;display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:26px;padding:0 20px;}
-.activity-card{
- background:#fff;padding:30px 20px;border-radius:14px;text-align:center;
+.activities-grid{max-width:1000px;margin:40px auto;display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;padding:0 20px;}
+.activity-card{background:#fff;padding:30px 20px;border-radius:14px;text-align:center;
  box-shadow:0 6px 20px rgba(0,0,0,.07);cursor:pointer;transition:.3s;}
 .activity-card:hover{transform:translateY(-5px);}
 
-/* EAT + SLEEP pages */
+/* EAT + SLEEP POPUPS */
 section.popup{display:none;opacity:0;transition:.4s;padding:50px 20px;max-width:900px;margin:auto;}
 section.popup.show{display:block;opacity:1;}
 .nav-back{text-align:center;margin-bottom:20px;}
 .nav-back button{padding:9px 14px;background:#000;color:#fff;border:none;border-radius:6px;cursor:pointer;}
 .ritual-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
-.ritual-card{background:white;padding:20px;border-radius:12px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.08);}
+.ritual-card{background:#fff;padding:20px;border-radius:12px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.08);}
 
-/* ================= Collapsible Boxes ================= */
-.collapse-box{
-  background:#fff;border-radius:14px;margin:30px auto;
-  box-shadow:0 6px 18px rgba(0,0,0,.08);max-width:1100px;overflow:hidden;
-}
-.collapse-header{
-  padding:18px 22px;font-size:1.15rem;font-weight:600;
-  display:flex;justify-content:space-between;align-items:center;cursor:pointer;
-}
-.collapse-toggle{transition:.3s;}
-.collapse-content{
-  max-height:0;overflow:hidden;transition:max-height .45s ease;padding:0 22px;
-}
-.collapse-content.open{padding:22px;max-height:900px;}
-@media(min-width:768px){
-  .collapse-content{max-height:none!important;padding:22px!important;}
-  .collapse-toggle{display:none;}
-}
-.booking-btn{margin-top:14px;background:#000;padding:10px 18px;border-radius:6px;color:#fff;text-decoration:none;display:inline-block;}
+/* ================= LOCATION BLOCK – IMPROVED ================= */
+.location-title{text-align:center;margin-top:60px;font-size:1.9rem;font-weight:600;}
+.location-sub{opacity:.75;text-align:center;margin-bottom:25px;}
+.location-container{max-width:1100px;margin:auto;border-radius:14px;overflow:hidden;
+ background:white;box-shadow:0 6px 18px rgba(0,0,0,.06);}
+
+/* Header collapsible */
+.loc-header{padding:18px 22px;font-size:1.15rem;font-weight:600;display:flex;
+ justify-content:space-between;align-items:center;cursor:pointer;}
+.loc-toggle{transition:.3s;}
+.loc-content{max-height:0;overflow:hidden;transition:max-height .45s ease;padding:0 22px;}
+.loc-content.open{padding:22px;max-height:900px;}
+
+/* Distance rows */
+.dist-grid{display:grid;gap:18px;margin:18px 0;}
+.dist-item{background:#f6f6f6;padding:14px;border-radius:8px;font-size:.95rem;}
+.dist-item strong{font-size:1rem;}
+
+/* Blur preview before open */
+.map-preview img{filter:blur(3px) brightness(.9);transition:.4s;border-radius:10px;}
+.map-preview:hover img{filter:blur(1px) brightness(1);}
+
+/* Buttons */
+.loc-btn{display:inline-block;margin-top:14px;background:#000;color:#fff;
+ padding:10px 18px;border-radius:6px;text-decoration:none;}
 </style>
 </head>
 
@@ -91,15 +91,13 @@ section.popup.show{display:block;opacity:1;}
 </nav>
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero">
 <div class="hero-content">
-<div class="hero-label">For Business Stays Near BIEC</div>
 <h1>A quiet, dependable place to work and rest</h1>
-<p class="hero-statement">20 minutes from BIEC. Clean suites with proper workspaces. Staff who understand early check-ins and late nights.</p>
+<p class="hero-statement">20 minutes from BIEC. Clean suites with proper workspaces.</p>
 <a href="https://bookingengine.stayflexi.com?hotel_id=23268" class="hero-cta">Check availability</a>
 </div>
-
 <div class="hero-visual">
 <div class="carousel-container">
 <div class="carousel-slide active"><img src="images/hero/hero-oasis-exterior.webp"></div>
@@ -117,94 +115,61 @@ section.popup.show{display:block;opacity:1;}
 
 <section class="rooftop-section">
 <h2>Explore Rituals at the Oasis 🍃</h2>
-<p>How would you like to unwind today?</p>
-
 <div class="activities-grid">
-  <div class="activity-card" onclick="openEat()">🍽 Eat</div>
-  <div class="activity-card" onclick="openSleep()">🛏 Sleep</div>
-  <div class="activity-card" onclick="alert('Relax Section Coming Soon 🌿')">🌿 Relax</div>
-  <div class="activity-card" onclick="alert('Style Section Coming Soon 👗')">👗 Style</div>
+<div class="activity-card" onclick="openEat()">🍽 Eat</div>
+<div class="activity-card" onclick="openSleep()">🛏 Sleep</div>
+<div class="activity-card">🌿 Relax</div>
+<div class="activity-card">👗 Style</div>
 </div>
 </section>
 
-<div class="collapse-box">
-  <div class="collapse-header" onclick="toggleCollapse('loc-box','loc-icon')">
-    📍 Location & Directions
-    <div id="loc-icon" class="collapse-toggle">▼</div>
-  </div>
-  <div id="loc-box" class="collapse-content">
-    <p style="opacity:.7;margin-bottom:14px;">Near BIEC · Metro reachable · Good commute access</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.30487490104!2d77.5166507!3d13.0181899"
-      width="100%" height="320" style="border:0;border-radius:10px;" loading="lazy"></iframe>
-  </div>
+<!-- ================= LOCATION FINAL ================= -->
+<h2 class="location-title">Where exactly are we located?</h2>
+<p class="location-sub">Yeshwanthpur · Close to BIEC · Peaceful area to work and sleep</p>
+
+<div class="location-container">
+<div class="loc-header" onclick="toggleCollapse('locBox','locIcon')">
+📍 Location & Directions
+<div id="locIcon" class="loc-toggle">▼</div>
 </div>
 
-<div class="collapse-box">
-  <div class="collapse-header" onclick="toggleCollapse('book-box','book-icon')">
-    🛎 Book Your Stay
-    <div id="book-icon" class="collapse-toggle">▼</div>
-  </div>
-  <div id="book-box" class="collapse-content">
-    <p style="opacity:.7;margin-bottom:14px;">Instant confirmation · Early check-ins available</p>
-    <iframe src="https://bookingengine.stayflexi.com?hotel_id=23268"
-      style="width:100%;height:650px;border:none;border-radius:10px;"></iframe>
-    <a href="https://bookingengine.stayflexi.com?hotel_id=23268" class="booking-btn">Open Fullscreen →</a>
-  </div>
+<div id="locBox" class="loc-content">
+<p id="live-distance" style="margin-bottom:6px;color:#444;"></p>
+<p id="travel-hint" style="margin-bottom:14px;color:#444;"></p>
+
+<div class="dist-grid">
+<div class="dist-item"><strong>BIEC</strong> — 12 min drive</div>
+<div class="dist-item"><strong>Yeshwanthpur Metro</strong> — 8 min walk</div>
+<div class="dist-item"><strong>Airport</strong> — 35 min cab</div>
+<div class="dist-item"><strong>Orion Mall</strong> — 5 min</div>
 </div>
 
-<section id="eat" class="popup">
-<div class="nav-back"><button onclick="closePopup()">← Back</button></div>
-<h2 style="text-align:center;margin-bottom:25px;">Dining Menu 🍽</h2>
-<div class="ritual-grid">
-<div class="ritual-card"><h3>Lunch Plates</h3><p>Comfort meals & bowls</p></div>
-<div class="ritual-card"><h3>Snacks</h3><p>Sandwich • Fries • Coffee</p></div>
-<div class="ritual-card"><h3>Dinner Meals</h3><p>Warm home-style servings</p></div>
-<div class="ritual-card"><h3>Fine Dine</h3><p>Pasta • Sizzlers</p></div>
+<div class="map-preview" style="margin-top:10px;">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.4829341131976!2d75.10914370992786!3d15.350309958222502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d73f4fd4c75f%3A0xebfb53b9b79bea23!2sHotel%20Oasis%20Suites!5e0!3m2!1sen!2sin!4v1766985476442!5m2!1sen!2sin"
+ width="100%" height="320" style="border:0;border-radius:10px;" allowfullscreen loading="lazy">
+</iframe>
 </div>
-</section>
 
-<section id="sleep" class="popup">
-<div class="nav-back"><button onclick="closePopup()">← Back</button></div>
-<h2 style="text-align:center;margin-bottom:25px;">Sleep Rituals 🌙</h2>
-<div class="ritual-grid">
-<div class="ritual-card"><h3>Herbal Tea 🍵</h3></div>
-<div class="ritual-card"><h3>Aromatherapy 🌾</h3></div>
-<div class="ritual-card"><h3>Candle Hour 🕯</h3></div>
-<div class="ritual-card"><h3>Night Stretch 😮‍💨</h3></div>
+<a href="https://www.google.com/maps/dir/?api=1&destination=15.350309958222502,75.10914370992786" target="_blank" class="loc-btn">Open in Google Maps →</a>
 </div>
-</section>
+</div>
+
+<!-- POPUPS -->
+<section id="eat" class="popup"><div class="nav-back"><button onclick="closePopup()">← Back</button></div></section>
+<section id="sleep" class="popup"><div class="nav-back"><button onclick="closePopup()">← Back</button></div></section>
 
 <script>
-// Hero Carousel
+// Carousel
 let s=0,slides=document.querySelectorAll('.carousel-slide'),dots=document.querySelectorAll('.carousel-dot');
 function show(n){slides.forEach(i=>i.classList.remove('active'));dots.forEach(i=>i.classList.remove('active'));
 slides[n].classList.add('active');dots[n].classList.add('active');}
-function next(){s=(s+1)%slides.length;show(s);} setInterval(next,4500);
+function next(){s=(s+1)%slides.length;show(s);}setInterval(next,4500);
 dots.forEach((d,i)=>d.onclick=()=>{s=i;show(i);});
 
-// ===== Updated Popup Behaviour (Fix) =====
-function openEat(){
-  closePopup();
-  const el=document.getElementById("eat");
-  el.classList.add("show");
-  el.scrollIntoView({behavior:"smooth",block:"start"});
-}
-function openSleep(){
-  closePopup();
-  const el=document.getElementById("sleep");
-  el.classList.add("show");
-  el.scrollIntoView({behavior:"smooth",block:"start"});
-}
-function closePopup(){
-  document.querySelectorAll(".popup").forEach(e=>e.classList.remove("show"));
-}
-
-// Rotating Words
+// Rotating text
 const words=["Calm","Sleep","Energy","Mood","Balance","Morning"];
-const rt=document.querySelector(".rotate-text");
-let i=0;
-function spin(){rt.style.opacity=0;
- setTimeout(()=>{rt.textContent=words[i];rt.style.opacity=1;i=(i+1)%words.length;},300);}
+const el=document.querySelector(".rotate-text");let idx=0;
+function spin(){el.style.opacity=0;setTimeout(()=>{el.textContent=words[idx];el.style.opacity=1;idx=(idx+1)%words.length;},300);}
 spin();setInterval(spin,2000);
 
 // Collapsible
@@ -213,6 +178,24 @@ const c=document.getElementById(box),i=document.getElementById(id);
 if(c.classList.contains("open")){c.classList.remove("open");i.style.transform="rotate(0deg)";}
 else{c.classList.add("open");i.style.transform="rotate(180deg)";}
 }
+
+// Distance calculator
+function distance(a,b,c,d){
+const R=6371,x=(c-a)*Math.PI/180,y=(d-b)*Math.PI/180;
+const h=Math.sin(x/2)**2+Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(y/2)**2;
+return R*2*Math.atan2(Math.sqrt(h),Math.sqrt(1-h));}
+
+function getDistanceLive(){
+if(!navigator.geolocation)return;
+navigator.geolocation.getCurrentPosition(pos=>{
+const userLat=pos.coords.latitude,userLon=pos.coords.longitude;
+const hLat=15.350309958222502,hLon=75.10914370992786;
+const d=distance(userLat,userLon,hLat,hLon).toFixed(1);
+
+document.getElementById("live-distance").innerText=`You are approx ${d} km away`;
+document.getElementById("travel-hint").innerText=d<2?"Best by walk 🚶":"Best by cab 🚕";
+});}
+getDistanceLive();
 </script>
 
 </body>
