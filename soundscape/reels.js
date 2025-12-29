@@ -39,3 +39,4 @@ async function loadReels() {
 }
 
 loadReels();
+<script src="reels.js"></script>
