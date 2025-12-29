@@ -6,118 +6,182 @@
 
 <title>JC Soundscapes | Sound that awakens what wants to emerge</title>
 
-<!-- 🔥 SEO Meta -->
-<meta name="description" content="JC Soundscapes — Handpan & clarinet journeys for presence, calm, and inner awakening. A sanctuary of sound where music becomes a doorway into what wants to emerge." />
-<meta name="keywords" content="sound healing, handpan, clarinet meditation, calming music, sleep loops, mindfulness sound, soundscapes, JC soundscapes" />
+<!-- SEO -->
+<meta name="description" content="Handpan & clarinet sound journeys for presence, calm, creativity and emotional release. Listen, breathe, return." />
 <link rel="canonical" href="https://hoteloasis.in/soundscape/" />
 
-<!-- 🟡 Social Share -->
-<meta property="og:title" content="JC Soundscapes — Sound that awakens what wants to emerge" />
-<meta property="og:description" content="Handpan & clarinet journeys that open breath, presence and emergence within you." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hoteloasis.in/soundscape/" />
-<meta property="og:image" content="https://hoteloasis.in/soundscape/preview.jpg" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="JC Soundscapes — Handpan & Clarinet Journeys" />
-<meta name="twitter:description" content="A space for inner emergence through sound, silence & breath." />
-<meta name="twitter:image" content="https://hoteloasis.in/soundscape/preview.jpg" />
-
-<!-- Schema -->
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "MusicGroup",
-"name": "JC Soundscapes",
-"description": "Handpan & clarinet sound journeys for meditation, calm, creativity & emotional release.",
-"url": "https://hoteloasis.in/soundscape/",
-"sameAs": [
-    "https://www.instagram.com/your_profile_here",
-    "https://youtube.com/",
-    "https://spotify.com/"
-]
-}
-</script>
-
-<!-- Styles -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
-:root{--stone:#d4cfc4;--smoke:#9a958c;--deep-earth:#4a4640;--void:#2a2622;--gold:#c9a66b;--silence:#f5f3ef;}
+:root{
+--stone:#d4cfc4;--smoke:#9a958c;--deep-earth:#4a4640;--void:#2a2622;
+--gold:#c9a66b;--silence:#f5f3ef;
+}
 
-body{font-family:'Georgia',serif;background:var(--silence);color:var(--deep-earth);line-height:1.8;overflow-x:hidden;}
+body{
+font-family:'Georgia',serif;background:var(--silence);color:var(--deep-earth);
+line-height:1.8;overflow-x:hidden;
+}
 h1,h2,h3{font-family:'Garamond','Georgia',serif;font-weight:300;letter-spacing:.05em;}
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;letter-spacing:.08em;}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2rem;background:linear-gradient(135deg,var(--stone),var(--silence));position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(201,166,107,.12),transparent 70%);animation:breathe 8s ease-in-out infinite;}
+.hero{min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;
+padding:4rem 2rem;background:linear-gradient(135deg,var(--stone),var(--silence));position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+background:radial-gradient(circle,rgba(201,166,107,.12),transparent 72%);animation:breathe 8s ease-in-out infinite;}
 @keyframes breathe{0%,100%{opacity:.3;transform:scale(1);}50%{opacity:.6;transform:scale(1.1);}}
 .hero-content{position:relative;z-index:2;max-width:900px;animation:fadeIn 2s ease-out;}
 @keyframes fadeIn{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
-.hero h1{font-size:clamp(2.5rem,6vw,5rem);margin-bottom:2rem;color:var(--void);}
-.identity-line{font-size:clamp(1.2rem,2.5vw,1.8rem);color:var(--smoke);margin-bottom:3rem;font-style:italic;}
-.cta-primary{padding:1.2rem 3rem;background:var(--deep-earth);color:var(--silence);text-decoration:none;border-radius:50px;transition:.4s;letter-spacing:.1em;}
-.cta-primary:hover{background:var(--void);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3);}
-.sub-cta{display:block;color:var(--smoke);margin-top:1rem;font-size:.95rem;}
 
+.hero h1{font-size:clamp(2.7rem,6vw,5rem);margin-bottom:2rem;color:var(--void);}
+.identity-line{font-size:1.3rem;color:var(--smoke);margin-bottom:3rem;font-style:italic;}
+.cta-primary{padding:1.2rem 3rem;background:var(--deep-earth);color:var(--silence);
+text-decoration:none;border-radius:50px;transition:.4s;letter-spacing:.1em;}
+.cta-primary:hover{background:var(--void);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3);}
+
+/* CONTENT SECTIONS */
 section{padding:6rem 2rem;max-width:1200px;margin:auto;}
 .section-title{text-align:center;font-size:clamp(2rem,4vw,3rem);margin-bottom:3rem;color:var(--void);}
 
-/* 🔥 REELS BLOCK */
+/* #### REELS #### */
 .reels{background:var(--stone);}
-.reels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:3rem;}
-
-.reel-card{
-    background:#fff;border-radius:12px;height:480px;display:flex;flex-direction:column;
-    overflow:hidden;text-decoration:none;color:var(--deep-earth);
-    box-shadow:0 6px 25px rgba(0,0,0,.1);
-    transform:translateY(30px);opacity:0;
-    transition:opacity .8s ease,transform .8s ease;
+.reels-grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:2rem;margin-top:3rem;
 }
-.reel-card.visible{opacity:1;transform:translateY(0);}
+
+/* Reel Card */
+.reel-card{
+background:#fff;border-radius:12px;overflow:hidden;
+box-shadow:0 6px 25px rgba(0,0,0,.1);
+text-decoration:none;color:var(--deep-earth);
+display:flex;flex-direction:column;transition:.35s;opacity:0;transform:translateY(20px);
+}
+.reel-card.loaded{opacity:1;transform:translateY(0);transition:.6s ease;}
 .reel-card:hover{transform:scale(1.03);}
 
-/* Hover + Lazy image animated */
+/* Thumbnail */
 .reel-thumb{
-    width:100%;height:80%;background-size:cover;background-position:center;
-    border-bottom:1px solid #ddd;opacity:.96;transition:transform .45s ease,opacity .4s;
+width:100%;height:78%;background-size:cover;background-position:center;
+border-bottom:1px solid #ddd;
+transition:transform .45s ease,opacity .4s;opacity:.96;
 }
 .reel-card:hover .reel-thumb{transform:scale(1.05);opacity:1;}
 
-.reel-placeholder{text-align:center;padding:1.4rem;font-size:1rem;}
+.reel-info{
+text-align:center;padding:1rem;font-size:1rem;
+}
 
+/* SOUL CALL */
+.soul-call{
+background:var(--void);color:var(--silence);text-align:center;padding:7rem 2rem;
+}
+.soul-call h2{font-size:clamp(2.4rem,5vw,4rem);color:var(--gold);margin-bottom:2rem;}
+.cta-private{
+padding:1.3rem 3rem;background:var(--gold);color:var(--void);border-radius:50px;
+text-decoration:none;font-size:1.2rem;display:inline-block;margin-bottom:2.5rem;
+transition:.4s;border:2px solid var(--gold);
+}
+.cta-private:hover{background:transparent;color:var(--gold);transform:scale(1.06);}
+.soul-ctas{display:flex;justify-content:center;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;}
+.soul-cta{
+padding:1rem 2.4rem;border:2px solid var(--gold);color:var(--gold);border-radius:40px;
+text-decoration:none;font-size:1rem;transition:.4s;
+}
+.soul-cta:hover{background:var(--gold);color:var(--void);}
+.signature{margin-top:3rem;font-style:italic;color:var(--stone);}
+
+/* FOOTER */
 footer{background:var(--void);color:var(--smoke);text-align:center;padding:3rem;margin-top:4rem;}
 
 @media(max-width:768px){
 section{padding:4rem 1.2rem;}
-.reel-card{height:420px;}
+.reel-card{height:auto;}
 }
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
 <div class="hero-content">
 <h1>Sound that awakens<br>what wants to emerge.</h1>
-<p class="identity-line">Handpan & clarinet journeys — a doorway into presence, breath & creative emergence.</p>
-<a href="#sound-reels" class="cta-primary sans">Enter Soundspace</a>
-<span class="sub-cta sans">Listen · Breathe · Return</span>
+<p class="identity-line">Handpan & clarinet journeys — a doorway into breath, stillness & creative emergence.</p>
+
+<a href="https://link.gobespoken.com/free_demo_booking" target="_blank" class="cta-primary sans">Enter Soundspace</a>
 </div>
 </section>
 
+<!-- REELS -->
 <section class="reels" id="sound-reels">
 <h2 class="section-title">Soundscapes You Can Enter</h2>
 <p style="text-align:center;color:var(--smoke)">New reels load automatically ↓</p>
+
 <div class="reels-grid">
-    <div class="reel-placeholder sans">Loading...</div>
+<div class="reel-info sans">Loading...</div>
 </div>
+</section>
+
+<!-- SOUL CALL -->
+<section class="soul-call">
+<h2>This Is Your Invitation</h2>
+<p style="max-width:720px;margin:auto;line-height:1.9;">
+You don't need to be fixed. You don't need to be better.  
+You only need permission to pause — to feel — to return to yourself.  
+The sound is here. The space is held.
+</p>
+
+<a href="https://link.gobespoken.com/free_demo_booking" target="_blank" class="cta-private sans">
+Book Your Private Session
+</a>
+
+<div class="soul-ctas">
+<a class="soul-cta sans" href="#">Listen</a>
+<a class="soul-cta sans" href="#">Follow</a>
+<a class="soul-cta sans" href="#">Join Movement</a>
+</div>
+
+<p class="signature">Come as you are. Leave more whole.</p>
 </section>
 
 <footer>© 2025 JC Soundscapes — A sanctuary of sound & silence.</footer>
 
+<script>
+// —— LOAD REELS ——
+async function loadReels(){
+const apiUrl="https://script.google.com/macros/s/AKfycbzWWyeOlGM8rHNGOdZJYx4h-p-oHnn_4B-tVTHonynZ3v15-NuCQdfjyW1WmT-FIQ4/exec";
+
+try{
+const res=await fetch(apiUrl);
+const reels=await res.json();
+const container=document.querySelector(".reels-grid");
+container.innerHTML="";
+
+reels.forEach(reel=>{
+const id=reel.instagram_url.match(/reel\/([^/?]+)/)?.[1];
+const thumb=id?`https://www.instagram.com/p/${id}/media/?size=l`:"";
+
+const card=document.createElement("a");
+card.href=reel.instagram_url;card.target="_blank";card.className="reel-card";
+
+card.innerHTML=`
+<div class="reel-thumb" style="background-image:url('${thumb}')"></div>
+<div class="reel-info sans">${reel.Title||"Untitled"}<br><small style="opacity:.7;">Tap to watch</small></div>
+`;
+
+container.appendChild(card);
+setTimeout(()=>card.classList.add("loaded"),100); 
+});
+}catch(e){
+console.error(e);
+document.querySelector(".reels-grid").innerHTML="<p style='text-align:center;color:#666'>Unable to load reels</p>";
+}
+}
+loadReels();
+</script>
+
 <script async src="//www.instagram.com/embed.js"></script>
-<script src="reels.js"></script>
 </body>
 </html>
