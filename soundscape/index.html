@@ -564,3 +564,39 @@
     <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
+<script>
+async function loadReels() {
+  const apiUrl = "https://script.google.com/macros/s/AKfycbvALEZUMFQtG3QgDnm0-y5e9HTLBXwXowfqIKgdG-Ra_EDI3oCWel0Yvnf8VkmCZno/exec";
+
+  try {
+    const res = await fetch(apiUrl);
+    const reels = await res.json();
+
+    const container = document.querySelector(".reels-grid");
+    container.innerHTML = ""; // remove placeholders
+
+    reels.forEach(reel => {
+      const card = document.createElement("a");
+      card.className = "reel-card";
+      card.href = reel.instagram_url;
+      card.target = "_blank";
+
+      card.innerHTML = `
+        <div class="reel-placeholder sans">
+          ${reel.Title}<br>
+          <small style="opacity: 0.7;">Tap to watch</small>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error("Error loading reels:", error);
+    document.querySelector(".reels-grid").innerHTML =
+      "<p style='text-align:center;color:#666;'>Unable to load reels right now.</p>";
+  }
+}
+
+loadReels();
+</script>
