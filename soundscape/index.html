@@ -3,244 +3,84 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>JC soundscapess | Sound that awakens what wants to emerge</title>
+<title>JC Soundscapes | Sound that awakens what wants to emerge</title>
 
 <!-- SEO -->
-<meta name="description" content="Handpan & Clarinet Soundscapes for presence, calm and inner emergence. Slow listening. Deep being." />
-<link rel="canonical" href="https://hoteloasis.in/soundscapes/">
+<meta name="description" content="Handpan & clarinet sound journeys for calm, presence, sleep and creative awakening." />
+<meta name="keywords" content="sound healing, handpan meditation, clarinet calm music, sleep soundscapes, ambient reels" />
+<link rel="canonical" href="https://hoteloasis.in/soundscape/" />
 
+<!-- Social Share -->
+<meta property="og:title" content="JC Soundscapes — Sound that awakens what wants to emerge" />
+<meta property="og:description" content="A sanctuary of sound and presence — handpan and clarinet journeys that open inner space." />
+<meta property="og:image" content="https://hoteloasis.in/soundscape/preview.jpg" />
+<meta property="og:type" content="website" />
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "MusicGroup",
+"name": "JC Soundscapes",
+"url": "https://hoteloasis.in/soundscape/",
+"description": "Handpan & clarinet sound meditations for calm, presence and creativity.",
+"sameAs": ["https://instagram.com/jc.soundscapess/"]
+}
+</script>
+
+<!-- Styles -->
 <style>
-/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
+:root{--stone:#d4cfc4;--smoke:#9a958c;--deep-earth:#4a4640;--void:#2a2622;--gold:#c9a66b;--silence:#f5f3ef;}
 
-/* COLORS */
-:root{
- --bg:#f5f3ef;
- --ink:#2b2723;
- --soft:#a59f95;
- --stone:#d4cfc4;
- --gold:#c9a66b;
-}
+body{font-family:'Georgia',serif;background:var(--silence);color:var(--deep-earth);line-height:1.8;overflow-x:hidden;}
+h1,h2,h3{font-family:'Garamond','Georgia',serif;font-weight:300;letter-spacing:.05em;}
+.sans{-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;letter-spacing:.08em;}
 
-/* BASE */
-body{
- background:var(--bg);
- color:var(--ink);
- font-family:Georgia,serif;
- line-height:1.9;
- letter-spacing:.2px;
- overflow-x:hidden;
-}
+/* Smooth fade */
+section{opacity:0;transform:translateY(30px);transition:1.4s ease;}
+section.visible{opacity:1;transform:translateY(0);}
 
-/* TYPO */
-h1,h2,h3{
- font-family: 'Garamond',serif;
- font-weight:300;
- letter-spacing:.04em;
-}
+/* Hero */
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 2rem;background:linear-gradient(135deg,var(--stone),var(--silence));}
+.hero h1{font-size:clamp(2.7rem,6vw,4.8rem);margin-bottom:1.8rem;}
+.identity-line{font-size:1.3rem;max-width:720px;margin:auto;opacity:.8;margin-bottom:2.2rem;}
+.cta-primary{padding:1.2rem 3rem;background:var(--deep-earth);color:#fff;border-radius:40px;text-decoration:none;transition:.3s;display:inline-block;}
+.cta-primary:hover{background:var(--void);}
 
-.sans{font-family:-apple-system,'Segoe UI',sans-serif;font-weight:300;}
+/* Tension */
+.tension{padding:7rem 2rem;max-width:1100px;margin:auto;}
+.tension-grid{margin-top:3rem;display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.tension-item{background:#fff;padding:2rem;border-radius:10px;box-shadow:0 5px 18px rgba(0,0,0,.06);}
 
-/* GLOBAL SECTION SPACING — slow scroll breathing */
-section{
- width:100%;
- max-width:1200px;
- margin:auto;
- padding:8rem 2rem;
-}
+/* Opportunity */
+.opportunity{padding:7rem 2rem;text-align:center;max-width:900px;margin:auto;}
+.opportunity-text{font-size:1.2rem;opacity:.85;line-height:2;margin-top:2rem;}
 
-/* HERO */
-.hero{
- min-height:95vh;
- display:flex;
- align-items:center;
- justify-content:center;
- text-align:center;
- position:relative;
- background:linear-gradient(145deg,var(--stone),var(--bg));
-}
+/* Offerings */
+.offers{padding:7rem 2rem;max-width:1200px;margin:auto;}
+.offers-grid{display:grid;gap:2.2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+.offer-card{background:var(--silence);padding:2rem;border-radius:12px;transition:.4s;}
+.offer-card:hover{transform:scale(1.02);}
 
-.hero-content{max-width:860px;animation:fadeUp 3s ease;}
-.hero h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:2rem;}
-.identity-line{font-size:clamp(1.2rem,2.5vw,1.7rem);color:var(--soft);margin-bottom:3.5rem;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;}}
+/* Reels */
+.reels{padding:7rem 2rem;background:var(--stone);}
+.reels-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+.reel-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.08);text-decoration:none;color:var(--void);}
+.reel-thumb{height:78%;background-size:cover;background-position:center;transition:.5s;}
+.reel-card:hover .reel-thumb{transform:scale(1.08);}
+.reel-placeholder{padding:1.4rem;text-align:center;opacity:.85;}
 
-.cta-main{
- display:inline-block;
- background:var(--ink);
- color:var(--bg);
- padding:1.2rem 3rem;
- border-radius:40px;
- text-decoration:none;
- font-size:1.05rem;
- letter-spacing:.1em;
- transition:.4s;
-}
-.cta-main:hover{background:#000;transform:translateY(-3px);}
+/* Soul */
+.soul-call{text-align:center;padding:9rem 2rem;background:var(--void);color:#fff;}
+.soul-call h2{font-size:2.6rem;margin-bottom:2rem;color:var(--gold);}
+.cta-private{background:var(--gold);padding:1.4rem 3rem;border-radius:50px;font-size:1.2rem;text-decoration:none;color:var(--void);display:inline-block;margin-bottom:1.8rem;}
+.cta-private:hover{opacity:.85;}
+.soul-ctas{margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:center;}
+.soul-cta{padding:1rem 2.4rem;border:1.8px solid var(--gold);color:var(--gold);border-radius:40px;text-decoration:none;transition:.3s;}
+.soul-cta:hover{background:var(--gold);color:var(--void);}
 
-/* TENSION */
-.tension h2{text-align:center;font-size:2.6rem;margin-bottom:4rem;}
-.tension-grid{
- display:grid;
- gap:2rem;
- grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-}
-.tension-item{
- background:white;
- padding:2.2rem;
- border-radius:10px;
- box-shadow:0 6px 18px rgba(0,0,0,.06);
- transition:.4s;
-}
-.tension-item:hover{transform:translateY(-5px);}
-
-/* OPPORTUNITY */
-.opportunity{text-align:center;}
-.opportunity p{
- max-width:780px;
- margin:auto;
- font-size:1.22rem;
- line-height:2.1;
- margin-bottom:2rem;
-}
-
-/* RESOLUTION / OFFERINGS */
-.offerings{
- display:grid;
- gap:2.5rem;
- grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
- margin-top:4rem;
-}
-.offering-card{
- padding:2.6rem;
- background:#fff;
- border-radius:12px;
- transition:.4s;
- border:1px solid transparent;
-}
-.offering-card:hover{
- border-color:var(--gold);
- transform:scale(1.02);
- box-shadow:0 10px 30px rgba(0,0,0,.1);
-}
-
-/* REELS */
-.reels{text-align:center;background:var(--stone);}
-.reels-grid{
- margin-top:3rem;
- display:grid;
- gap:2rem;
- grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-}
-
-.reel-card{
- display:flex;
- flex-direction:column;
- background:white;
- border-radius:12px;
- overflow:hidden;
- text-decoration:none;
- color:var(--ink);
- box-shadow:0 6px 20px rgba(0,0,0,.08);
- transition:.3s;
- height:480px;
-}
-.reel-card:hover{transform:scale(1.03);}
-
-.reel-thumb{
- width:100%;
- height:78%;
- background-size:cover;
- background-position:center;
- border-bottom:1px solid #ddd;
- transition:transform .45s ease,opacity .4s;
- opacity:.94;
-}
-.reel-card:hover .reel-thumb{transform:scale(1.05);opacity:1;}
-
-.reel-placeholder{text-align:center;padding:1.4rem;}
-
-/* SOUL CALL */
-.soul-call{
- background:#1f1d1a;
- color:var(--bg);
- text-align:center;
- padding:10rem 2rem;
-}
-
-.soul-call h2{
- font-size:clamp(2.6rem,5vw,4rem);
- margin-bottom:2.5rem;
- color:var(--gold);
-}
-
-.soul-text{
- max-width:760px;
- margin:auto;
- font-size:1.3rem;
- line-height:2.2;
- margin-bottom:3.5rem;
- opacity:.92;
-}
-
-.cta-private{
- display:inline-block;
- background:var(--gold);
- color:#1f1d1a;
- padding:1.4rem 3.6rem;
- border-radius:50px;
- font-size:1.15rem;
- text-decoration:none;
- transition:.3s;
- border:2px solid var(--gold);
-}
-.cta-private:hover{
- background:transparent;
- color:var(--gold);
- transform:scale(1.05);
-}
-
-.soul-ctas{
- margin-top:3.5rem;
- display:flex;
- flex-wrap:wrap;
- justify-content:center;
- gap:1.6rem;
-}
-.soul-cta{
- border:2px solid var(--gold);
- padding:1rem 2.4rem;
- border-radius:40px;
- color:var(--gold);
- text-decoration:none;
- font-size:1rem;
- opacity:.85;
- transition:.3s;
-}
-.soul-cta:hover{background:var(--gold);color:#1f1d1a;opacity:1;}
-
-.signature{
- margin-top:3.5rem;
- font-size:1.4rem;
- opacity:.75;
- font-style:italic;
-}
-
-/* FOOTER */
-footer{
- text-align:center;
- padding:3.5rem 2rem;
- background:#1f1d1a;
- color:var(--soft);
- margin-top:5rem;
-}
-
-/* MOBILE */
-@media(max-width:800px){
- section{padding:6rem 1.5rem;}
- .hero{padding-top:5rem;}
- .reel-card{height:420px;}
-}
+footer{text-align:center;padding:3rem;font-size:.9rem;background:var(--void);color:#bbb;margin-top:6rem;}
 </style>
 </head>
 
@@ -248,108 +88,103 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
- <div class="hero-content">
-  <h1>Sound that awakens<br>what wants to emerge.</h1>
-  <p class="identity-line">Handpan & clarinet journeys into presence. Sound that opens the inner room.</p>
-  <a href="#reels" class="cta-main sans">Enter the Soundspace</a>
-  <br><br>
- </div>
+<div>
+<h1>Sound that awakens<br>what wants to emerge.</h1>
+<p class="identity-line">Handpan & clarinet journeys — sound as a doorway to presence, breath and inner space.</p>
+<a href="#reels" class="cta-primary sans">Enter</a>
+</div>
 </section>
 
 <!-- TENSION -->
 <section class="tension" id="tension">
- <h2>When the world feels heavy</h2>
-
- <div class="tension-grid">
-  <div class="tension-item"><h3>Unseen</h3><p>You move through rooms like air.</p></div>
-  <div class="tension-item"><h3>Stuck</h3><p>The music won’t come. The page stays white.</p></div>
-  <div class="tension-item"><h3>Numb</h3><p>Feeling is a memory. Life is flat.</p></div>
-  <div class="tension-item"><h3>No Quiet</h3><p>Thoughts rush like traffic. No pause.</p></div>
-  <div class="tension-item"><h3>Wonder Lost</h3><p>The sky no longer surprises you.</p></div>
-  <div class="tension-item"><h3>Always On</h3><p>The world is loud. You forgot how to rest.</p></div>
- </div>
+<h2 class="section-title">When the World Feels Heavy</h2>
+<div class="tension-grid">
+<div class="tension-item"><h3>Unseen</h3><p>You move through rooms like air.</p></div>
+<div class="tension-item"><h3>Stuck</h3><p>The page stays blank. The song won't come.</p></div>
+<div class="tension-item"><h3>Numb</h3><p>Feeling becomes distant. Flat.</p></div>
+<div class="tension-item"><h3>No Quiet</h3><p>Mind like traffic. No space.</p></div>
+<div class="tension-item"><h3>Wonder Lost</h3><p>The sky is just sky. Magic asleep.</p></div>
+<div class="tension-item"><h3>Always On</h3><p>You forgot how to pause.</p></div>
+</div>
 </section>
 
 <!-- OPPORTUNITY -->
 <section class="opportunity">
- <h2 class="section-title">What if one sound changed everything?</h2>
- <p>Not entertainment. A doorway back to yourself.</p>
- <p>Handpan like water. Clarinet like wind. A mirror to the inner world.</p>
+<h2 class="section-title">One Note Can Open a Door</h2>
+<p class="opportunity-text">
+Sound is not background here — it is invitation.  
+A mirror. A returning.  
+The handpan hums like the earth remembering.  
+The clarinet breathes like wind through ancient trees.  
+You listen — and something inside loosens, softens, rises.
+</p>
 </section>
 
 <!-- OFFERINGS -->
-<section class="resolution">
- <h2 class="section-title">Offerings</h2>
- <div class="offerings">
-  <div class="offering-card"><h3>Sound Journeys</h3><p>Acoustic meditations for release and return.</p></div>
-  <div class="offering-card"><h3>Handpan Waves</h3><p>Stone, water, resonance.</p></div>
-  <div class="offering-card"><h3>Clarinet Wind</h3><p>Breath made music.</p></div>
-  <div class="offering-card"><h3>Sleep Loops</h3><p>Soft repeating soundscapess.</p></div>
-  <div class="offering-card"><h3>Breath & Silence</h3><p>Space where nervous system rests.</p></div>
-  <div class="offering-card"><h3>Calm Reel Library</h3><p>Bite-sized sound medicine.</p></div>
- </div>
+<section class="offers">
+<h2 class="section-title">What Awaits You Inside</h2>
+<div class="offers-grid">
+<div class="offer-card"><h3>Sound Journeys</h3><p>Guided presence & release through tone and breath.</p></div>
+<div class="offer-card"><h3>Handpan Waves</h3><p>Earth-warm resonance in the chest.</p></div>
+<div class="offer-card"><h3>Clarinet Wind</h3><p>Breath that carries feeling.</p></div>
+<div class="offer-card"><h3>Sleep / Calm Loops</h3><p>Slow repeating soundscapes for night softness.</p></div>
+</div>
 </section>
 
 <!-- REELS -->
 <section class="reels" id="reels">
- <h2 class="section-title">soundscapess You Can Enter</h2>
- <p style="opacity:.7">New reels load automatically ↓</p>
-
- <div class="reels-grid" id="reel-container">
-   <div class="reel-placeholder sans">Loading...</div>
- </div>
+<h2 class="section-title">Soundscapes You Can Enter</h2>
+<p style="text-align:center;opacity:.6;">New journeys appear here automatically ↓</p>
+<div class="reels-grid" id="reels-container">
+<div class="reel-placeholder">Loading...</div>
+</div>
 </section>
 
 <!-- SOUL CALL -->
 <section class="soul-call">
- <h2>This is your invitation</h2>
- <p class="soul-text">Pause. Listen. Return. Nothing to fix. Only to feel. Only to be.</p>
+<h2>This Is Your Invitation</h2>
+<p>Come as you are. Rest. Return to yourself through sound.</p>
 
- <a href="https://link.gobespoken.com/free_demo_booking" 
-    class="cta-private sans" target="_blank">Book a Private Session</a>
+<a href="https://link.gobespoken.com/free_demo_booking" class="cta-private">Book Your Private Session</a>
 
- <div class="soul-ctas">
-   <a href="https://wa.me/918088301024?text=I%20am%20ready%20to%20listen" class="soul-cta sans" target="_blank">
-      Join The soundscapes Circle
-   </a>
-   <a href="https://www.instagram.com/jc.soundscapess" class="soul-cta sans" target="_blank">
-      Follow on Instagram
-   </a>
- </div>
-
- <p class="signature">Come as you are. Leave more whole.</p>
+<div class="soul-ctas">
+<a href="https://instagram.com/jc.soundscapess/" class="soul-cta">Listen</a>
+<a href="https://instagram.com/jc.soundscapess/" class="soul-cta">Follow</a>
+<a href="https://wa.me/918088301024?text=I%20am%20ready%20to%20listen" class="soul-cta">Join Movement</a>
+</div>
 </section>
 
-<footer>© 2025 JC soundscapess — Hosted at Hotel Oasis, Bangalore</footer>
+<footer>© 2025 JC Soundscapes — hosted at Hotel Oasis. Sound. Stillness. Return.</footer>
 
-<!-- Scripts -->
 <script>
-async function loadReels() {
- const url = "https://script.google.com/macros/s/AKfycbzWWyeOlGM8rHNGOdZJYx4h-p-oHnn_4B-tVTHonynZ3v15-NuCQdfjyW1WmT-FIQ4/exec";
+// Fade-in On Scroll
+const sections=document.querySelectorAll("section");
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible");});
+},{threshold:0.15});
+sections.forEach(s=>observer.observe(s));
 
- try{
-   const r = await fetch(url);
-   const data = await r.json();
-   const grid = document.querySelector(".reels-grid");
-   grid.innerHTML="";
+// Dynamic Reels Loader
+async function loadReels(){
+const api="https://script.google.com/macros/s/AKfycbzWWyeOlGM8rHNGOdZJYx4h-p-oHnn_4B-tVTHonynZ3v15-NuCQdfjyW1WmT-FIQ4/exec";
+try{
+const res=await fetch(api);const data=await res.json();
+const box=document.getElementById("reels-container");box.innerHTML="";
 
-   data.forEach(v=>{
-     const id = (v.instagram_url.match(/reel\/([^/?]+)/)||[])[1];
-     const thumb = id ? `https://www.instagram.com/p/${id}/media/?size=l`:"";
+data.forEach(r=>{
+const id=r.instagram_url.match(/reel\/([^\/]+)/)?.[1];
+const thumb=id?`https://www.instagram.com/p/${id}/media/?size=l`:``;
 
-     grid.insertAdjacentHTML("beforeend",`
-     <a href="${v.instagram_url}" class="reel-card" target="_blank">
-       <div class="reel-thumb" style="background-image:url('${thumb}')"></div>
-       <div class="reel-placeholder sans">${v.Title||""}<br><small style="opacity:.6">Tap to watch</small></div>
-     </a>`);
-   });
-
- }catch(e){
-   console.log(e);
-   document.querySelector(".reels-grid").innerHTML="<p>Unable to load right now</p>";
- }
-}
+box.innerHTML+=`
+<a class="reel-card" href="${r.instagram_url}" target="_blank">
+<div class="reel-thumb" style="background-image:url('${thumb}')"></div>
+<div class="reel-placeholder">${r.Title||"Reel"}</div>
+</a>`;
+});
+}catch(err){
+document.getElementById("reels-container").innerHTML="<p>Unable to load reels</p>";
+}}
 loadReels();
 </script>
-
-</body></html>
+</body>
+</html>
