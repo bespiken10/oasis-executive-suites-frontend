@@ -1,3 +1,4 @@
+<script>
 async function loadReels() {
   const apiUrl = "https://script.google.com/macros/s/AKfycbzWWyeOlGM8rHNGOdZJYx4h-p-oHnn_4B-tVTHonynZ3v15-NuCQdfjyW1WmT-FIQ4/exec";
 
@@ -10,13 +11,18 @@ async function loadReels() {
 
     reels.forEach(reel => {
 
-      const match = reel.instagram_url.match(/reel\/([^/?]+)/);
+      // ⛔ Skip blank rows in sheet
+      if (!reel.instagram_url) return;
+
+      // 🔍 Extract reel/post id even with ?utm parameters
+      const match = reel.instagram_url.match(/reel\/([^\/?]+)/);
       const id = match ? match[1] : null;
 
       const thumb = id 
         ? `https://www.instagram.com/p/${id}/media/?size=l`
         : "";
 
+      // 🎥 Build card
       const card = document.createElement("a");
       card.className = "reel-card";
       card.href = reel.instagram_url;
@@ -43,7 +49,7 @@ async function loadReels() {
       container.appendChild(card);
     });
 
-    // 🔥 Fade-in lazy load animation
+    // Smooth fade-in appearance
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -63,3 +69,4 @@ async function loadReels() {
 }
 
 loadReels();
+</script>
