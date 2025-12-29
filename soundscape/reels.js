@@ -6,17 +6,37 @@ async function loadReels() {
     const reels = await res.json();
 
     const container = document.querySelector(".reels-grid");
-    container.innerHTML = ""; 
+    container.innerHTML = ""; // clears "loading..."
 
     reels.forEach(reel => {
+
+      // Extract Instagram Reel ID
+      const match = reel.instagram_url.match(/reel\/([^/?]+)/);
+      const id = match ? match[1] : null;
+
+      // Auto thumbnail pull (Instagram public thumbnail trick)
+      const thumb = id 
+        ? `https://www.instagram.com/p/${id}/media/?size=l`
+        : "";
+
+      // Card
       const card = document.createElement("a");
       card.className = "reel-card";
       card.href = reel.instagram_url;
       card.target = "_blank";
 
       card.innerHTML = `
-        <div class="reel-placeholder sans">
-          ${reel.Title}<br>
+        <div class="reel-thumb" 
+          style="
+            background:url('${thumb}') center/cover no-repeat;
+            width:100%;
+            height:80%;
+            border-bottom:1px solid #ddd;
+          ">
+        </div>
+
+        <div class="reel-placeholder sans" style="padding:1.2rem;">
+          ${reel.Title || "Untitled"}<br>
           <small style="opacity:.7;">Tap to watch</small>
         </div>
       `;
@@ -31,4 +51,5 @@ async function loadReels() {
   }
 }
 
+// Run on page load
 loadReels();
