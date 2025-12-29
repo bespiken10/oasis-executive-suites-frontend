@@ -6,35 +6,32 @@ async function loadReels() {
     const reels = await res.json();
 
     const container = document.querySelector(".reels-grid");
-    container.innerHTML = ""; // clears loader
+    container.innerHTML = ""; 
 
     reels.forEach(reel => {
 
-      // Extract Reel ID
       const match = reel.instagram_url.match(/reel\/([^/?]+)/);
       const id = match ? match[1] : null;
 
-      // Auto-thumbnail source
       const thumb = id 
         ? `https://www.instagram.com/p/${id}/media/?size=l`
         : "";
 
-      // Create card
       const card = document.createElement("a");
       card.className = "reel-card";
       card.href = reel.instagram_url;
       card.target = "_blank";
       card.rel = "noopener";
+      card.setAttribute("loading", "lazy");
 
       card.innerHTML = `
-        <div class="reel-thumb" 
+        <div class="reel-thumb"
           style="
             background:url('${thumb}') center/cover no-repeat;
             width:100%;
             height:78%;
             border-bottom:1px solid rgba(0,0,0,.06);
-            border-radius:12px 12px 0 0;
-          ">
+            border-radius:12px 12px 0 0;">
         </div>
 
         <div class="reel-placeholder sans" style="padding:1rem 1.4rem;text-align:center;">
@@ -46,6 +43,18 @@ async function loadReels() {
       container.appendChild(card);
     });
 
+    // 🔥 Fade-in lazy load animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".reel-card").forEach(card => observer.observe(card));
+
   } catch (error) {
     console.error("Reel API error:", error);
     document.querySelector(".reels-grid").innerHTML =
@@ -53,5 +62,4 @@ async function loadReels() {
   }
 }
 
-// Run
 loadReels();
