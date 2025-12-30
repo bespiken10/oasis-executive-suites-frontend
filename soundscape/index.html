@@ -29,16 +29,17 @@
 </script>
 
 <style>
+/* Base */
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
  --stone:#d4cfc4;--smoke:#9a958c;--deep-earth:#4a4640;--void:#2a2622;
  --gold:#c9a66b;--silence:#f5f3ef;
 }
 
+/* Typography & layout */
 body{font-family:'Georgia',serif;background:var(--silence);color:var(--deep-earth);line-height:1.8;overflow-x:hidden;}
 h1,h2,h3{font-family:'Garamond','Georgia',serif;font-weight:300;letter-spacing:.05em;}
 .sans{-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;letter-spacing:.08em;}
-
 section{opacity:0;transform:translateY(30px);transition:1.4s ease;}
 section.visible{opacity:1;transform:translateY(0);}
 
@@ -56,8 +57,8 @@ section.visible{opacity:1;transform:translateY(0);}
   box-shadow:inset 0 0 200px rgba(0,0,0,.6);
 }
 .hero-content{position:relative;z-index:2;max-width:780px;padding:3rem 2rem;}
-.hero h1{font-size:clamp(2.6rem,6vw,5rem);line-height:1.3;margin-bottom:1.6rem;color:#fff;}
-.identity-line{font-size:1.3rem;max-width:760px;margin:auto;opacity:.9;margin-bottom:2.2rem;color:#fff;}
+.hero h1{font-size:clamp(2.6rem,6vw,5rem);line-height:1.3;margin-bottom:1.6rem;}
+.identity-line{font-size:1.3rem;max-width:760px;margin:auto;opacity:.9;margin-bottom:2.2rem;}
 .cta-primary{padding:1.1rem 2.6rem;background:#fff;color:#111;border-radius:40px;text-decoration:none;font-weight:500;}
 .cta-primary:hover{background:#f0f0f0;}
 
@@ -82,72 +83,23 @@ section.visible{opacity:1;transform:translateY(0);}
 .reel-card:hover .reel-thumb{transform:scale(1.05);}
 .reel-placeholder{padding:1rem;text-align:center;}
 
-/* ------------------ SOUL CALL (FIXED) ------------------ */
+/* ---------------- SOUL CALL (FINAL FIXED) ----------------*/
+.soul-call{text-align:center;padding:6rem 2rem;background:var(--void);color:#fff;}
+.soul-call h2{font-size:2.9rem;margin-bottom:1rem;color:var(--gold);}
+.soul-call p{max-width:650px;margin:auto;font-size:1.18rem;opacity:.9;margin-bottom:2.5rem;}
 
-.soul-call{
-  text-align:center;
-  padding:5rem 2rem 6rem;
-  background:var(--void);
-  color:#fff;
-}
+.cta-private{background:var(--gold);padding:1.15rem 2.6rem;border-radius:45px;font-size:1.25rem;color:var(--void);font-weight:600;text-decoration:none;display:inline-block;margin-bottom:3rem;transition:.3s;}
+.cta-private:hover{opacity:.9;transform:scale(1.06);}
 
-.soul-call h2{
-  font-size:2.8rem;
-  color:var(--gold);
-  margin-bottom:1rem;
-}
+.soul-ctas{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;}
+.soul-cta{padding:.9rem 2.3rem;border:2px solid var(--gold);color:var(--gold);min-width:150px;border-radius:50px;text-decoration:none;font-size:1.1rem;transition:.3s;}
+.soul-cta:hover{background:var(--gold);color:var(--void);transform:translateY(-3px);}
 
-.soul-call p{
-  font-size:1.15rem;
-  max-width:600px;
-  margin:0 auto 2rem;
-  opacity:.9;
-}
-
-/* Main CTA */
-.cta-private{
-  background:var(--gold);
-  padding:1.1rem 2.4rem;
-  border-radius:45px;
-  font-size:1.25rem;
-  color:var(--void);
-  text-decoration:none;
-  display:inline-block;
-  margin-bottom:2.8rem;
-  font-weight:600;
-  transition:.3s;
-}
-.cta-private:hover{
-  opacity:.88;
-  transform:scale(1.03);
-}
-
-/* 3 buttons row */
-.soul-ctas{
-  display:flex;
-  justify-content:center;
-  gap:2rem;
-  flex-wrap:wrap;
-}
-
-.soul-cta{
-  padding:.85rem 2.2rem;
-  border:2px solid var(--gold);
-  color:var(--gold);
-  border-radius:50px;
-  min-width:160px;
-  font-size:1.1rem;
-  text-align:center;
-  transition:.3s;
-}
-.soul-cta:hover{
-  background:var(--gold);
-  color:var(--void);
-  transform:translateY(-3px);
-}
-
-/* footer unchanged — keep it if already present below */
+/* Footer */
 footer{text-align:center;padding:3rem;font-size:.9rem;background:var(--void);color:#bbb;margin-top:6rem;}
+</style>
+</head>
+<body>
 
 <!-- HERO -->
 <section class="hero">
