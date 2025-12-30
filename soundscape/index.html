@@ -180,19 +180,59 @@ section{
   color:var(--void);
   text-decoration:none;
 }
+/* ---------------- REELS (IMPROVED UI) ----------------*/
+.reels{
+  padding:7rem 2rem;background:var(--stone);
+}
+.reels-grid{
+  display:grid;gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+/* Reel Card Base */
+.reel-card{
+  position:relative;
+  background:#e9e3d5;                     /* warm parchment tone */
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
+  text-decoration:none;
+  color:var(--void);
+  transition:.3s;
+}
+.reel-card:hover{transform:scale(1.02);}
+
+/* NEW Placeholder UI */
 .reel-thumb{
-  height:200px;
-  background-size:cover;
-  background-position:center;
-  filter:brightness(.92);
-  transition:.4s;
+  height:240px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#bfa780,#d9ccb3);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  position:relative;
 }
-.reel-card:hover .reel-thumb{
-  transform:scale(1.05);
+
+/* Play Button Overlay */
+.reel-thumb::after{
+  content:"▶";
+  width:80px;height:80px;
+  border-radius:50%;
+  background:rgba(0,0,0,.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  color:white;
+  backdrop-filter:blur(3px);
 }
+
+/* Title */
 .reel-placeholder{
-  padding:1rem;
   text-align:center;
+  padding:1.2rem;
+  font-size:1.2rem;
+  font-weight:600;
 }
 
 /* ---------------- SOUL CALL ----------------*/
