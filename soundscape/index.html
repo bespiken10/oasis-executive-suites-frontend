@@ -28,8 +28,6 @@
 }
 </script>
 
-
-<!-- ------------------  STYLES  ------------------ -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -44,48 +42,26 @@ h1,h2,h3{font-family:'Garamond','Georgia',serif;font-weight:300;letter-spacing:.
 section{opacity:0;transform:translateY(30px);transition:1.4s ease;}
 section.visible{opacity:1;transform:translateY(0);}
 
-
-/* ------------------ HERO NEW ------------------ */
-
-/* Hero */
+/* ---------------- HERO ----------------*/
 .hero{
   min-height:100vh;
   background:url("Images/hero.webp") center/cover no-repeat fixed;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:0; /* image fills full screen */
-  position:relative;
-  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;position:relative;color:#fff;padding:0;
 }
-hero-overlay{
+.hero-overlay{
   position:absolute;inset:0;
   background:rgba(0,0,0,0.32);
-  backdrop-filter:blur(0.8px);
-  box-shadow:inset 0 0 200px rgba(0,0,0,0.6);
+  backdrop-filter:blur(1px);
+  box-shadow:inset 0 0 200px rgba(0,0,0,.6);
 }
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:780px;
-  margin:auto;
-  padding:3rem 2rem;
-}
-.hero h1{
-  font-size:clamp(2.6rem,6vw,5rem);
-  line-height:1.3;
-  margin-bottom:1.6rem;
-  color:#fff;
-}
-.identity-line{font-size:1.3rem;max-width:760px;margin:auto;opacity:.9;margin-bottom:2.2rem;color:#fdfdfd;}
-.cta-primary{padding:1.1rem 2.6rem;background:#fff;color:#1a1a1a;border-radius:40px;text-decoration:none;font-weight:500;}
+.hero-content{position:relative;z-index:2;max-width:780px;padding:3rem 2rem;}
+.hero h1{font-size:clamp(2.6rem,6vw,5rem);line-height:1.3;margin-bottom:1.6rem;color:#fff;}
+.identity-line{font-size:1.3rem;max-width:760px;margin:auto;opacity:.9;margin-bottom:2.2rem;color:#fff;}
+.cta-primary{padding:1.1rem 2.6rem;background:#fff;color:#111;border-radius:40px;text-decoration:none;font-weight:500;}
 .cta-primary:hover{background:#f0f0f0;}
 
-
-/* ------------------ CONTENT SECTIONS ------------------ */
-
+/* ------------- CONTENT ----------------*/
 .tension{padding:7rem 2rem;max-width:1100px;margin:auto;}
 .tension-grid{margin-top:3rem;display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
 .tension-item{background:#fff;padding:2rem;border-radius:10px;box-shadow:0 5px 18px rgba(0,0,0,.06);}
@@ -98,58 +74,45 @@ hero-overlay{
 .offer-card{background:var(--silence);padding:2rem;border-radius:12px;transition:.4s;}
 .offer-card:hover{transform:scale(1.02);}
 
-
-/* ------------------ REELS ------------------ */
-
+/* ---------------- REELS ----------------*/
 .reels{padding:7rem 2rem;background:var(--stone);}
 .reels-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
-.reel-card{
- background:#fff;border-radius:12px;overflow:hidden;
- box-shadow:0 6px 22px rgba(0,0,0,.08);text-decoration:none;color:var(--void);
-}
-.reel-thumb{
- height:200px;background-size:cover;background-position:center;
- transition:.4s;filter:brightness(.92);
-}
+.reel-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.08);color:var(--void);text-decoration:none;}
+.reel-thumb{height:200px;background-size:cover;background-position:center;filter:brightness(.92);transition:.4s;}
 .reel-card:hover .reel-thumb{transform:scale(1.05);}
-.reel-placeholder{padding:1rem 1.2rem;text-align:center;}
+.reel-placeholder{padding:1rem;text-align:center;}
 
-
-/* ------------------ SOUL CALL ------------------ */
-
+/* ---------------- SOUL INVITATION ----------------*/
 .soul-call{text-align:center;padding:9rem 2rem;background:var(--void);color:#fff;}
 .soul-call h2{font-size:2.6rem;margin-bottom:2rem;color:var(--gold);}
-.cta-private{background:var(--gold);padding:1.4rem 3rem;border-radius:50px;font-size:1.2rem;color:var(--void);text-decoration:none;}
+.cta-private{background:var(--gold);padding:1.3rem 3rem;border-radius:50px;font-size:1.2rem;color:var(--void);text-decoration:none;font-weight:600;}
 .cta-private:hover{opacity:.85;}
 .soul-ctas{margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:center;}
-.soul-cta{padding:1rem 2.4rem;border:1.8px solid var(--gold);color:var(--gold);border-radius:40px;text-decoration:none;transition:.3s;}
+.soul-cta{padding:1rem 2.4rem;border:2px solid var(--gold);color:var(--gold);border-radius:40px;text-decoration:none;font-weight:500;transition:.3s;}
 .soul-cta:hover{background:var(--gold);color:var(--void);}
 
 footer{text-align:center;padding:3rem;font-size:.9rem;background:var(--void);color:#bbb;margin-top:6rem;}
 </style>
 </head>
 
-
 <body>
 
-<!-- ---------------- HERO BLOCK  ---------------- -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-      <h1>Sound that awakens<br>what wants to emerge.</h1>
-      <p class="identity-line">Handpan & clarinet journeys — sound as a doorway to presence, breath & inner space.</p>
-      <a href="#reels" class="cta-primary sans">Enter</a>
-  </div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<h1>Sound that awakens<br>what wants to emerge.</h1>
+<p class="identity-line">Handpan & clarinet journeys — sound as a doorway to presence, breath & inner space.</p>
+<a href="#reels" class="cta-primary sans">Enter</a>
+</div>
 </section>
 
-
-
-<!-- ---------------- CONTENT ---------------- -->
+<!-- CONTENT -->
 <section class="tension" id="tension">
 <h2>When the World Feels Heavy</h2>
 <div class="tension-grid">
 <div class="tension-item"><h3>Unseen</h3><p>You move through rooms like air.</p></div>
-<div class="tension-item"><h3>Stuck</h3><p>The page stays blank. The song won't come.</p></div>
+<div class="tension-item"><h3>Stuck</h3><p>The page stays blank.</p></div>
 <div class="tension-item"><h3>Numb</h3><p>Feeling becomes distant.</p></div>
 <div class="tension-item"><h3>No Quiet</h3><p>Mind like traffic.</p></div>
 <div class="tension-item"><h3>Wonder Lost</h3><p>Magic asleep.</p></div>
@@ -157,16 +120,14 @@ footer{text-align:center;padding:3rem;font-size:.9rem;background:var(--void);col
 </div>
 </section>
 
-
 <section class="opportunity">
 <h2>One Note Can Open a Door</h2>
 <p class="opportunity-text">
 Sound is not background — it is invitation.<br>
-The handpan hums like earth remembering.<br>
-The clarinet breathes like wind through ancient trees.
+Handpan hums like earth remembering.<br>
+Clarinet breathes like ancient wind.
 </p>
 </section>
-
 
 <section class="offers">
 <h2>What Awaits You Inside</h2>
@@ -178,13 +139,11 @@ The clarinet breathes like wind through ancient trees.
 </div>
 </section>
 
-
 <section class="reels" id="reels">
 <h2>Soundscapes You Can Enter</h2>
 <p style="text-align:center;opacity:.6;">New journeys appear here automatically ↓</p>
 <div class="reels-grid" id="reels-container"><div>Loading...</div></div>
 </section>
-
 
 <section class="soul-call">
 <h2>This Is Your Invitation</h2>
@@ -199,42 +158,35 @@ The clarinet breathes like wind through ancient trees.
 </div>
 </section>
 
-
 <footer>© 2025 JC Soundscapes — hosted at Hotel Oasis.</footer>
 
-
-
-<!-- ---------------- SCRIPTS ---------------- -->
+<!-- JS -->
 <script>
-// Fade-in On Scroll
+// Scroll Fade
 const sections=document.querySelectorAll("section");
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible");});
-},{threshold:0.15});
-sections.forEach(s=>observer.observe(s));
+const obs=new IntersectionObserver(e=>{e.forEach(x=>x.isIntersecting&&x.target.classList.add("visible"))},{threshold:.15});
+sections.forEach(s=>obs.observe(s));
 
-
-// Load Reels (still no thumbnail API allowed by Instagram)
+// Load Reels
 async function loadReels(){
 const api="https://script.google.com/macros/s/AKfycbzWWyeOlGM8rHNGOdZJYx4h-p-oHnn_4B-tVTHonynZ3v15-NuCQdfjyW1WmT-FIQ4/exec";
 try{
-const res=await fetch(api);const data=await res.json();
-const box=document.getElementById("reels-container");box.innerHTML="";
-
-data.forEach(r=>{
-if(!r.instagram_url)return;
+const r=await fetch(api).then(r=>r.json());
+const box=document.getElementById("reels-container");
+box.innerHTML="";
+r.forEach(v=>{
+if(!v.instagram_url)return;
 box.innerHTML+=`
-<a class='reel-card' href='${r.instagram_url}' target='_blank'>
-<div class='reel-thumb'></div>
-<div class='reel-placeholder'>${r.Title||"Untitled"}</div>
+<a class="reel-card" href="${v.instagram_url}" target="_blank">
+<div class="reel-thumb"></div>
+<div class="reel-placeholder">${v.Title||"Untitled"}</div>
 </a>`;
 });
-}catch(err){
-document.getElementById("reels-container").innerHTML="<p>Unable to load reels</p>";
-}}
+}catch{document.getElementById("reels-container").innerHTML="<p>Unable to load reels</p>";}
+}
 loadReels();
 </script>
- <script src="reels.js"></script>
 
+<script src="reels.js"></script>
 </body>
 </html>
