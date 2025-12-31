@@ -1,405 +1,750 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>JC Soundscapes | Sound that awakens what wants to emerge</title>
-
-<!-- SEO -->
-<meta name="description" content="Handpan & clarinet sound journeys for calm, presence, sleep and creative awakening." />
-<meta name="keywords" content="sound healing, handpan meditation, clarinet calm music, sleep soundscapes, ambient reels" />
-<link rel="canonical" href="https://hoteloasis.in/soundscape/" />
-
-<!-- Social Share -->
-<meta property="og:title" content="JC Soundscapes — Sound that awakens what wants to emerge" />
-<meta property="og:description" content="A sanctuary of sound and presence — handpan and clarinet journeys that open inner space." />
-<meta property="og:image" content="https://hoteloasis.in/soundscape/preview.jpg" />
-<meta property="og:type" content="website" />
-
-<!-- Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MusicGroup",
-  "name": "JC Soundscapes",
-  "url": "https://hoteloasis.in/soundscape/",
-  "description": "Handpan & clarinet sound meditations for calm, presence and creativity.",
-  "sameAs": ["https://instagram.com/jc.soundscapes/"]
-}
-</script>
-
-<style>
-/* Base */
-* { margin:0; padding:0; box-sizing:border-box; }
-:root{
-  --stone:#d4cfc4; --smoke:#9a958c; --deep-earth:#4a4640; --void:#2a2622;
-  --gold:#c9a66b; --silence:#f5f3ef;
-}
-
-body{
-  font-family:'Georgia',serif;
-  background:var(--silence);
-  color:var(--deep-earth);
-  line-height:1.8;
-  overflow-x:hidden;
-}
-
-h1,h2,h3{
-  font-family:'Garamond','Georgia',serif;
-  font-weight:300;
-  letter-spacing:.05em;
-}
-
-.sans{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-weight:300;
-  letter-spacing:.08em;
-}
-
-/* sections are visible by default */
-section{
-  padding-block:0;
-}
-
-/* ---------------- HERO ----------------*/
-.hero{
-  min-height:100vh;
-  background:url("Images/hero.webp") center/cover no-repeat fixed;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  position:relative;
-  color:#fff;
-  padding:0;
-}
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.32);
-  backdrop-filter:blur(1px);
-  box-shadow:inset 0 0 200px rgba(0,0,0,.6);
-}
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:780px;
-  padding:3rem 2rem;
-}
-.hero h1{
-  font-size:clamp(2.6rem,6vw,5rem);
-  line-height:1.3;
-  margin-bottom:1.6rem;
-}
-.identity-line{
-  font-size:1.3rem;
-  max-width:760px;
-  margin:auto;
-  opacity:.9;
-  margin-bottom:2.2rem;
-}
-.cta-primary{
-  padding:1.1rem 2.6rem;
-  background:#fff;
-  color:#111;
-  border-radius:40px;
-  text-decoration:none;
-  font-weight:500;
-}
-.cta-primary:hover{
-  background:#f0f0f0;
-}
-
-/* ------------- CONTENT ----------------*/
-.tension{
-  padding:7rem 2rem;
-  max-width:1100px;
-  margin:auto;
-}
-.tension-grid{
-  margin-top:3rem;
-  display:grid;
-  gap:2rem;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-}
-.tension-item{
-  background:#fff;
-  padding:2rem;
-  border-radius:10px;
-  box-shadow:0 5px 18px rgba(0,0,0,.06);
-}
-
-.opportunity{
-  padding:7rem 2rem;
-  text-align:center;
-  max-width:900px;
-  margin:auto;
-}
-.opportunity-text{
-  font-size:1.2rem;
-  opacity:.85;
-  line-height:2;
-  margin-top:2rem;
-}
-
-.offers{
-  padding:7rem 2rem;
-  max-width:1200px;
-  margin:auto;
-}
-.offers-grid{
-  display:grid;
-  gap:2.2rem;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-}
-.offer-card{
-  background:var(--silence);
-  padding:2rem;
-  border-radius:12px;
-  transition:.4s;
-}
-.offer-card:hover{
-  transform:scale(1.02);
-}
-
-/* ---------------- REELS ----------------*/
-.reels{
-  padding:7rem 2rem;
-  background:var(--stone);
-}
-.reels-grid{
-  display:grid;
-  gap:2rem;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-}
-.reel-card{
-  background:#fff;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 6px 22px rgba(0,0,0,.08);
-  color:var(--void);
-  text-decoration:none;
-}
-/* ---------------- REELS (IMPROVED UI) ----------------*/
-.reels{
-  padding:7rem 2rem;background:var(--stone);
-}
-.reels-grid{
-  display:grid;gap:2rem;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-}
-
-/* Reel Card Base */
-.reel-card{
-  position:relative;
-  background:#e9e3d5;                     /* warm parchment tone */
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 8px 30px rgba(0,0,0,.08);
-  text-decoration:none;
-  color:var(--void);
-  transition:.3s;
-}
-.reel-card:hover{transform:scale(1.02);}
-
-/* NEW Placeholder UI */
-.reel-thumb{
-  height:240px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,#bfa780,#d9ccb3);
-  border-bottom: 1px solid rgba(0,0,0,.08);
-  position:relative;
-}
-
-/* Play Button Overlay */
-.reel-thumb::after{
-  content:"▶";
-  width:80px;height:80px;
-  border-radius:50%;
-  background:rgba(0,0,0,.35);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:2rem;
-  color:white;
-  backdrop-filter:blur(3px);
-}
-
-/* Title */
-.reel-placeholder{
-  text-align:center;
-  padding:1.2rem;
-  font-size:1.2rem;
-  font-weight:600;
-}
-
-/* ---------------- SOUL CALL ----------------*/
-.soul-call{
-  text-align:center;
-  padding:6rem 2rem;
-  background:var(--void);
-  color:#fff;
-}
-.soul-call h2{
-  font-size:2.9rem;
-  margin-bottom:1rem;
-  color:var(--gold);
-}
-.soul-call p{
-  max-width:650px;
-  margin:auto;
-  font-size:1.18rem;
-  opacity:.9;
-  margin-bottom:2.5rem;
-}
-
-.cta-private{
-  background:var(--gold);
-  padding:1.15rem 2.6rem;
-  border-radius:45px;
-  font-size:1.25rem;
-  color:var(--void);
-  font-weight:600;
-  text-decoration:none;
-  display:inline-block;
-  margin-bottom:3rem;
-  transition:.3s;
-}
-.cta-private:hover{
-  opacity:.9;
-  transform:scale(1.06);
-}
-
-.soul-ctas{
-  display:flex;
-  justify-content:center;
-  gap:2rem;
-  flex-wrap:wrap;
-}
-.soul-cta{
-  padding:.9rem 2.3rem;
-  border:2px solid var(--gold);
-  color:var(--gold);
-  min-width:150px;
-  border-radius:50px;
-  text-decoration:none;
-  font-size:1.1rem;
-  transition:.3s;
-}
-.soul-cta:hover{
-  background:var(--gold);
-  color:var(--void);
-  transform:translateY(-3px);
-}
-
-/* Footer */
-footer{
-  text-align:center;
-  padding:3rem;
-  font-size:.9rem;
-  background:var(--void);
-  color:#bbb;
-  margin-top:6rem;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JC.Soundscapes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #2a2a2a;
+      background: #faf8f5;
+      overflow-x: hidden;
+    }
+    
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(42,42,42,0.85), rgba(80,60,50,0.75)),
+                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23c9a87c" width="1200" height="800"/></svg>');
+      background-size: cover;
+      text-align: center;
+      color: #fff;
+      padding: 2rem;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      opacity: 0.95;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 3rem;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      transition: all 0.4s ease;
+    }
+    
+    .cta-button:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .emotion-section {
+      padding: 8rem 2rem;
+      text-align: center;
+      background: linear-gradient(to bottom, #faf8f5, #f5f1eb);
+    }
+    
+    .emotion-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 5rem;
+      color: #3a3a3a;
+    }
+    
+    .emotion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .emotion-card {
+      background: #fff;
+      padding: 3.5rem 2rem;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .emotion-card::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: radial-gradient(circle, rgba(201,168,124,0.2), transparent);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+    
+    .emotion-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(201,168,124,0.25);
+    }
+    
+    .emotion-card:hover::before {
+      width: 500px;
+      height: 500px;
+    }
+    
+    .emotion-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .emotion-card p {
+      color: #666;
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .oasis-portal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 2rem;
+      transition: opacity 0.5s ease;
+    }
+    
+    .oasis-portal.active { 
+      display: flex;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .oasis-portal.agua { background: linear-gradient(135deg, #c9a87c, #d4b896, #9b8264); }
+    .oasis-portal.liwa { background: linear-gradient(135deg, #9eb3c2, #b8cad6, #7a92a3); }
+    .oasis-portal.siwa { background: linear-gradient(135deg, #d89a6a, #e8b088, #c27d4a); }
+    .oasis-portal.timia { background: linear-gradient(135deg, #a8b5b8, #c5d0d3, #8a9799); }
+    .oasis-portal.ubari { background: linear-gradient(135deg, #d4a5c7, #e5c3db, #b87fa1); }
+    .oasis-portal.crescent { background: linear-gradient(135deg, #4a5568, #667180, #2d3748); }
+    
+    .oasis-card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 24px;
+      padding: 4rem 3rem;
+      text-align: center;
+      max-width: 600px;
+      color: #fff;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.2);
+      animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    @keyframes scaleIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    
+    .oasis-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+    
+    .oasis-card p {
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+    
+    .ritual-section {
+      padding: 8rem 2rem;
+      background: linear-gradient(to bottom, #3a3a3a, #2a2a2a);
+      color: #fff;
+      text-align: center;
+    }
+    
+    .breathing-orb-container {
+      position: relative;
+      width: 240px;
+      height: 240px;
+      margin: 0 auto 3rem;
+    }
+    
+    .breathing-orb {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 80px rgba(255,220,150,0.4);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .breathing-orb:hover {
+      transform: scale(1.05);
+    }
+    
+    .breathing-orb.agua { background: radial-gradient(circle, rgba(255,220,150,0.9), rgba(201,168,124,0.6)); }
+    .breathing-orb.liwa { background: radial-gradient(circle, rgba(158,179,194,0.9), rgba(122,146,163,0.6)); }
+    .breathing-orb.siwa { background: radial-gradient(circle, rgba(216,154,106,0.9), rgba(194,125,74,0.6)); }
+    .breathing-orb.timia { background: radial-gradient(circle, rgba(197,208,211,0.9), rgba(138,151,153,0.6)); }
+    .breathing-orb.ubari { background: radial-gradient(circle, rgba(212,165,199,0.9), rgba(184,127,161,0.6)); }
+    .breathing-orb.crescent { background: radial-gradient(circle, rgba(102,113,128,0.9), rgba(45,55,72,0.6)); }
+    
+    .ritual-instruction {
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.3s forwards;
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 0.9; transform: translateY(0); }
+    }
+    
+    .player-ui {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      margin-top: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .player-ui h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .player-controls {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .play-button {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .play-button:hover {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.05);
+    }
+    
+    .timeline {
+      flex: 1;
+      height: 4px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 2px;
+      cursor: pointer;
+      position: relative;
+    }
+    
+    .timeline-progress {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ffdcaa, #c9a87c);
+      border-radius: 2px;
+      transition: width 0.1s linear;
+    }
+    
+    .player-modes {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    .mode-button {
+      padding: 0.6rem 1.5rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .mode-button:hover, .mode-button.active {
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.4);
+    }
+    
+    .shared-section {
+      padding: 8rem 2rem;
+      background: linear-gradient(135deg, #f5f1eb, #faf8f5);
+      text-align: center;
+    }
+    
+    .shared-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      color: #2a2a2a;
+    }
+    
+    .shared-section p {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+    
+    .shared-visual {
+      max-width: 400px;
+      margin: 0 auto 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .shared-orb {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,124,0.3), transparent);
+      border: 2px solid rgba(201,168,124,0.4);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+    
+    .share-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .share-button {
+      padding: 1rem 2.5rem;
+      background: #2a2a2a;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .share-button:hover {
+      background: #3a3a3a;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .closing-section {
+      padding: 8rem 2rem;
+      background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
+      color: #fff;
+      text-align: center;
+    }
+    
+    .closing-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .closing-section p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      opacity: 0.9;
+    }
+    
+    .closing-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .closing-button {
+      padding: 1rem 2.5rem;
+      background: rgba(201,168,124,0.2);
+      border: 1px solid rgba(201,168,124,0.4);
+      color: #fff;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .closing-button:hover {
+      background: rgba(201,168,124,0.3);
+      transform: translateY(-2px);
+    }
+    
+    footer {
+      padding: 3rem 2rem;
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .emotion-grid { grid-template-columns: 1fr; }
+      .breathing-orb-container { width: 180px; height: 180px; }
+      .player-controls { flex-direction: column; }
+      .shared-orb { width: 90px; height: 90px; }
+    }
+  </style>
 </head>
 <body>
+  <audio id="audio" loop></audio>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1>Sound that awakens<br>what wants to emerge.</h1>
-    <p class="identity-line">
-      Handpan & clarinet journeys — sound as a doorway to presence, breath & inner space.
-    </p>
-    <a href="#reels" class="cta-primary sans">Enter</a>
+  <section class="hero">
+    <div>
+      <h1>Sound that awakens<br>what wants to emerge.</h1>
+      <p>Handpan & clarinet journeys — sound as doorway to presence, breath & inner glow.</p>
+      <a href="#emotions" class="cta-button">enter</a>
+    </div>
+  </section>
+
+  <section class="emotion-section" id="emotions">
+    <h2>When the World Feels Heavy</h2>
+    <div class="emotion-grid">
+      <div class="emotion-card" onclick="openOasis('agua')">
+        <h3>Unseen</h3>
+        <p>You move through rooms like air</p>
+      </div>
+      <div class="emotion-card" onclick="openOasis('liwa')">
+        <h3>Stuck</h3>
+        <p>The cage wasn't made of bars</p>
+      </div>
+      <div class="emotion-card" onclick="openOasis('siwa')">
+        <h3>Numb</h3>
+        <p>Feeling becomes distant</p>
+      </div>
+      <div class="emotion-card" onclick="openOasis('timia')">
+        <h3>No Quiet</h3>
+        <p>Mind like traffic</p>
+      </div>
+      <div class="emotion-card" onclick="openOasis('ubari')">
+        <h3>Wonder Lost</h3>
+        <p>Magic stillness</p>
+      </div>
+      <div class="emotion-card" onclick="openOasis('crescent')">
+        <h3>Always On</h3>
+        <p>You forgot how to pause</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="oasis-portal" id="oasisPortal">
+    <div class="oasis-card">
+      <h2 id="oasisTitle"></h2>
+      <p id="oasisDesc"></p>
+      <a href="#ritual" class="cta-button" onclick="enterRitual(); return true;">Enter</a>
+    </div>
   </div>
-</section>
 
-<!-- CONTENT -->
-<section class="tension" id="tension">
-  <h2>When the World Feels Heavy</h2>
-  <div class="tension-grid">
-    <div class="tension-item"><h3>Unseen</h3><p>You move through rooms like air.</p></div>
-    <div class="tension-item"><h3>Stuck</h3><p>The page stays blank.</p></div>
-    <div class="tension-item"><h3>Numb</h3><p>Feeling becomes distant.</p></div>
-    <div class="tension-item"><h3>No Quiet</h3><p>Mind like traffic.</p></div>
-    <div class="tension-item"><h3>Wonder Lost</h3><p>Magic asleep.</p></div>
-    <div class="tension-item"><h3>Always On</h3><p>You forgot how to pause.</p></div>
-  </div>
-</section>
+  <section class="ritual-section" id="ritual">
+    <div class="breathing-orb-container">
+      <div class="breathing-orb" id="breathingOrb"></div>
+    </div>
+    <div class="ritual-instruction">
+      One hand to chest. One to belly.<br>
+      Feel the rise. Feel the fall.<br>
+      Press play when breath softens.
+    </div>
+    
+    <div class="player-ui">
+      <h3 id="ritualTitle"></h3>
+      <div class="player-controls">
+        <div class="play-button" id="playButton">▶</div>
+        <div class="timeline" id="timeline">
+          <div class="timeline-progress" id="progress"></div>
+        </div>
+      </div>
+      <div style="margin: 1rem 0; opacity: 0.7;">
+        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+      </div>
+      <div class="player-modes">
+        <button class="mode-button active" onclick="setMode('loop')">Loop</button>
+        <button class="mode-button" onclick="setMode('sleep')">Sleep</button>
+        <button class="mode-button" onclick="setMode('deep')">Deep</button>
+      </div>
+    </div>
+  </section>
 
-<section class="opportunity">
-  <h2>One Note Can Open a Door</h2>
-  <p class="opportunity-text">
-    Sound is not background — it is invitation.<br>
-    Handpan hums like earth remembering.<br>
-    Clarinet breathes like ancient wind.
-  </p>
-</section>
+  <section class="shared-section">
+    <h2>Share this ritual with someone you love.<br>Even across distance.</h2>
+    <p>One breath. Two hearts. Infinite connection.</p>
+    <div class="shared-visual">
+      <div class="shared-orb"></div>
+      <div style="opacity: 0.4; font-size: 2rem;">~</div>
+      <div class="shared-orb"></div>
+    </div>
+    <div class="share-buttons">
+      <a href="#" class="share-button" onclick="shareWhatsApp(); return false;">Invite on WhatsApp</a>
+      <a href="#" class="share-button" onclick="copyLink(); return false;">Copy Ritual Link</a>
+    </div>
+  </section>
 
-<section class="offers">
-  <h2>What Awaits You Inside</h2>
-  <div class="offers-grid">
-    <div class="offer-card"><h3>Sound Journeys</h3></div>
-    <div class="offer-card"><h3>Handpan Waves</h3></div>
-    <div class="offer-card"><h3>Clarinet Wind</h3></div>
-    <div class="offer-card"><h3>Sleep / Calm Loops</h3></div>
-  </div>
-</section>
+  <section class="closing-section">
+    <h2>This is your invitation.</h2>
+    <p>Come as you are. Return through sound.</p>
+    <div class="closing-buttons">
+      <a href="#" class="closing-button">Book Private Session</a>
+      <a href="#" class="closing-button">Listen Collection</a>
+      <a href="#" class="closing-button">Join Movement</a>
+    </div>
+  </section>
 
-<section class="reels" id="reels">
-  <h2>Soundscapes You Can Enter</h2>
-  <p style="text-align:center;opacity:.6;">New journeys appear here automatically ↓</p>
-  <div class="reels-grid" id="reels-container"><div>Loading...</div></div>
-</section>
+  <footer>
+    © 2024 JC.Soundscapes — Sound as Medicine · Breath as Ritual
+  </footer>
 
-<section class="soul-call">
-  <h2>This Is Your Invitation</h2>
-  <p>Come as you are. Rest. Return through sound.</p>
+  <script>
+    // Oasis content configuration
+    const oasisContent = {
+      agua: {
+        title: "You matter here.<br>The water sees you.",
+        desc: "Reflection & recognition.<br>Handpan flows the earth remembering<br>Clarinet breathes the ancient wind",
+        ritualTitle: "Agua — The Water Remembers You",
+        audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        breathDuration: 6000
+      },
+      liwa: {
+        title: "Movement returns.<br>The wind carries you.",
+        desc: "Space opens. Breath flows.<br>The desert wind knows the stuck places<br>Sound moves what was frozen",
+        ritualTitle: "Liwa — Wind Moves Through",
+        audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+        breathDuration: 5000
+      },
+      siwa: {
+        title: "Warmth awakens.<br>The ember glows for you.",
+        desc: "Return to feeling.<br>Handpan sparks the sleeping heart<br>Clarinet kindles gentle heat",
+        ritualTitle: "Siwa — Ember Returns",
+        audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+        breathDuration: 7000
+      },
+      timia: {
+        title: "Quiet gathers here.<br>The mist holds you.",
+        desc: "Stillness deepens.<br>Sound creates the sanctuary<br>Breath becomes prayer",
+        ritualTitle: "Timia — Stillness Lake",
+        audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+        breathDuration: 8000
+      },
+      ubari: {
+        title: "Wonder returns.<br>The spark remembers you.",
+        desc: "Colour emerges. Light dances.<br>Music invites the child back<br>Sound opens what was closed",
+        ritualTitle: "Ubari — Wonder Sparks",
+        audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+        breathDuration: 5000
+      },
+      crescent: {
+        title: "Night holds you.<br>The moon watches.",
+        desc: "Surrender deepens.<br>Sound carries you to rest<br>Breath becomes lullaby",
+        ritualTitle: "Crescent — Moon Ritual",
+        audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+        breathDuration: 9000
+      }
+    };
 
-  <a href="https://link.gobespoken.com/free_demo_booking" class="cta-private">
-    Book Your Private Session
-  </a>
+    let currentOasis = 'agua';
+    let breathAnimation = null;
+    let currentMode = 'loop';
+    const audio = document.getElementById('audio');
 
-  <div class="soul-ctas">
-    <a href="https://www.youtube.com" target="_blank" class="soul-cta">Listen</a>
-    <a href="https://instagram.com/jc.soundscapes/" target="_blank" class="soul-cta">Follow</a>
-    <a href="https://wa.me/918088301024?text=I%20am%20ready%20to%20listen" target="_blank" class="soul-cta">
-      Join Movement
-    </a>
-  </div>
-</section>
+    // Open oasis portal
+    function openOasis(oasis) {
+      currentOasis = oasis;
+      const content = oasisContent[oasis];
+      const portal = document.getElementById('oasisPortal');
+      
+      portal.className = 'oasis-portal active ' + oasis;
+      document.getElementById('oasisTitle').innerHTML = content.title;
+      document.getElementById('oasisDesc').innerHTML = content.desc;
+      document.body.style.overflow = 'hidden';
+    }
 
-<footer>© 2025 JC Soundscapes — hosted at Hotel Oasis.</footer>
+    // Enter ritual
+    function enterRitual() {
+      const portal = document.getElementById('oasisPortal');
+      portal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      
+      const content = oasisContent[currentOasis];
+      document.getElementById('ritualTitle').textContent = content.ritualTitle;
+      document.getElementById('breathingOrb').className = 'breathing-orb ' + currentOasis;
+      audio.src = content.audio;
+      
+      startBreathAnimation(content.breathDuration);
+    }
 
-<!-- JS: Reels only -->
-<script>
-async function loadReels(){
-  const api = "https://script.google.com/macros/s/AKfycbzWWyeOlGM8rHNGOdZJYx4h-p-oHnn_4B-tVTHonynZ3v15-NuCQdfjyW1WmT-FIQ4/exec";
-  try{
-    const res = await fetch(api);
-    const data = await res.json();
-    const box = document.getElementById("reels-container");
-    box.innerHTML = "";
-    data.forEach(r => {
-      if (!r.instagram_url) return;
-      box.innerHTML += `
-        <a class="reel-card" href="${r.instagram_url}" target="_blank">
-          <div class="reel-thumb"></div>
-          <div class="reel-placeholder">${r.Title || "Untitled"}</div>
-        </a>`;
+    // Breathing animation
+    function startBreathAnimation(duration) {
+      const orb = document.getElementById('breathingOrb');
+      if (breathAnimation) clearInterval(breathAnimation);
+      
+      let scale = 1;
+      let growing = true;
+      const step = 0.005;
+      const maxScale = 1.15;
+      const minScale = 1;
+      
+      breathAnimation = setInterval(() => {
+        if (growing) {
+          scale += step;
+          if (scale >= maxScale) growing = false;
+        } else {
+          scale -= step;
+          if (scale <= minScale) growing = true;
+        }
+        orb.style.transform = `scale(${scale})`;
+      }, 16);
+    }
+
+    // Play/pause
+    let playing = false;
+    document.getElementById('playButton').onclick = function() {
+      playing = !playing;
+      this.textContent = playing ? '⏸' : '▶';
+      
+      if (playing) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    };
+
+    // Update progress
+    audio.addEventListener('timeupdate', function() {
+      const progress = (audio.currentTime / audio.duration) * 100;
+      document.getElementById('progress').style.width = progress + '%';
+      document.getElementById('currentTime').textContent = formatTime(audio.currentTime);
     });
-  }catch(e){
-    document.getElementById("reels-container").innerHTML =
-      "<p>Unable to load reels</p>";
-  }
-}
-loadReels();
-</script>
 
+    audio.addEventListener('loadedmetadata', function() {
+      document.getElementById('duration').textContent = formatTime(audio.duration);
+    });
+
+    // Timeline click
+    document.getElementById('timeline').onclick = function(e) {
+      const rect = this.getBoundingClientRect();
+      const percent = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = percent * audio.duration;
+    };
+
+    // Format time
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return mins + ':' + (secs < 10 ? '0' : '') + secs;
+    }
+
+    // Set mode
+    function setMode(mode) {
+      currentMode = mode;
+      document.querySelectorAll('.mode-button').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      const content = oasisContent[currentOasis];
+      let breathDuration = content.breathDuration;
+      
+      if (mode === 'sleep') {
+        breathDuration = breathDuration * 1.3;
+      } else if (mode === 'deep') {
+        breathDuration = breathDuration * 1.6;
+      }
+      
+      startBreathAnimation(breathDuration);
+    }
+
+    // Share on WhatsApp
+    function shareWhatsApp() {
+      const url = window.location.href.split('?')[0] + '?oasis=' + currentOasis;
+      const text = `Join me in this sound ritual 💛\n${oasisContent[currentOasis].ritualTitle}\n${url}`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // Copy link
+    function copyLink() {
+      const url = window.location.href.split('?')[0] + '?oasis=' + currentOasis;
+      navigator.clipboard.writeText(url).then(() => {
+        alert('Ritual link copied! Share with someone you love.');
+      });
+    }
+
+    // Check for shared ritual
+    window.addEventListener('load', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const sharedOasis = urlParams.get('oasis');
+      if (sharedOasis && oasisContent[sharedOasis]) {
+        setTimeout(() => {
+          openOasis(sharedOasis);
+          setTimeout(() => {
+            enterRitual();
+            document.getElementById('ritual').scrollIntoView({ behavior: 'smooth' });
+          }, 2000);
+        }, 500);
+      }
+    });
+  </script>
 </body>
 </html>
